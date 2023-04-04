@@ -7,7 +7,9 @@
 
 SRC			=	src/main.c
 
-CFLAGS		=	-W -Wall -Wextra -I ./include
+CFLAGS		=	-W -Wall -Wextra -I ./include \
+				-lcsfml-graphics -lcsfml-window \
+				-lcsfml-system -lcsfml-audio
 
 NAME		=	my_rpg
 
