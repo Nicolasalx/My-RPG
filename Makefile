@@ -5,11 +5,15 @@
 ## Makefile
 ##
 
-SRC			=	src/main.c
+MAIN_SRC	=	src/main/declaration_main.c \
+				src/main/create_render_window.c \
+				src/main/main_loop.c
 
-CFLAGS		=	-W -Wall -Wextra -I ./include \
-				-lcsfml-graphics -lcsfml-window \
-				-lcsfml-system -lcsfml-audio
+SRC			=	src/main.c \
+				$(MAIN_SRC)
+
+CFLAGS		=	-W -Wall -Wextra -I ./include -I ./include/lib -lcsfml-system \
+				-lcsfml-graphics -lcsfml-window -lcsfml-audio -lm
 
 NAME		=	my_rpg
 

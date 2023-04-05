@@ -10,7 +10,8 @@ SRCERROR	=	error/error_manager.c \
 				error/my_puterror.c \
 				error/my_exit.c \
 				error/print_fatal_error_and_exit.c \
-				error/my_put_x_error.c
+				error/my_put_x_error.c \
+				error/catch_error.c
 
 SRCBITSHIFT	=	bit_shift/get_bit_value.c \
 				bit_shift/set_all_bit_to_zero.c \
@@ -122,7 +123,7 @@ SRC			=	$(SRCGRAPHICAL) \
 
 OBJ			=	$(SRC:.c=.o)
 
-CFLAGS		=	-W -Wall -Wextra -I ../include -O2 -fno-builtin
+CFLAGS		=	-W -Wall -Wextra -I ../include/lib -O2 -fno-builtin
 
 LIBFLAG		=
 

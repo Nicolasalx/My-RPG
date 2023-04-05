@@ -5,9 +5,10 @@
 ** main
 */
 
-#include "my.h"
+#include "main.h"
 
-int main(int argc, char **argv)
+int main(void)
 {
+    main_loop();
     return 0;
 }
