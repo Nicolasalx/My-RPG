@@ -10,8 +10,10 @@
 void main_loop(void)
 {
     create_render_window();
+    create_all_data();
     while (sfRenderWindow_isOpen(window)) {
         sfRenderWindow_clear(window, sfBlack);
+        render_all_data();
 //        render_all_data();
         manage_event();
         sfRenderWindow_display(window);

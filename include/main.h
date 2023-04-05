@@ -35,4 +35,7 @@ void main_loop(void);
 void create_render_window(void);
 void manage_event(void);
 
+void render_all_data(void);
+void create_all_data(void);
+
 #endif /* !MY_H_ */

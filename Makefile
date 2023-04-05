@@ -8,10 +8,17 @@
 MAIN_SRC	=	src/main/declaration_main.c \
 				src/main/create_render_window.c \
 				src/main/manage_event.c \
-				src/main/main_loop.c
+				src/main/main_loop.c \
+				src/main/render_all_data.c \
+				src/main/create_all_data.c
+
+MENU_SRC 	= 	src/menu/create.c \
+				src/menu/declaration.c \
+				src/menu/render.c
 
 SRC			=	src/main.c \
-				$(MAIN_SRC)
+				$(MAIN_SRC) \
+				$(MENU_SRC)
 
 CFLAGS		=	-W -Wall -Wextra -I ./include -I ./include/lib -lcsfml-system \
 				-lcsfml-graphics -lcsfml-window -lcsfml-audio -lm
