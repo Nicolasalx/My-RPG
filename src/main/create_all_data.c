@@ -10,5 +10,7 @@
 
 void create_all_data(void)
 {
-    ini_menu_button();
+    for (int i = 0; create[i] != NULL; ++i) {
+        create[i]();
+    }
 }

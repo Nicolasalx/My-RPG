@@ -20,7 +20,7 @@ typedef struct {
 extern img_button_menu_t img_button_menu[];
 extern const int size_img_button_menu;
 
+void create_menu_button(void);
 void render_menu(void);
-void ini_menu_button(void);
 
 #endif /* !MENU_H_ */

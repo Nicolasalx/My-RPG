@@ -2,15 +2,13 @@
 ** EPITECH PROJECT, 2023
 ** B-MUL-200-PAR-2-1-myrpg-thibaud.cathala
 ** File description:
-** render_all_data
+** declaration_create_all_data
 */
 
 #include "main.h"
 #include "menu_game.h"
 
-void render_all_data(void)
-{
-    for (int i = 0; render[i] != NULL; ++i) {
-        render[i]();
-    }
-}
+void (*create[])(void) = {
+    create_menu_button,
+    NULL
+};

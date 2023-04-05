@@ -13,9 +13,8 @@ void main_loop(void)
     create_all_data();
     while (sfRenderWindow_isOpen(window)) {
         sfRenderWindow_clear(window, sfBlack);
-        render_all_data();
-//        render_all_data();
         manage_event();
+        render_all_data();
         sfRenderWindow_display(window);
     }
     sfRenderWindow_destroy(window);

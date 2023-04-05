@@ -31,6 +31,9 @@ typedef struct {
 extern sfRenderWindow *window;
 extern render_window_t render_window;
 
+extern void (*create[])(void);
+extern void (*render[])(void);
+
 void main_loop(void);
 void create_render_window(void);
 void manage_event(void);

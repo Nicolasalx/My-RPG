@@ -13,7 +13,9 @@ MAIN_SRC	=	src/main/declaration_main.c \
 				src/main/manage_event.c \
 				src/main/main_loop.c \
 				src/main/render_all_data.c \
-				src/main/create_all_data.c
+				src/main/create_all_data.c \
+				src/main/declaration_render_all_data.c \
+				src/main/declaration_create_all_data.c
 
 MENU_SRC 	= 	src/menu/create.c \
 				src/menu/declaration.c \
