@@ -13,6 +13,14 @@
     #include "SFML/Graphics.h"
     #include <sys/types.h>
 
+    #include "my_string.h"
+    #include "my_number.h"
+    #include "my_linkedlist.h"
+    #include "my_char.h"
+    #include "my_bitshift.h"
+    #include "my_graphical.h"
+    #include "my_malloc.h"
+
 typedef struct {
     sfVideoMode mode;
     sfUint32 style;
@@ -25,5 +33,6 @@ extern render_window_t render_window;
 
 void main_loop(void);
 void create_render_window(void);
+void manage_event(void);
 
 #endif /* !MY_H_ */

@@ -7,6 +7,7 @@
 
 MAIN_SRC	=	src/main/declaration_main.c \
 				src/main/create_render_window.c \
+				src/main/manage_event.c \
 				src/main/main_loop.c
 
 SRC			=	src/main.c \

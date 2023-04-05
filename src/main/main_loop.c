@@ -9,12 +9,11 @@
 
 void main_loop(void)
 {
-    sfEvent event;
-
     create_render_window();
     while (sfRenderWindow_isOpen(window)) {
         sfRenderWindow_clear(window, sfBlack);
 //        render_all_data();
+        manage_event();
         sfRenderWindow_display(window);
     }
     sfRenderWindow_destroy(window);
