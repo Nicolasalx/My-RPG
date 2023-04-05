@@ -9,25 +9,23 @@
     #define PLAYER_H_
 
     #include "SFML/Graphics.h"
+    #include "generic_func.h"
 
 typedef enum {
     IDLE,
     RUN,
     JUMP,
-    ATTACK
+    ATTACK,
+    NB_ANIM_PLAYER
 } player_anim_e;
 
 typedef struct {
-    char *sheet_path;
-    unsigned int nb_frame;
-    unsigned int current_frame;
-    sfTexture *texture;
-    sfSprite *sprite;
-} anim_t;
-
-typedef struct {
     player_anim_e anim_to_play;
-    anim_t *player_anim;
+    player_anim_e last_anim;
+    unsigned int current_frame;
+    anim_t player_anim[];
 } player_t;
+
+extern player_t player;
 
 #endif /* !PLAYER_H_ */

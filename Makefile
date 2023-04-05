@@ -5,6 +5,9 @@
 ## Makefile
 ##
 
+PLAYER_SRC	=	src/player/declaration_player.c \
+				src/player/create_player.c
+
 MAIN_SRC	=	src/main/declaration_main.c \
 				src/main/create_render_window.c \
 				src/main/manage_event.c \
