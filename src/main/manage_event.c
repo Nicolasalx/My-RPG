@@ -10,10 +10,19 @@
 void manage_event(void)
 {
     sfEvent event;
-
+    mouse_button_maintain = sfMouse_isButtonPressed(sfMouseLeft);
+    mouse_button_pressed = false;
+    mouse_button_released = false;
     while (sfRenderWindow_pollEvent(window, &event)) {
         if (event.type == sfEvtClosed) {
             sfRenderWindow_close(window);
+        }
+        mouse_pos = sfMouse_getPositionRenderWindow(window);
+        if (event.type == sfEvtMouseButtonPressed) {
+            mouse_button_pressed = true;
+        }
+        if (event.type == sfEvtMouseButtonReleased) {
+            mouse_button_released = true;
         }
     }
 }

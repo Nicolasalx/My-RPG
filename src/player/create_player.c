@@ -15,6 +15,7 @@ void create_player(void)
         player.player_anim[i].sprite = sfSprite_create();
         sfSprite_setTexture(player.player_anim[i].sprite,
             player.player_anim[i].texture, sfFalse);
-        player.player_anim[i].texture_size = sfTexture_getSize(player.player_anim[i].texture);
+        player.player_anim[i].texture_size = sfTexture_getSize
+            (player.player_anim[i].texture);
     }
 }

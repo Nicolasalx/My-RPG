@@ -61,4 +61,6 @@ int rand_int(int min, int max);
 
 sfIntRect get_texture_size(sfTexture *texture);
 
+sfBool is_mouse_over_sprite(sfSprite *sprite);
+
 #endif /* !MY_GRAPHICAL */

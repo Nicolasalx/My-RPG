@@ -7,7 +7,7 @@
 
 #include "generic_func.h"
 
-void anim_sprite(anim_t *anim, int anim_to_play, unsigned int current_frame, unsigned int last_anim)
+void anim_sprite(anim_t *anim, int anim_to_play, unsigned int current_frame,
+    unsigned int last_anim)
 {
-    
 }

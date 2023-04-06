@@ -45,7 +45,8 @@ SRCGRAPHICAL=	graphical/animated_sprite.c \
 				graphical/time.c \
 				graphical/mouse_is_over.c \
 				graphical/randint.c \
-				graphical/texture.c
+				graphical/texture.c \
+				graphical/is_mouse_over.c
 
 SRCMALLOC	=	malloc/my_malloc.c \
 				malloc/malloc_board.c \
@@ -123,7 +124,8 @@ SRC			=	$(SRCGRAPHICAL) \
 
 OBJ			=	$(SRC:.c=.o)
 
-CFLAGS		=	-W -Wall -Wextra -I ../include/lib -O2 -fno-builtin
+CFLAGS		=	-W -Wall -Wextra -I ../include/lib -I ../include \
+				-O2 -fno-builtin
 
 LIBFLAG		=
 

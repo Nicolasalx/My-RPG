@@ -7,6 +7,11 @@
 
 #include "main.h"
 
+sfBool mouse_button_pressed = false;
+sfBool mouse_button_maintain = false;
+sfBool mouse_button_released = false;
+sfVector2i mouse_pos = {0, 0};
+
 void main_loop(void)
 {
     create_render_window();

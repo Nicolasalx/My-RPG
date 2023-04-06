@@ -15,6 +15,7 @@ typedef struct {
     sfVector2f pos;
     sfVector2f size;
     char *path_img;
+    void (*redirect)(void);
 } img_button_menu_t;
 
 extern img_button_menu_t img_button_menu[];
@@ -22,5 +23,8 @@ extern const int size_img_button_menu;
 
 void create_menu_button(void);
 void render_menu(void);
+void setting_button(void);
+void sound_up_button(void);
+void go_home_button(void);
 
 #endif /* !MENU_H_ */
