@@ -6,8 +6,9 @@
 */
 
 #include "menu_game.h"
+#include "my_def.h"
 
-img_button_menu_t img_button_menu [] = {
+img_button_menu_t img_button_menu[] = {
     {.pos = {800, 300}, .path_img = "game_src/Menu_button/settings.png",
     .size = {0.3, 0.3}, .redirect = setting_button},
 
@@ -18,5 +19,4 @@ img_button_menu_t img_button_menu [] = {
     .size = {0.3, 0.3}, .redirect = sound_up_button},
 };
 
-const int size_img_button_menu =
-    sizeof(img_button_menu) / sizeof(img_button_menu_t);
+const int size_img_button_menu = NB_ELEM(img_button_menu);
