@@ -20,6 +20,8 @@ typedef enum {
 } player_anim_e;
 
 typedef struct {
+    sfVector2f pos;
+    sfVector2f scale;
     player_anim_e anim_to_play;
     anim_sprite_t player_anim;
 } player_t;

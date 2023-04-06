@@ -15,6 +15,7 @@
 typedef struct {
     char *sheet_path;
     unsigned int nb_frame;
+    unsigned int frame_rate;
     sfSprite *sprite;
     sfTexture *texture;
     sfVector2u texture_size;
@@ -23,6 +24,7 @@ typedef struct {
 typedef struct {
     unsigned int current_frame;
     unsigned int last_anim;
+    sfClock *clock;
     sprite_sheet_t sprite_sheet[MAX_SPRITE_SHEET];
 } anim_sprite_t;
 
