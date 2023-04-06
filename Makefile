@@ -5,8 +5,11 @@
 ## Makefile
 ##
 
+GENERIC_FUNC_SRC=	src/generic_func/anim_sprite.c
+
 PLAYER_SRC	=	src/player/declaration_player.c \
-				src/player/create_player.c
+				src/player/create_player.c \
+				src/player/render_player.c
 
 MAIN_SRC	=	src/main/declaration_main.c \
 				src/main/create_render_window.c \
@@ -21,14 +24,16 @@ MENU_SRC 	= 	src/menu/create.c \
 				src/menu/declaration.c \
 				src/menu/render.c
 
-QUEST_SRC	=	src/quest/create.c	\
-				src/quest/declaration.c	\
-				src/quest/render.c	\
+QUEST_SRC	=	src/quest/create.c \
+				src/quest/declaration.c \
+				src/quest/render.c
 
 SRC			=	src/main.c \
 				$(MAIN_SRC) \
-				$(MENU_SRC)	\
-				$(QUEST_SRC)
+				$(MENU_SRC) \
+				$(QUEST_SRC) \
+				$(PLAYER_SRC) \
+				$(GENERIC_FUNC_SRC)
 
 CFLAGS		=	-W -Wall -Wextra -I ./include -I ./include/lib -lcsfml-system \
 				-lcsfml-graphics -lcsfml-window -lcsfml-audio -lm

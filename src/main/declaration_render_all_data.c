@@ -7,9 +7,11 @@
 
 #include "menu_game.h"
 #include "quest.h"
+#include "player.h"
 
 void (*render[])(void) = {
     render_menu,
     render_menu_quest,
+    render_player,
     NULL
 };
