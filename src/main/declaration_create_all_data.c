@@ -7,8 +7,10 @@
 
 #include "main.h"
 #include "menu_game.h"
+#include "quest.h"
 
 void (*create[])(void) = {
     create_menu_button,
+    create_menu_quest,
     NULL
 };

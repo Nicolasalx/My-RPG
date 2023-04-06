@@ -6,6 +6,7 @@
 */
 
 #include "main.h"
+#include "quest.h"
 
 void manage_event(void)
 {
@@ -24,5 +25,11 @@ void manage_event(void)
         if (event.type == sfEvtMouseButtonReleased) {
             mouse_button_released = true;
         }
+        if (display_quest == false && event.type == sfEvtKeyPressed
+        && event.key.code == sfKeyH) {
+            display_quest = true;
+        } else if (display_quest == true && event.type == sfEvtKeyPressed
+        && event.key.code == sfKeyH)
+            display_quest = false;
     }
 }
