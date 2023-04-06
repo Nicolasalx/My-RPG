@@ -21,9 +21,14 @@ MENU_SRC 	= 	src/menu/create.c \
 				src/menu/declaration.c \
 				src/menu/render.c
 
+QUEST_SRC	=	src/quest/create.c	\
+				src/quest/declaration.c	\
+				src/quest/render.c	\
+
 SRC			=	src/main.c \
 				$(MAIN_SRC) \
-				$(MENU_SRC)
+				$(MENU_SRC)	\
+				$(QUEST_SRC)
 
 CFLAGS		=	-W -Wall -Wextra -I ./include -I ./include/lib -lcsfml-system \
 				-lcsfml-graphics -lcsfml-window -lcsfml-audio -lm

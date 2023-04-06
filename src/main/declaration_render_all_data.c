@@ -6,8 +6,10 @@
 */
 
 #include "menu_game.h"
+#include "quest.h"
 
 void (*render[])(void) = {
     render_menu,
+    render_menu_quest,
     NULL
 };
