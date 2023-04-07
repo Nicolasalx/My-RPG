@@ -29,7 +29,7 @@ MAIN_SRC	=	src/main/declaration_main.c \
 				src/main/create_all_data.c \
 				src/main/declaration_render_all_data.c \
 				src/main/declaration_create_all_data.c \
-				src/main/create_default_font.c
+				src/main/create_default_font.c \
 				src/main/declaration_event.c
 
 MENU_SRC 	= 	src/menu/create.c \

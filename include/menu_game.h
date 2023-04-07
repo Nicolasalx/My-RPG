@@ -31,5 +31,6 @@ void sound_up_button(void);
 void go_home_button(void);
 void quit_button(void);
 void play_button(void);
+void setting_button(void);
 
 #endif /* !MENU_H_ */

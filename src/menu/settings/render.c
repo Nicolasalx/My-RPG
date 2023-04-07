@@ -12,6 +12,13 @@
 
 bool can_open_settings = false;
 
+
+
+void choose_opt_settings(void)
+{
+
+}
+
 void render_settings(void)
 {
     static int last_index_frame = 0;
@@ -59,7 +66,10 @@ void render_settings(void)
                 ++ nb_button_pressed;
             }
             if (button_settings[i].choose_opt == 3) {
-                if (nb_button_pressed > 1) {
+                if (nb_button_pressed > 0) {
+                    for (int i = 0; i < size_button_settings; ++i) {
+                        sfRectangleShape_setFillColor(button_settings[i].rectangle, (sfColor) {COLOR_BG_BUTTON_SETTINGS});
+                    }
                     if (little_reso == true) {
                         render_window.mode.width = 1280;
                         render_window.mode.height = 920;

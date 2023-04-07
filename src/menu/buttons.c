@@ -8,10 +8,13 @@
 #include "menu_game.h"
 #include "my_def.h"
 #include "main.h"
+#include "settings.h"
 
 void quit_button(void)
 {
-    quit_status = true;
+    if (can_open_settings == false) {
+        quit_status = true;
+    }
 }
 
 void sound_up_button(void)

@@ -45,4 +45,3 @@ button_settings_t button_settings [] = {
 };
 
 const int size_button_settings = NB_ELEM(button_settings);
-
