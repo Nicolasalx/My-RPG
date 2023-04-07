@@ -11,7 +11,9 @@
 
 void render_player(void)
 {
-    player.anim_to_play = ATTACK;
     anim_sprite(&player.player_anim, player.anim_to_play);
+    for (int i = 0; i < NB_ANIM_PLAYER; ++i) {
+        sfSprite_setPosition(player.player_anim.sprite_sheet[i].sprite, player.pos);
+    }
     sfRenderWindow_drawSprite(window, player.player_anim.sprite_sheet[player.anim_to_play].sprite, NULL);
 }

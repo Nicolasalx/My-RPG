@@ -12,7 +12,8 @@ const error_t error_info[] = {
     {MALLOC_FAIL, "Malloc fail", 84},
     {STAT_FAIL, "Stat fail", 84},
     {READ_FAIL, "Read fail", 84},
-    {WINDOW_CREATION_FAIL, "Render window creation fail", 84}
+    {WINDOW_CREATION_FAIL, "Render window creation fail", 84},
+    {OPEN_CONFIG_FILE_FAIL, "Open config file fail", 84}
 };
 
 const int size_error_info = sizeof(error_info) / sizeof(error_t);

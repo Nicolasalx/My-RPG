@@ -17,7 +17,7 @@ void main_loop(void)
     create_render_window();
     create_all_data();
     while (sfRenderWindow_isOpen(window)) {
-        sfRenderWindow_clear(window, sfBlack);
+        sfRenderWindow_clear(window, (sfColor) {20, 24, 46, 255});
         manage_event();
         render_all_data();
         sfRenderWindow_display(window);

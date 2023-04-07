@@ -10,7 +10,7 @@
 
     #include <SFML/Graphics.h>
 
-    #define MAX_SPRITE_SHEET 10
+    #define MAX_SPRITE_SHEET 20
 
 typedef struct {
     char *sheet_path;

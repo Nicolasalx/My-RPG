@@ -8,6 +8,7 @@
 #ifndef MENU_H_
     #define MENU_H_
     #include "SFML/Graphics.h"
+    #include <stdbool.h>
 
 typedef struct {
     sfSprite *sprite;
@@ -19,12 +20,16 @@ typedef struct {
 } img_button_menu_t;
 
 extern img_button_menu_t img_button_menu[];
+
 extern const int size_img_button_menu;
+
+extern bool quit_status;
 
 void create_menu_button(void);
 void render_menu(void);
-void setting_button(void);
 void sound_up_button(void);
 void go_home_button(void);
+void quit_button(void);
+void play_button(void);
 
 #endif /* !MENU_H_ */

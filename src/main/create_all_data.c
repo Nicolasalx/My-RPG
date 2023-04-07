@@ -7,11 +7,15 @@
 
 #include "main.h"
 #include "menu_game.h"
+#include "quest.h"
 
 sfFont* font;
 
 void create_all_data(void)
 {
+    quit_status = false;
+    display_quest = false;
+
     for (int i = 0; create[i] != NULL; ++i) {
         create[i]();
     }
