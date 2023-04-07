@@ -9,6 +9,10 @@ MAP_SRC			=	src/map/declaration_map.c \
 					src/map/create_map.c \
 					src/map/render_map.c
 
+INVENTORY_SRC	=	src/inventory/create.c \
+					src/inventory/declaration.c \
+					src/inventory/render.c
+
 GENERIC_FUNC_SRC=	src/generic_func/anim_sprite.c \
 					src/generic_func/compute_rect_texture.c
 
@@ -47,7 +51,8 @@ SRC			=	src/main.c \
 				$(QUEST_SRC) \
 				$(PLAYER_SRC) \
 				$(GENERIC_FUNC_SRC) \
-				$(SETTINGS_SRC)
+				$(SETTINGS_SRC) \
+				$(INVENTORY_SRC)
 
 CFLAGS		=	-W -Wall -Wextra -I ./include -I ./include/lib -lcsfml-system \
 				-lcsfml-graphics -lcsfml-window -lcsfml-audio -lm
