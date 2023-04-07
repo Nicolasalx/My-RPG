@@ -6,6 +6,8 @@
 */
 
 #include "generic_func.h"
+#include "main.h"
+#include "player.h"
 
 void anim_sprite(anim_sprite_t *anim_sprite, unsigned int anim_to_play)
 {
