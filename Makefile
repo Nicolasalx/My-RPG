@@ -23,6 +23,7 @@ MAIN_SRC	=	src/main/declaration_main.c \
 
 MENU_SRC 	= 	src/menu/create.c \
 				src/menu/declaration.c \
+				src/menu/buttons.c \
 				src/menu/render.c
 
 QUEST_SRC	=	src/quest/create.c \

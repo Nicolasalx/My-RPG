@@ -18,4 +18,4 @@ img_quest_t img_quest_menu[] = {
 const int size_quest_menu =
     sizeof(img_quest_menu) / sizeof(img_quest_t);
 
-bool display_quest = false;
+bool display_quest;

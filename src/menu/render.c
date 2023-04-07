@@ -9,22 +9,6 @@
 #include "main.h"
 #include "my_graphical.h"
 
-void sound_up_button(void)
-{
-    print("SOUND UP\n");
-}
-
-void go_home_button(void)
-{
-    print("GO HOME\n");
-}
-
-void setting_button(void)
-{
-    
-    print("SETTINGS\n");
-}
-
 void render_menu(void)
 {
     for (int i = 0; i < size_img_button_menu; ++i) {

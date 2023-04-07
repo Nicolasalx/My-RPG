@@ -7,6 +7,7 @@
 
 #include "main.h"
 #include "quest.h"
+#include "menu_game.h"
 
 void manage_event(void)
 {
@@ -15,7 +16,7 @@ void manage_event(void)
     mouse_button_pressed = false;
     mouse_button_released = false;
     while (sfRenderWindow_pollEvent(window, &event)) {
-        if (event.type == sfEvtClosed) {
+        if (event.type == sfEvtClosed || quit_status == true) {
             sfRenderWindow_close(window);
         }
         mouse_pos = sfMouse_getPositionRenderWindow(window);
