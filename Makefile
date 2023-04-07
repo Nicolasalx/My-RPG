@@ -5,7 +5,8 @@
 ## Makefile
 ##
 
-GENERIC_FUNC_SRC=	src/generic_func/anim_sprite.c
+GENERIC_FUNC_SRC=	src/generic_func/anim_sprite.c \
+					src/generic_func/compute_rect_texture.c
 
 PLAYER_SRC	=	src/player/declaration_player.c \
 				src/player/create_player.c \
