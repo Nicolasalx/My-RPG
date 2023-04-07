@@ -20,12 +20,15 @@ typedef enum {
 } player_anim_e;
 
 typedef struct {
+    sfVector2f pos;
+    sfVector2f scale;
     player_anim_e anim_to_play;
-    player_anim_e last_anim;
-    unsigned int current_frame;
-    anim_t player_anim[];
+    anim_sprite_t player_anim;
 } player_t;
 
 extern player_t player;
+
+void create_player(void);
+void render_player(void);
 
 #endif /* !PLAYER_H_ */
