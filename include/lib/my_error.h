@@ -19,7 +19,8 @@ typedef enum error_code_enum {
     MALLOC_FAIL,
     STAT_FAIL,
     READ_FAIL,
-    WINDOW_CREATION_FAIL
+    WINDOW_CREATION_FAIL,
+    OPEN_CONFIG_FILE_FAIL
 } error_code_enum;
 
 typedef struct error_t {

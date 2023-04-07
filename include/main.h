@@ -33,6 +33,7 @@ extern render_window_t render_window;
 
 extern void (*create[])(void);
 extern void (*render[])(void);
+extern void (*handle_event[])(sfEvent *);
 
 void main_loop(void);
 void create_render_window(void);

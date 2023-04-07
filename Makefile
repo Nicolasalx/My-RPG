@@ -5,12 +5,17 @@
 ## Makefile
 ##
 
+MAP_SRC			=	src/map/declaration_map.c \
+					src/map/create_map.c \
+					src/map/render_map.c
+
 GENERIC_FUNC_SRC=	src/generic_func/anim_sprite.c \
 					src/generic_func/compute_rect_texture.c
 
 PLAYER_SRC	=	src/player/declaration_player.c \
 				src/player/create_player.c \
-				src/player/render_player.c
+				src/player/render_player.c \
+				src/player/event_player.c
 
 MAIN_SRC	=	src/main/declaration_main.c \
 				src/main/create_render_window.c \
@@ -19,7 +24,8 @@ MAIN_SRC	=	src/main/declaration_main.c \
 				src/main/render_all_data.c \
 				src/main/create_all_data.c \
 				src/main/declaration_render_all_data.c \
-				src/main/declaration_create_all_data.c
+				src/main/declaration_create_all_data.c \
+				src/main/declaration_event.c
 
 MENU_SRC 	= 	src/menu/create.c \
 				src/menu/declaration.c \

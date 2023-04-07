@@ -11,11 +11,21 @@
     #include "SFML/Graphics.h"
     #include "generic_func.h"
 
+    #define PLAYER_ANIM_MULT 1.75
+
 typedef enum {
-    IDLE,
-    RUN,
-    JUMP,
-    ATTACK,
+    IDLE_LEFT,
+    IDLE_RIGHT,
+    IDLE_UP,
+    IDLE_DOWN,
+    WALK_LEFT,
+    WALK_RIGHT,
+    WALK_UP,
+    WALK_DOWN,
+    ATTACK_LEFT,
+    ATTACK_RIGHT,
+    ATTACK_UP,
+    ATTACK_DOWN,
     NB_ANIM_PLAYER
 } player_anim_e;
 
@@ -30,5 +40,6 @@ extern player_t player;
 
 void create_player(void);
 void render_player(void);
+void event_player(sfEvent *event);
 
 #endif /* !PLAYER_H_ */

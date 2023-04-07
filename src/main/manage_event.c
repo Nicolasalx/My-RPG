@@ -12,6 +12,7 @@
 void manage_event(void)
 {
     sfEvent event;
+
     mouse_button_maintain = sfMouse_isButtonPressed(sfMouseLeft);
     mouse_button_pressed = false;
     mouse_button_released = false;
@@ -30,7 +31,11 @@ void manage_event(void)
         && event.key.code == sfKeyH) {
             display_quest = true;
         } else if (display_quest == true && event.type == sfEvtKeyPressed
-        && event.key.code == sfKeyH)
+        && event.key.code == sfKeyH) {
             display_quest = false;
+        }
+        for (int i = 0; handle_event[i] != NULL; ++i) {
+            handle_event[i](&event);
+        }
     }
 }
