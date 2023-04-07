@@ -9,10 +9,14 @@
 #include "menu_game.h"
 #include "quest.h"
 #include "player.h"
+#include "settings.h"
 
 void (*create[])(void) = {
+    create_default_font,
     create_menu_button,
     create_menu_quest,
     create_player,
+    create_img_settings,
+    create_button_settings,
     NULL
 };

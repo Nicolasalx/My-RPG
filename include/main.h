@@ -41,9 +41,12 @@ void manage_event(void);
 void render_all_data(void);
 void create_all_data(void);
 
+void create_default_font(void);
+
 extern sfBool mouse_button_pressed;
 extern sfBool mouse_button_maintain;
 extern sfBool mouse_button_released;
 extern sfVector2i mouse_pos;
+extern sfFont* font;
 
 #endif /* !MY_H_ */

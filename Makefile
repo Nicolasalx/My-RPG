@@ -12,6 +12,10 @@ PLAYER_SRC	=	src/player/declaration_player.c \
 				src/player/create_player.c \
 				src/player/render_player.c
 
+SETTINGS_SRC=	src/menu/settings/create.c \
+				src/menu/settings/declaration.c \
+				src/menu/settings/render.c
+
 MAIN_SRC	=	src/main/declaration_main.c \
 				src/main/create_render_window.c \
 				src/main/manage_event.c \
@@ -19,7 +23,8 @@ MAIN_SRC	=	src/main/declaration_main.c \
 				src/main/render_all_data.c \
 				src/main/create_all_data.c \
 				src/main/declaration_render_all_data.c \
-				src/main/declaration_create_all_data.c
+				src/main/declaration_create_all_data.c \
+				src/main/create_default_font.c
 
 MENU_SRC 	= 	src/menu/create.c \
 				src/menu/declaration.c \
@@ -34,7 +39,8 @@ SRC			=	src/main.c \
 				$(MENU_SRC) \
 				$(QUEST_SRC) \
 				$(PLAYER_SRC) \
-				$(GENERIC_FUNC_SRC)
+				$(GENERIC_FUNC_SRC) \
+				$(SETTINGS_SRC)
 
 CFLAGS		=	-W -Wall -Wextra -I ./include -I ./include/lib -lcsfml-system \
 				-lcsfml-graphics -lcsfml-window -lcsfml-audio -lm
