@@ -15,7 +15,7 @@ img_button_menu_t img_button_menu [] = {
     .size = {0.3, 0.3}, .redirect = go_home_button},
 
     {.pos = {800, 700}, .path_img = "game_src/Menu_button/sound_plus.png",
-    .size = {0.3, 0.3}, .redirect = sound_up_button},
+    .size = {0.3, 0.3}, .redirect = sound_up_button}
 };
 
 const int size_img_button_menu =

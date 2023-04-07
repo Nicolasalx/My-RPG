@@ -21,6 +21,7 @@ void go_home_button(void)
 
 void setting_button(void)
 {
+    
     print("SETTINGS\n");
 }
 
