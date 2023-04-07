@@ -16,5 +16,3 @@ void render_menu_quest(void)
         }
     }
 }
-
-

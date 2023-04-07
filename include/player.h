@@ -42,5 +42,7 @@ extern player_t player;
 void create_player(void);
 void render_player(void);
 void event_player(sfEvent *event);
+void player_move(sfEvent *event);
+void player_reset(void);
 
 #endif /* !PLAYER_H_ */

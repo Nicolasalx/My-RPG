@@ -11,7 +11,8 @@
 
 void anim_sprite(anim_sprite_t *anim_sprite, unsigned int anim_to_play)
 {
-    if (anim_sprite->current_frame >= anim_sprite->sprite_sheet[anim_to_play].nb_frame
+    if (anim_sprite->current_frame >=
+    anim_sprite->sprite_sheet[anim_to_play].nb_frame
     || anim_sprite->last_anim != anim_to_play) {
         anim_sprite->current_frame = 0;
     }

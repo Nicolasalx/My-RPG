@@ -5,3 +5,9 @@
 ** render_map
 */
 
+#include "map.h"
+
+void map(void)
+{
+    return;
+}
