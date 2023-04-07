@@ -15,6 +15,8 @@ GENERIC_FUNC_SRC=	src/generic_func/anim_sprite.c \
 PLAYER_SRC	=	src/player/declaration_player.c \
 				src/player/create_player.c \
 				src/player/render_player.c \
+				src/player/event_player_reset.c \
+				src/player/event_player_move.c \
 				src/player/event_player.c
 
 MAIN_SRC	=	src/main/declaration_main.c \
