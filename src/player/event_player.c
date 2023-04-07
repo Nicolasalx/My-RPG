@@ -55,13 +55,13 @@ void event_player(sfEvent *event)
         player.anim_to_play = IDLE_RIGHT;
     } else if (event->type == sfEvtKeyReleased && player.player_anim.last_anim == WALK_DOWN) {
         player.anim_to_play = IDLE_DOWN;
-    } else if (player.anim_to_play == ATTACK_UP) {
+    } else if (event->type == sfEvtKeyReleased && player.anim_to_play == ATTACK_UP) {
         player.anim_to_play = IDLE_UP;
-    } else if (player.anim_to_play == ATTACK_LEFT) {
+    } else if (event->type == sfEvtKeyReleased && player.anim_to_play == ATTACK_LEFT) {
         player.anim_to_play = IDLE_LEFT;
-    }else if (player.anim_to_play == ATTACK_RIGHT) {
+    }else if (event->type == sfEvtKeyReleased && player.anim_to_play == ATTACK_RIGHT) {
         player.anim_to_play = IDLE_RIGHT;
-    } else if (player.anim_to_play == ATTACK_DOWN) {
+    } else if (event->type == sfEvtKeyReleased && player.anim_to_play == ATTACK_DOWN) {
         player.anim_to_play = IDLE_DOWN;
     }
 }
