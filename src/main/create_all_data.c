@@ -9,6 +9,8 @@
 #include "menu_game.h"
 #include "quest.h"
 
+sfFont* font;
+
 void create_all_data(void)
 {
     quit_status = false;

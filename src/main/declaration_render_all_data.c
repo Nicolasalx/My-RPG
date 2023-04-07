@@ -8,6 +8,7 @@
 #include "menu_game.h"
 #include "quest.h"
 #include "player.h"
+#include "settings.h"
 
 void (*render[])(void) = {
     render_menu,

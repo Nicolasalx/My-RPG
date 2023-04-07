@@ -55,6 +55,7 @@ void play_music(music_t *music);
 void destroy_music(music_t music);
 
 sfBool is_mouse_over_sprite(sfSprite *sprite);
+sfBool is_mouse_over_rectangle_shape(sfRectangleShape* rectangle_shape);
 
 //bool mouse_is_over_sprite(sprite_t sprite, sfVector2i mouse);
 //bool mouse_is_over_anim_sprite(anim_sprite_t anim_sprite, sfVector2i mouse);
