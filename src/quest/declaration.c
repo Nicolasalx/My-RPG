@@ -9,8 +9,8 @@
 
 img_quest_t img_quest_menu[] = {
     {
-    .pos = {800, 300},
-    .path_img = "game_src/Quest/test.jpg",
+    .pos = {0, 0},
+    .path_img = "game_src/Quest/quest.png",
     .size = {1.0, 1.0}
     }
 };
