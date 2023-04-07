@@ -9,6 +9,7 @@
     #define GENERIC_FUNC_H_
 
     #include <SFML/Graphics.h>
+    #include <stdbool.h>
 
     #define MAX_SPRITE_SHEET 20
 

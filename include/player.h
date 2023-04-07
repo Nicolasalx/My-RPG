@@ -10,6 +10,7 @@
 
     #include "SFML/Graphics.h"
     #include "generic_func.h"
+    #include <stdbool.h>
 
     #define PLAYER_ANIM_MULT 1.75
 
