@@ -11,6 +11,7 @@
     #include "SFML/Graphics.h"
 
     #define COLOR_BG_BUTTON_SETTINGS 0, 0, 0, 0
+    #define COLOR_PRESSED_SETTINGS 177, 98, 49, 120
 
 typedef struct {
     sfSprite *sprite;

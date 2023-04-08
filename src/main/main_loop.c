@@ -7,9 +7,9 @@
 
 #include "main.h"
 
-sfBool mouse_button_pressed = false;
-sfBool mouse_button_maintain = false;
-sfBool mouse_button_released = false;
+bool mouse_button_pressed;
+bool mouse_button_maintain;
+bool mouse_button_released;
 sfVector2i mouse_pos = {0, 0};
 
 void main_loop(void)
