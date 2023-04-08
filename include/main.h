@@ -64,4 +64,6 @@ void create_default_font(void);
 extern sfVector2i mouse_pos;
 extern sfFont* font;
 
+extern bool can_open_game_menu;
+
 #endif /* !MY_H_ */

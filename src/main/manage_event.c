@@ -14,6 +14,11 @@ void execute_event(sfEvent event)
     if (event.type == sfEvtClosed || quit_status == true) {
         sfRenderWindow_close(window);
     }
+    if (game_state == GAME && event.type == sfEvtKeyPressed &&
+        event.key.code == sfKeyEscape) {
+        print("GAME_MENU\n");
+        can_open_game_menu = true;
+    }
     mouse_pos = sfMouse_getPositionRenderWindow(window);
     if (event.type == sfEvtMouseButtonPressed) {
         mouse_button_pressed = true;
