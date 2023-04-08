@@ -24,8 +24,22 @@ typedef struct {
 } inventory_menu_front_t;
 
 typedef struct {
-    int number_of_item;
+    int id;
+    char *name;
 } inventory_t;
+
+enum Item {
+    HELMET = 1,
+    CHESTPLATE = 2,
+    PANTS = 3,
+    BOOTS = 4,
+    POTION = 5,
+    KEY = 6,
+    MONEY = 7,
+    XP = 8
+};
+
+extern int number_of_item;
 
 extern inventory_menu_front_t inventory_menu_front[];
 extern const int size_inventory_menu_front;

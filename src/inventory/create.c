@@ -5,6 +5,8 @@
 ** create
 */
 
+int number_of_item = 0;
+
 /* void create_button_dress_inventory(void)
 {
     for (int i = 0; i < size_inventory_dress; ++i) {
