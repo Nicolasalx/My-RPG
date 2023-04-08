@@ -18,13 +18,6 @@ img_button_menu_t img_button_menu[] = {
     },
 
     {
-    .pos = {790, 850},
-    .path_img = "game_src/Menu_button/quit.png",
-    .size = {1.7, 1.7},
-    .redirect = tutorial_button
-    },
-
-    {
     .pos = {800, 50},
     .path_img = "game_src/Menu_button/play.png",
     .size = {1.7, 1.7},
@@ -47,6 +40,13 @@ img_button_menu_t img_button_menu[] = {
 
     {
     .pos = {790, 650},
+    .path_img = "game_src/Menu_button/quit.png",
+    .size = {1.7, 1.7},
+    .redirect = tutorial_button
+    },
+
+    {
+    .pos = {790, 850},
     .path_img = "game_src/Menu_button/quit.png",
     .size = {1.7, 1.7},
     .redirect = quit_button
