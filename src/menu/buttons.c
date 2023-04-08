@@ -36,5 +36,5 @@ void go_home_button(void)
 
 void play_button(void)
 {
-    print("LAUNCH THE GAME\n");
+    game_state = GAME;
 }
