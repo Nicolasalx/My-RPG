@@ -5,7 +5,10 @@
 ** create
 */
 
+#include "main.h"
+
 int number_of_item = 0;
+bool can_open_game_menu = false;
 
 /* void create_button_dress_inventory(void)
 {
