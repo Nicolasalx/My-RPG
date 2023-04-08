@@ -17,7 +17,8 @@ void create_menu_button(void)
         sfSprite_setTexture(img_button_menu[i].sprite,
             img_button_menu[i].texture, sfTrue);
         sfSprite_setScale(img_button_menu[i].sprite, img_button_menu[i].size);
-        sfSprite_setPosition(img_button_menu[i].sprite, img_button_menu[i].pos);
+        sfSprite_setPosition(img_button_menu[i].sprite,
+            img_button_menu[i].pos);
     }
 }
 
@@ -30,7 +31,8 @@ void create_tutorial(void)
         sfSprite_setTexture(tutorial_info[i].sprite,
             tutorial_info[i].texture, sfTrue);
         sfSprite_setScale(tutorial_info[i].sprite, tutorial_info[i].size_sprite);
-        sfSprite_setPosition(tutorial_info[i].sprite, tutorial_info[i].pos_sprite);
+        sfSprite_setPosition(tutorial_info[i].sprite,
+            tutorial_info[i].pos_sprite);
 
         tutorial_info[i].text = sfText_create();
         sfText_setString(tutorial_info[i].text, tutorial_info[i].text_to_write);

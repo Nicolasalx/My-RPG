@@ -12,7 +12,7 @@
 
 void quit_button(void)
 {
-    if (can_open_settings == false) {
+    if (can_open_settings == false && can_open_tutorial == false) {
         quit_status = true;
     }
 }
@@ -24,7 +24,9 @@ void sound_up_button(void)
 
 void tutorial_button(void)
 {
-    can_open_tutorial = true;
+    if (can_open_settings == false) {
+        can_open_tutorial = true;
+    }
 }
 
 void go_home_button(void)
