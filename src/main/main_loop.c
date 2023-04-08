@@ -15,7 +15,6 @@ sfVector2i mouse_pos = {0, 0};
 void main_loop(void)
 {
     create_render_window();
-    create_all_data();
     while (sfRenderWindow_isOpen(window)) {
         sfRenderWindow_clear(window, (sfColor) {20, 24, 46, 255});
         manage_event();

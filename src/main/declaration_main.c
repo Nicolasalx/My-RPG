@@ -15,3 +15,5 @@ render_window_t render_window = {
     .style = sfTitlebar | sfClose,
     .fps = 60
 };
+
+bool is_create_success = true;

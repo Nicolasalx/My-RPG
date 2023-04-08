@@ -16,17 +16,21 @@ typedef struct {
     char representation;
     char *path;
     sfTexture *texture;
-    sfSprite *sprite;
 } tile_t;
 
 typedef struct {
-    sfVector2f *pos;
-    sfVector2f *size;
+    sfVector2f pos;
+    sfVector2f scale;
     char *map_path;
+    int nb_line;
+    int size_line;
     sfSprite ***full_map;
-    tile_t tile[];
+    tile_t tile[30];
 } map_t;
 
 extern map_t map;
+
+void create_map(void);
+void render_map(void);
 
 #endif /* !MAP_H_ */
