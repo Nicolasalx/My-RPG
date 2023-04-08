@@ -20,6 +20,7 @@ void create_all_data(void)
     mouse_button_pressed = false;
     mouse_button_maintain = false;
     mouse_button_released = false;
+    is_fullscreen = false;
 
     for (int i = 0; create[i] != NULL; ++i) {
         create[i]();

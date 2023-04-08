@@ -7,6 +7,7 @@
 
 #include "main.h"
 #include "settings.h"
+#include "menu_game.h"
 
 void change_resolution(int i, bool *little_res, int *last_index_res, int *nb_button_pressed)
 {
@@ -83,13 +84,13 @@ void render_settings(void)
                             button_settings[i].rectangle,
                         (sfColor) {COLOR_BG_BUTTON_SETTINGS});
                     }
-                    if (little_reso == true) {
+                    if (little_reso == true && is_fullscreen == false) {
                         render_window.mode.width = 1280;
                         render_window.mode.height = 920;
                         sfRenderWindow_destroy(window);
                         window = sfRenderWindow_create(render_window.mode,
                         render_window.name, render_window.style, NULL);
-                    } else {
+                    } else if (little_reso == false && is_fullscreen == false) {
                         render_window.mode.width = 1920;
                         render_window.mode.height = 1080;
                         sfRenderWindow_destroy(window);
