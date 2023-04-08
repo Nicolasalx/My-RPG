@@ -10,7 +10,9 @@
 
 void render_all_data(void)
 {
-    for (int i = 0; render[i] != NULL; ++i) {
-        render[i]();
+    for (int i = 0; render_func[i].render != NULL; ++i) {
+        if (render_func[i].render_categ == game_state) {
+            render_func[i].render();
+    }
     }
 }

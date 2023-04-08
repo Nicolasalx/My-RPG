@@ -16,4 +16,5 @@ render_window_t render_window = {
     .fps = 60
 };
 
-bool is_create_success = true;
+bool is_create_success = {true};
+game_state_t game_state = {MENU};
