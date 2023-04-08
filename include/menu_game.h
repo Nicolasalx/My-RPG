@@ -19,8 +19,22 @@ typedef struct {
     void (*redirect)(void);
 } img_button_menu_t;
 
-extern img_button_menu_t img_button_menu[];
+typedef struct {
+    sfSprite *sprite;
+    sfTexture *texture;
+    sfVector2f pos_sprite;
+    sfVector2f size_sprite;
+    char *path_img;
+    sfText *text;
+    sfVector2f pos_text;
+    char *text_to_write;
+    bool can_quit;
+} tutorial_info_t;
 
+extern tutorial_info_t tutorial_info[];
+extern const int size_tutorial_info;
+
+extern img_button_menu_t img_button_menu[];
 extern const int size_img_button_menu;
 
 extern bool quit_status;
@@ -32,5 +46,7 @@ void go_home_button(void);
 void quit_button(void);
 void play_button(void);
 void setting_button(void);
+void create_tutorial(void);
+void tutorial_button(void);
 
 #endif /* !MENU_H_ */

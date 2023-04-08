@@ -14,5 +14,6 @@ void (*render[])(void) = {
     render_menu,
     render_menu_quest,
     render_player,
+    render_tutorial,
     NULL
 };

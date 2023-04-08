@@ -10,6 +10,8 @@
 #include "my_graphical.h"
 #include "settings.h"
 
+bool can_open_tutorial = false;
+
 void setting_button(void)
 {
     can_open_settings = true;
@@ -26,5 +28,19 @@ void render_menu(void)
     }
     if (can_open_settings == true) {
         render_settings();
+    }
+}
+
+void render_tutorial(void)
+{
+    if (can_open_tutorial == true) {
+        for (int i = 0; i < size_tutorial_info; ++i) {
+            if (is_mouse_over_sprite(tutorial_info[i].sprite) == true
+            && mouse_button_pressed == true && tutorial_info[i].can_quit == true) {
+                can_open_tutorial = false;
+            }
+            sfRenderWindow_drawSprite(window, tutorial_info[i].sprite, NULL);
+            sfRenderWindow_drawText(window, tutorial_info[i].text, NULL);
+        }
     }
 }

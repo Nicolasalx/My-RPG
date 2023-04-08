@@ -18,5 +18,6 @@ void (*create[])(void) = {
     create_player,
     create_img_settings,
     create_button_settings,
+    create_tutorial,
     NULL
 };

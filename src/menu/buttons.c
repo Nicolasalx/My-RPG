@@ -22,6 +22,11 @@ void sound_up_button(void)
     print("SOUND UP\n");
 }
 
+void tutorial_button(void)
+{
+    can_open_tutorial = true;
+}
+
 void go_home_button(void)
 {
     print("GO HOME\n");

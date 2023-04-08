@@ -12,13 +12,6 @@
 
 bool can_open_settings = false;
 
-
-
-void choose_opt_settings(void)
-{
-
-}
-
 void render_settings(void)
 {
     static int last_index_frame = 0;

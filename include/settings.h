@@ -41,9 +41,11 @@ extern settings_img_t settings_img[];
 extern const int size_settings_img;
 
 extern bool can_open_settings;
+extern bool can_open_tutorial;
 
 void create_img_settings(void);
 void render_settings(void);
 void create_button_settings(void);
+void render_tutorial(void);
 
 #endif /* !SETTINGS_H_ */
