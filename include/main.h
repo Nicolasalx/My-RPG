@@ -28,6 +28,16 @@ typedef struct {
     const char *name;
 } render_window_t;
 
+typedef enum {
+    MENU,
+    GAME
+} game_state_t;
+
+typedef struct {
+    void (*render)(void);
+    game_state_t render_categ;
+} render_func_t;
+
 extern sfRenderWindow *window;
 extern render_window_t render_window;
 
@@ -36,10 +46,11 @@ extern bool mouse_button_maintain;
 extern bool mouse_button_released;
 
 extern void (*create[])(void);
-extern void (*render[])(void);
+extern render_func_t render_func[];
 extern void (*handle_event[])(sfEvent *);
 
 extern bool is_create_success;
+extern game_state_t game_state;
 
 void main_loop(void);
 void create_render_window(void);

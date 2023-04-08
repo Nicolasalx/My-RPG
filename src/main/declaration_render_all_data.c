@@ -5,17 +5,18 @@
 ** declaration_render_all_data
 */
 
+#include "main.h"
 #include "menu_game.h"
 #include "quest.h"
 #include "player.h"
 #include "settings.h"
 #include "map.h"
 
-void (*render[])(void) = {
-    render_map,
-    render_menu,
-    render_menu_quest,
-    render_player,
-    render_tutorial,
-    NULL
+render_func_t render_func[] = {
+    {render_map, GAME},
+    {render_menu, MENU},
+    {render_menu_quest, GAME},
+    {render_player, GAME},
+    {render_tutorial, MENU},
+    {NULL, 0}
 };
