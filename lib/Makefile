@@ -64,7 +64,8 @@ SRCMALLOC	=	malloc/my_malloc.c \
 				malloc/free_x.c \
 				malloc/count_size_word_wm.c \
 				malloc/my_str_to_word_wm.c \
-				malloc/my_calloc.c
+				malloc/my_calloc.c \
+				malloc/malloc_gn_adv_board.c
 
 SRCCHAR		=	char/is_alpha.c \
 				char/is_alphanum.c \

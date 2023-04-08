@@ -32,5 +32,6 @@ void free_x(int nb_free, void *data[]);
 int *count_size_word_wm(const char *str, bool (*method)(char), int nb_word);
 char **my_str_to_word_wm(const char *str, bool (*method)(char),
     int nb_word, const int *size_word);
+void **malloc_gn_adv_board(size_t size_data, int size_board, int *size_line);
 
 #endif /* !MY_MALLOC */

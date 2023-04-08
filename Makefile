@@ -38,14 +38,14 @@ MAIN_SRC	=	src/main/declaration_main.c \
 				src/main/create_default_font.c \
 				src/main/declaration_event.c
 
-MENU_SRC 	= 	src/menu/create.c \
-				src/menu/declaration.c \
-				src/menu/buttons.c \
-				src/menu/render.c
+MENU_SRC 		=	src/menu/create.c \
+					src/menu/declaration.c \
+					src/menu/buttons.c \
+					src/menu/render.c
 
-QUEST_SRC	=	src/quest/create.c \
-				src/quest/declaration.c \
-				src/quest/render.c
+QUEST_SRC		=	src/quest/create.c \
+					src/quest/declaration.c \
+					src/quest/render.c
 
 SRC			=	src/main.c \
 				$(MAIN_SRC) \
@@ -54,7 +54,8 @@ SRC			=	src/main.c \
 				$(PLAYER_SRC) \
 				$(GENERIC_FUNC_SRC) \
 				$(SETTINGS_SRC) \
-				$(INVENTORY_SRC)
+				$(INVENTORY_SRC) \
+				$(MAP_SRC)
 
 CFLAGS		=	-W -Wall -Wextra -I ./include -I ./include/lib -lcsfml-system \
 				-lcsfml-graphics -lcsfml-window -lcsfml-audio -lm

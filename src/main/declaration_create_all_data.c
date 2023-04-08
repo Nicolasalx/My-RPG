@@ -10,6 +10,7 @@
 #include "quest.h"
 #include "player.h"
 #include "settings.h"
+#include "map.h"
 
 void (*create[])(void) = {
     create_default_font,
@@ -19,5 +20,6 @@ void (*create[])(void) = {
     create_img_settings,
     create_button_settings,
     create_tutorial,
+    create_map,
     NULL
 };

@@ -9,8 +9,10 @@
 #include "quest.h"
 #include "player.h"
 #include "settings.h"
+#include "map.h"
 
 void (*render[])(void) = {
+    render_map,
     render_menu,
     render_menu_quest,
     render_player,

@@ -39,6 +39,8 @@ extern void (*create[])(void);
 extern void (*render[])(void);
 extern void (*handle_event[])(sfEvent *);
 
+extern bool is_create_success;
+
 void main_loop(void);
 void create_render_window(void);
 void manage_event(void);
