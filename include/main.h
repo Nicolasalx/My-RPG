@@ -31,6 +31,10 @@ typedef struct {
 extern sfRenderWindow *window;
 extern render_window_t render_window;
 
+extern bool mouse_button_pressed;
+extern bool mouse_button_maintain;
+extern bool mouse_button_released;
+
 extern void (*create[])(void);
 extern void (*render[])(void);
 extern void (*handle_event[])(sfEvent *);
@@ -44,9 +48,6 @@ void create_all_data(void);
 
 void create_default_font(void);
 
-extern sfBool mouse_button_pressed;
-extern sfBool mouse_button_maintain;
-extern sfBool mouse_button_released;
 extern sfVector2i mouse_pos;
 extern sfFont* font;
 

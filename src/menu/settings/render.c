@@ -8,9 +8,42 @@
 #include "main.h"
 #include "settings.h"
 
-#define COLOR_PRESSED_SETTINGS 177, 98, 49, 120
+void change_resolution(int i, bool *little_res, int *last_index_res, int *nb_button_pressed)
+{
+    if (button_settings[i].choose_opt == 2) {
+        if (my_strcmp(button_settings[i].text_to_write, "1280x920") == 0) {
+            *little_res = true;
+        } else {
+            *little_res = false;
+        }
+        sfRectangleShape_setFillColor(
+            button_settings[*last_index_res].rectangle,
+        (sfColor) {COLOR_BG_BUTTON_SETTINGS});
+        sfRectangleShape_setFillColor(button_settings[i].rectangle,
+        (sfColor) {COLOR_PRESSED_SETTINGS});
+        *last_index_res = i;
+        ++ *nb_button_pressed;
+    }
+}
 
-bool can_open_settings = false;
+void change_fps(int i, bool *little_frame,
+    int *last_index_frame, int *nb_button_pressed)
+{
+    if (button_settings[i].choose_opt == 1) {
+        if (my_strcmp(button_settings[i].text_to_write, "30 fps") == 0) {
+            *little_frame = true;
+        } else {
+            *little_frame = false;
+        }
+        sfRectangleShape_setFillColor(
+            button_settings[*last_index_frame].rectangle,
+        (sfColor) {COLOR_BG_BUTTON_SETTINGS});
+        sfRectangleShape_setFillColor(button_settings[i].rectangle,
+        (sfColor) {COLOR_PRESSED_SETTINGS});
+        *last_index_frame = i;
+        ++ *nb_button_pressed;
+    }
+}
 
 void render_settings(void)
 {
@@ -23,7 +56,8 @@ void render_settings(void)
     for (int i = 0; i < size_settings_img; ++i) {
         sfRenderWindow_drawSprite(window, settings_img[i].sprite, NULL);
         if (is_mouse_over_sprite(settings_img[i].sprite) == true
-            && mouse_button_pressed == true && settings_img[i].can_quit == true) {
+            && mouse_button_pressed == true &&
+            settings_img[i].can_quit == true) {
                 can_open_settings = false;
                 last_index_frame = 0;
                 last_index_reso = 0;
@@ -33,35 +67,21 @@ void render_settings(void)
         }
     }
     for (int i = 0; i < size_button_settings; ++i) {
-        sfRenderWindow_drawRectangleShape(window, button_settings[i].rectangle, NULL);
+        sfRenderWindow_drawRectangleShape(window,
+        button_settings[i].rectangle, NULL);
         sfRenderWindow_drawText(window, button_settings[i].text, NULL);
-        if (mouse_button_pressed == true && is_mouse_over_rectangle_shape(button_settings[i].rectangle)) {
-            if (button_settings[i].choose_opt == 1) {
-                if (my_strcmp(button_settings[i].text_to_write, "30 fps") == 0) {
-                    little_frame = true;
-                } else {
-                    little_frame = false;
-                }
-                sfRectangleShape_setFillColor(button_settings[last_index_frame].rectangle, (sfColor) {COLOR_BG_BUTTON_SETTINGS});
-                sfRectangleShape_setFillColor(button_settings[i].rectangle, (sfColor) {COLOR_PRESSED_SETTINGS});
-                last_index_frame = i;
-                ++ nb_button_pressed;
-            }
-            if (button_settings[i].choose_opt == 2) {
-                if (my_strcmp(button_settings[i].text_to_write, "1280x920") == 0) {
-                    little_reso = true;
-                } else {
-                    little_reso = false;
-                }
-                sfRectangleShape_setFillColor(button_settings[last_index_reso].rectangle, (sfColor) {COLOR_BG_BUTTON_SETTINGS});
-                sfRectangleShape_setFillColor(button_settings[i].rectangle, (sfColor) {COLOR_PRESSED_SETTINGS});
-                last_index_reso = i;
-                ++ nb_button_pressed;
-            }
+        if (mouse_button_pressed == true &&
+        is_mouse_over_rectangle_shape(button_settings[i].rectangle)) {
+            change_fps(i, &little_frame,
+            &last_index_frame, &nb_button_pressed);
+            change_resolution(i, &little_reso,
+            &last_index_reso, &nb_button_pressed);
             if (button_settings[i].choose_opt == 3) {
                 if (nb_button_pressed > 0) {
                     for (int i = 0; i < size_button_settings; ++i) {
-                        sfRectangleShape_setFillColor(button_settings[i].rectangle, (sfColor) {COLOR_BG_BUTTON_SETTINGS});
+                        sfRectangleShape_setFillColor(
+                            button_settings[i].rectangle,
+                        (sfColor) {COLOR_BG_BUTTON_SETTINGS});
                     }
                     if (little_reso == true) {
                         render_window.mode.width = 1280;
