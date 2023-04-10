@@ -22,4 +22,9 @@ void create_player(void)
             player.player_anim.sprite_sheet[i].texture);
         player.player_anim.clock = sfClock_create();
     }
+    player.collision = sfRectangleShape_create();
+    sfRectangleShape_setFillColor(player.collision, sfTransparent);
+    sfRectangleShape_setOutlineColor(player.collision, sfRed);
+    sfRectangleShape_setOutlineThickness(player.collision, 2);
+    sfRectangleShape_setSize(player.collision, (sfVector2f) {22 * player.scale.x, 33 * player.scale.y});
 }

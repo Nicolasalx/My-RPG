@@ -31,6 +31,7 @@ typedef struct {
     sfVector2f pos;
     sfVector2f scale;
     double speed;
+    sfRectangleShape *collision;
     player_anim_e anim_to_play;
     anim_sprite_t player_anim;
 } player_t;
