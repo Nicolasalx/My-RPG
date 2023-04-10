@@ -13,6 +13,7 @@
 #include "map.h"
 #include "game_menu.h"
 #include "inventory.h"
+#include "level_arrow.h"
 
 void (*create[])(void) = {
     create_default_font,
@@ -30,5 +31,6 @@ void (*create[])(void) = {
     create_saving_inventory,
     create_validate_saving_option,
     create_stuff_inventory,
+    create_arrow_and_touret,
     NULL
 };

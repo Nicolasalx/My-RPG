@@ -13,6 +13,10 @@ INVENTORY_SRC	=	src/menu_game/inventory/declaration.c \
 					src/menu_game/inventory/create.c \
 					src/menu_game/inventory/render.c
 
+LEVEL_ARROW_SRC	=	src/level_arrow/declaration.c \
+					src/level_arrow/create.c \
+					src/level_arrow/render.c
+
 TREE_SRC		=	src/menu_game/tree/declaration.c \
 					src/menu_game/tree/create.c \
 					src/menu_game/tree/render.c
@@ -84,7 +88,8 @@ SRC			=	src/main.c \
 				$(LOADING_SRC) \
 				$(SAVING_SRC) \
 				$(SETTINGS_MENU_SRC) \
-				$(MAP_SRC)
+				$(MAP_SRC) \
+				$(LEVEL_ARROW_SRC)
 
 CFLAGS		=	-W -Wall -Wextra -I ./include -I ./include/lib -lcsfml-system \
 				-lcsfml-graphics -lcsfml-window -lcsfml-audio -lm

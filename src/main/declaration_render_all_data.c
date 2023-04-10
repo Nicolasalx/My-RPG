@@ -12,6 +12,7 @@
 #include "settings.h"
 #include "map.h"
 #include "game_menu.h"
+#include "level_arrow.h"
 
 render_func_t render_func[] = {
     {render_map, GAME},
@@ -19,6 +20,7 @@ render_func_t render_func[] = {
     {render_player, GAME},
     {render_menu_quest, GAME},
     {render_tutorial, MENU},
+    {render_level_arrow, GAME},
     {render_game_menu_button, GAME},
     {NULL, 0}
 };

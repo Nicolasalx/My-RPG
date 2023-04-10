@@ -12,16 +12,7 @@
 
 void display_settings_and_tuto(bool *open_settings, bool *open_tuto)
 {
-    if (*open_settings == true) {
-        render_settings();
-        if (is_mouse_over_sprite(settings_button_game_menu[2].sprite) &&
-            mouse_button_pressed == true) {
-            *open_settings = false;
-        }
-        sfRenderWindow_drawSprite(window, settings_button_game_menu[2].sprite,
-            NULL);
-    }
-    if (*open_tuto == true) {
+    if (*open_tuto == true && *open_settings == false) {
         can_open_tutorial = true;
         render_tutorial();
         can_open_tutorial = false;
@@ -31,18 +22,25 @@ void display_settings_and_tuto(bool *open_settings, bool *open_tuto)
         }
         sfRenderWindow_drawSprite(window, settings_button_game_menu[2].sprite,
             NULL);
+    } else if (*open_settings == true && *open_tuto == false) {
+        render_settings();
+        if (is_mouse_over_sprite(settings_button_game_menu[2].sprite) &&
+            mouse_button_pressed == true) {
+            *open_settings = false;
+        }
+        sfRenderWindow_drawSprite(window, settings_button_game_menu[2].sprite,
+            NULL);
     }
 }
 
 void choose_opt_tuto_or_settings(int i, bool *open_tuto, bool *open_settings)
 {
-    if (settings_button_game_menu[i].choose_opt == 1) {
-        *open_tuto = false;
-        *open_settings = true;
-    }
     if (settings_button_game_menu[i].choose_opt == 2) {
         *open_settings = false;
         *open_tuto = true;
+    } else if (settings_button_game_menu[i].choose_opt == 1) {
+        *open_tuto = false;
+        *open_settings = true;
     }
 }
 
