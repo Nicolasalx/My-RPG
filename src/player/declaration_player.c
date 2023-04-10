@@ -9,59 +9,36 @@
 
 player_t player = {
     .pos = {0, 0},
-    .scale = {4, 4},
-    .anim_to_play = IDLE_RIGHT,
+    .scale = {2, 2},
+    .speed = 2,
+    .anim_to_play = IDLE_LEFT,
     .player_anim = {
         .current_frame = 0,
-        .last_anim = IDLE_RIGHT,
+        .last_anim = IDLE_LEFT,
         .sprite_sheet = {
             {
-                .sheet_path = "game_src/Character/Idle/Char_idle_left.png",
+                .sheet_path = "game_src/Character/idle_right.png",
                 .nb_frame = 6,
                 .frame_rate = 6 * PLAYER_ANIM_MULT
             }, {
-                .sheet_path = "game_src/Character/Idle/Char_idle_right.png",
+                .sheet_path = "game_src/Character/run_right.png",
+                .nb_frame = 8,
+                .frame_rate = 6 * PLAYER_ANIM_MULT
+            }, {
+                .sheet_path = "game_src/Character/attack_right.png",
+                .nb_frame = 8,
+                .frame_rate = 6 * PLAYER_ANIM_MULT
+            }, {
+                .sheet_path = "game_src/Character/idle_left.png",
                 .nb_frame = 6,
                 .frame_rate = 6 * PLAYER_ANIM_MULT
             }, {
-                .sheet_path = "game_src/Character/Idle/Char_idle_up.png",
-                .nb_frame = 6,
+                .sheet_path = "game_src/Character/run_left.png",
+                .nb_frame = 8,
                 .frame_rate = 6 * PLAYER_ANIM_MULT
             }, {
-                .sheet_path = "game_src/Character/Idle/Char_idle_down.png",
-                .nb_frame = 6,
-                .frame_rate = 6 * PLAYER_ANIM_MULT
-            }, {
-                .sheet_path = "game_src/Character/Walk/Char_walk_left.png",
-                .nb_frame = 6,
-                .frame_rate = 6 * PLAYER_ANIM_MULT
-            }, {
-                .sheet_path = "game_src/Character/Walk/Char_walk_right.png",
-                .nb_frame = 6,
-                .frame_rate = 6 * PLAYER_ANIM_MULT
-            }, {
-                .sheet_path = "game_src/Character/Walk/Char_walk_up.png",
-                .nb_frame = 6,
-                .frame_rate = 6 * PLAYER_ANIM_MULT
-            }, {
-                .sheet_path = "game_src/Character/Walk/Char_walk_down.png",
-                .nb_frame = 6,
-                .frame_rate = 6 * PLAYER_ANIM_MULT
-            }, {
-                .sheet_path = "game_src/Character/Attack/Char_atk_left.png",
-                .nb_frame = 6,
-                .frame_rate = 6 * PLAYER_ANIM_MULT
-            }, {
-                .sheet_path = "game_src/Character/Attack/Char_atk_right.png",
-                .nb_frame = 6,
-                .frame_rate = 6 * PLAYER_ANIM_MULT
-            }, {
-                .sheet_path = "game_src/Character/Attack/Char_atk_up.png",
-                .nb_frame = 6,
-                .frame_rate = 6 * PLAYER_ANIM_MULT
-            }, {
-                .sheet_path = "game_src/Character/Attack/Char_atk_down.png",
-                .nb_frame = 6,
+                .sheet_path = "game_src/Character/attack_left.png",
+                .nb_frame = 8,
                 .frame_rate = 6 * PLAYER_ANIM_MULT
             }
         }
