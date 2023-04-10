@@ -41,9 +41,6 @@ void execute_event(sfEvent event)
     && event.key.code == sfKeyH) {
         display_quest = false;
     }
-    for (int i = 0; handle_event[i] != NULL; ++i) {
-        handle_event[i](&event);
-    }
 }
 
 void manage_event(void)

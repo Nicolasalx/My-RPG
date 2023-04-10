@@ -11,6 +11,7 @@
 
 void render_player(void)
 {
+    player_move();
     anim_sprite(&player.player_anim, player.anim_to_play);
     for (int i = 0; i < NB_ANIM_PLAYER; ++i) {
         sfSprite_setPosition(

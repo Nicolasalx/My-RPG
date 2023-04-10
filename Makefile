@@ -43,9 +43,7 @@ GENERIC_FUNC_SRC=	src/generic_func/anim_sprite.c \
 PLAYER_SRC	=	src/player/declaration_player.c \
 				src/player/create_player.c \
 				src/player/render_player.c \
-				src/player/event_player_reset.c \
-				src/player/event_player_move.c \
-				src/player/event_player.c
+				src/player/player_move.c
 
 SETTINGS_SRC=	src/menu/settings/create.c \
 				src/menu/settings/declaration.c \
@@ -59,8 +57,7 @@ MAIN_SRC	=	src/main/declaration_main.c \
 				src/main/create_all_data.c \
 				src/main/declaration_render_all_data.c \
 				src/main/declaration_create_all_data.c \
-				src/main/create_default_font.c \
-				src/main/declaration_event.c
+				src/main/create_default_font.c
 
 MENU_SRC 	=	src/menu/create.c \
 				src/menu/declaration.c \
