@@ -9,9 +9,33 @@ MAP_SRC			=	src/map/declaration_map.c \
 					src/map/create_map.c \
 					src/map/render_map.c
 
-INVENTORY_SRC	=	src/inventory/create.c \
-					src/inventory/declaration.c \
-					src/inventory/render.c
+INVENTORY_SRC	=	src/menu_game/inventory/declaration.c \
+					src/menu_game/inventory/create.c \
+					src/menu_game/inventory/render.c
+
+TREE_SRC		=	src/menu_game/tree/declaration.c \
+					src/menu_game/tree/create.c \
+					src/menu_game/tree/render.c
+
+LEVEL_COLLISION = 	src/level_collision/create.c \
+					src/level_collision/declaration.c \
+					src/level_collision/render.c
+
+LOADING_SRC		=	src/menu_game/loading/declaration.c \
+					src/menu_game/loading/create.c \
+					src/menu_game/loading/render.c
+
+SAVING_SRC		=	src/menu_game/saving/declaration.c \
+					src/menu_game/saving/create.c \
+					src/menu_game/saving/render.c
+
+SETTINGS_MENU_SRC=	src/menu_game/settings/declaration.c \
+					src/menu_game/settings/create.c \
+					src/menu_game/settings/render.c
+
+MENU_GAME_SRC	=	src/menu_game/create.c \
+					src/menu_game/declaration.c \
+					src/menu_game/render.c
 
 GENERIC_FUNC_SRC=	src/generic_func/anim_sprite.c \
 					src/generic_func/compute_rect_texture.c
@@ -38,14 +62,14 @@ MAIN_SRC	=	src/main/declaration_main.c \
 				src/main/create_default_font.c \
 				src/main/declaration_event.c
 
-MENU_SRC 		=	src/menu/create.c \
-					src/menu/declaration.c \
-					src/menu/buttons.c \
-					src/menu/render.c
+MENU_SRC 	=	src/menu/create.c \
+				src/menu/declaration.c \
+				src/menu/buttons.c \
+				src/menu/render.c
 
-QUEST_SRC		=	src/quest/create.c \
-					src/quest/declaration.c \
-					src/quest/render.c
+QUEST_SRC	=	src/quest/create.c \
+				src/quest/declaration.c \
+				src/quest/render.c
 
 SRC			=	src/main.c \
 				$(MAIN_SRC) \
@@ -54,7 +78,12 @@ SRC			=	src/main.c \
 				$(PLAYER_SRC) \
 				$(GENERIC_FUNC_SRC) \
 				$(SETTINGS_SRC) \
+				$(MENU_GAME_SRC) \
 				$(INVENTORY_SRC) \
+				$(TREE_SRC) \
+				$(LOADING_SRC) \
+				$(SAVING_SRC) \
+				$(SETTINGS_MENU_SRC) \
 				$(MAP_SRC)
 
 CFLAGS		=	-W -Wall -Wextra -I ./include -I ./include/lib -lcsfml-system \

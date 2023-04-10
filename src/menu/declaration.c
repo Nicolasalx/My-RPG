@@ -83,7 +83,9 @@ tutorial_info_t tutorial_info[] = {
     {
         .pos_sprite = {740, 280},
         .size_sprite = {0.5, 0.5},
-        .path_img = "game_src/tutorial/key_A.png", .pos_text = {850, 280}, .text_to_write = "Attack", .can_quit = false},
+        .path_img = "game_src/tutorial/key_A.png",
+        .pos_text = {850, 280}, .text_to_write = "Attack",
+        .can_quit = false},
     {
         .pos_sprite = {740, 350},
         .size_sprite = {0.5, 0.5},

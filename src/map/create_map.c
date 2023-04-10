@@ -50,7 +50,8 @@ char **get_map_config_file(void)
     nb_line = count_nb_line(buff);
     size_line = count_lines_size(buff, nb_line);
     config_map = my_str_to_board(buff, nb_line, size_line);
-    map.full_map = (sfSprite ***) malloc_gn_adv_board(sizeof(sfSprite *), nb_line, size_line); // !
+    map.full_map = (sfSprite ***) malloc_gn_adv_board(sizeof(sfSprite *),
+        nb_line, size_line);
     map.nb_line = nb_line;
     map.size_line = size_line[0];
     my_free(buff, size_line);

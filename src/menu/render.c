@@ -52,15 +52,20 @@ void render_menu(void)
     }
 }
 
+void quit_tuto(int i)
+{
+    if (is_mouse_over_sprite(tutorial_info[i].sprite) == true
+    && mouse_button_pressed == true &&
+        tutorial_info[i].can_quit == true) {
+        can_open_tutorial = false;
+    }
+}
+
 void render_tutorial(void)
 {
     if (can_open_tutorial == true) {
         for (int i = 0; i < size_tutorial_info; ++i) {
-            if (is_mouse_over_sprite(tutorial_info[i].sprite) == true
-            && mouse_button_pressed == true &&
-                tutorial_info[i].can_quit == true) {
-                can_open_tutorial = false;
-            }
+            quit_tuto(i);
             sfRenderWindow_drawSprite(window, tutorial_info[i].sprite, NULL);
             sfRenderWindow_drawText(window, tutorial_info[i].text, NULL);
         }

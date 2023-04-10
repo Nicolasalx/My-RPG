@@ -30,7 +30,8 @@ void create_tutorial(void)
         tutorial_info[i].sprite = sfSprite_create();
         sfSprite_setTexture(tutorial_info[i].sprite,
             tutorial_info[i].texture, sfTrue);
-        sfSprite_setScale(tutorial_info[i].sprite, tutorial_info[i].size_sprite);
+        sfSprite_setScale(tutorial_info[i].sprite, tutorial_info[i].
+            size_sprite);
         sfSprite_setPosition(tutorial_info[i].sprite,
             tutorial_info[i].pos_sprite);
 

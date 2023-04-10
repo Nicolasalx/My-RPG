@@ -12,7 +12,7 @@
 void change_resolution(int i, bool *little_res, int *last_index_res, int *nb_button_pressed)
 {
     if (button_settings[i].choose_opt == 2) {
-        if (my_strcmp(button_settings[i].text_to_write, "1280x920") == 0) {
+        if (my_strcmp(button_settings[i].text_to_write, "1280x720") == 0) {
             *little_res = true;
         } else {
             *little_res = false;
@@ -86,7 +86,7 @@ void render_settings(void)
                     }
                     if (little_reso == true && is_fullscreen == false) {
                         render_window.mode.width = 1280;
-                        render_window.mode.height = 920;
+                        render_window.mode.height = 720;
                         sfRenderWindow_destroy(window);
                         window = sfRenderWindow_create(render_window.mode,
                         render_window.name, render_window.style, NULL);

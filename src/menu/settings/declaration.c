@@ -53,7 +53,7 @@ button_settings_t button_settings [] = {
     .pos = {700, 550},
     .size = {200, 100},
     .pos_text = {730, 560},
-    .text_to_write = "1280x920",
+    .text_to_write = "1280x720",
     .choose_opt = 2
     },
     {
