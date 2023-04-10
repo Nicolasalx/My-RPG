@@ -17,10 +17,10 @@
 render_func_t render_func[] = {
     {render_map, GAME},
     {render_menu, MENU},
+    {render_level_arrow, GAME},
     {render_player, GAME},
     {render_menu_quest, GAME},
     {render_tutorial, MENU},
-    {render_level_arrow, GAME},
     {render_game_menu_button, GAME},
     {NULL, 0}
 };
