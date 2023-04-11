@@ -9,6 +9,7 @@
     #define SYSTEM_BOT_SKELET_H_
 
     #include "SFML/Graphics.h"
+    #include "main.h"
 
 typedef struct {
     sfSprite *bot;
@@ -17,13 +18,6 @@ typedef struct {
     sfVector2f bot_size_sprite;
     char *bot_path_img;
     sfVector2f reset_pos_bot;
-
-    sfVector2f current_position_bot;
-    sfVector2f direction_bot;
-    sfVector2f pos_start_bot;
-    sfVector2f pos_end_bot;
-    float speed_bot;
-    float distance;
 
     sfRectangleShape *big_life_rectangle;
     sfColor big_life_color_rectangle;
@@ -44,6 +38,17 @@ typedef struct {
     sfColor border_zone;
     float outlineThickness;
 
+    bool bot_can_move;
+    sfClock *clock;
+
+    sfVector2f current_position_bot;
+    sfVector2f direction_bot;
+    sfVector2f pos_start_bot;
+    sfVector2f pos_end_bot;
+    float speed_bot;
+    float distance;
+
+    sfVector2f pos_bot_ini;
 } system_bot_t;
 
 extern system_bot_t system_bot[];
