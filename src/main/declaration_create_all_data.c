@@ -17,6 +17,7 @@
 #include "tree.h"
 #include "system_bot_skelet.h"
 #include "collision_map.h"
+#include "manage_view.h"
 
 void (*create[])(void) = {
     create_default_font,

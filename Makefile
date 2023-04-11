@@ -5,7 +5,8 @@
 ## Makefile
 ##
 
-MANAGEVIEW_SRC	=	src/manage_view/create_view.c
+MANAGEVIEW_SRC	=	src/manage_view/create_view.c \
+					src/manage_view/render_view.c
 
 COLLISIONMAP_SRC=	src/collision_map/declaration_collision_map.c \
 					src/collision_map/create_collision_map.c \
