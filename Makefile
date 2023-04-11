@@ -5,6 +5,8 @@
 ## Makefile
 ##
 
+MANAGEVIEW_SRC	=	src/manage_view/create_view.c
+
 COLLISIONMAP_SRC=	src/collision_map/declaration_collision_map.c \
 					src/collision_map/create_collision_map.c \
 					src/collision_map/render_collision_map.c
@@ -98,7 +100,8 @@ SRC			=	src/main.c \
 				$(MAP_SRC) \
 				$(LEVEL_ARROW_SRC) \
 				$(SYSTEM_BOT_SRC) \
-				$(COLLISIONMAP_SRC)
+				$(COLLISIONMAP_SRC) \
+				$(MANAGEVIEW_SRC)
 
 CFLAGS		=	-W -Wall -Wextra -I ./include -I ./include/lib -lcsfml-system \
 				-lcsfml-graphics -lcsfml-window -lcsfml-audio -lm
