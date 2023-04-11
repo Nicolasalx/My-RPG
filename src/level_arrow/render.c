@@ -15,8 +15,7 @@ void render_level_arrow(void)
     for (int i = 0; i < size_touret_arrow; ++i) {
         sfVector2f circleCenter = sfCircleShape_getPosition(touret_arrow[i].arrow);
         float circleRadius = sfCircleShape_getRadius(touret_arrow[i].arrow);
-        sfFloatRect circleBounds = {circleCenter.x - circleRadius, circleCenter.y - circleRadius,
-                                    circleRadius * 2.f, circleRadius * 2.f};
+        sfFloatRect circleBounds = {circleCenter.x - circleRadius, circleCenter.y - circleRadius, circleRadius * 2.f, circleRadius * 2.f};
         if (sfFloatRect_intersects(&rectangleBounds, &circleBounds, NULL)) {
             player.pos.x = 300;
             player.pos.y = 450;

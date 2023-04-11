@@ -13,11 +13,13 @@
 #include "map.h"
 #include "game_menu.h"
 #include "level_arrow.h"
+#include "system_bot_skelet.h"
 
 render_func_t render_func[] = {
     {render_map, GAME},
     {render_menu, MENU},
-    {render_level_arrow, GAME},
+    //{render_level_arrow, GAME},
+    {render_system_bot, GAME},
     {render_player, GAME},
     {render_menu_quest, GAME},
     {render_tutorial, MENU},

@@ -9,6 +9,10 @@ MAP_SRC			=	src/map/declaration_map.c \
 					src/map/create_map.c \
 					src/map/render_map.c
 
+SYSTEM_BOT_SRC	=	src/system_bot_skelet/declaration.c \
+					src/system_bot_skelet/create.c \
+					src/system_bot_skelet/render.c
+
 INVENTORY_SRC	=	src/menu_game/inventory/declaration.c \
 					src/menu_game/inventory/create.c \
 					src/menu_game/inventory/render.c
@@ -86,7 +90,8 @@ SRC			=	src/main.c \
 				$(SAVING_SRC) \
 				$(SETTINGS_MENU_SRC) \
 				$(MAP_SRC) \
-				$(LEVEL_ARROW_SRC)
+				$(LEVEL_ARROW_SRC) \
+				$(SYSTEM_BOT_SRC)
 
 CFLAGS		=	-W -Wall -Wextra -I ./include -I ./include/lib -lcsfml-system \
 				-lcsfml-graphics -lcsfml-window -lcsfml-audio -lm

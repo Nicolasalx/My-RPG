@@ -14,6 +14,7 @@
 #include "game_menu.h"
 #include "inventory.h"
 #include "level_arrow.h"
+#include "system_bot_skelet.h"
 
 void (*create[])(void) = {
     create_default_font,
@@ -25,6 +26,7 @@ void (*create[])(void) = {
     create_button_menu_game,
     create_front_inventory,
     create_tutorial,
+    create_system_bot,
     create_button_settings_game_menu,
     create_map,
     create_clothes_inventory,
