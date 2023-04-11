@@ -32,5 +32,6 @@ typedef struct {
 void anim_sprite(anim_sprite_t *anim_sprite, unsigned int anim_to_play);
 sfIntRect compute_rect_texture(sprite_sheet_t *sprite_sheet,
     unsigned int current_frame);
+bool check_collision(sfRectangleShape *rect_1, sfRectangleShape *rect_2);
 
 #endif /* !GENERIC_FUNC_H_ */

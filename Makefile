@@ -5,6 +5,10 @@
 ## Makefile
 ##
 
+COLLISIONMAP_SRC=	src/collision_map/declaration_collision_map.c \
+					src/collision_map/create_collision_map.c \
+					src/collision_map/render_collision_map.c
+
 MAP_SRC			=	src/map/declaration_map.c \
 					src/map/create_map.c \
 					src/map/render_map.c
@@ -42,12 +46,14 @@ MENU_GAME_SRC	=	src/menu_game/create.c \
 					src/menu_game/render.c
 
 GENERIC_FUNC_SRC=	src/generic_func/anim_sprite.c \
-					src/generic_func/compute_rect_texture.c
+					src/generic_func/compute_rect_texture.c \
+					src/generic_func/check_collision.c
 
 PLAYER_SRC	=	src/player/declaration_player.c \
 				src/player/create_player.c \
 				src/player/render_player.c \
-				src/player/player_move.c
+				src/player/player_move.c \
+				src/player/check_collision_player.c
 
 SETTINGS_SRC=	src/menu/settings/create.c \
 				src/menu/settings/declaration.c \
@@ -86,7 +92,8 @@ SRC			=	src/main.c \
 				$(SAVING_SRC) \
 				$(SETTINGS_MENU_SRC) \
 				$(MAP_SRC) \
-				$(LEVEL_ARROW_SRC)
+				$(LEVEL_ARROW_SRC) \
+				$(COLLISIONMAP_SRC)
 
 CFLAGS		=	-W -Wall -Wextra -I ./include -I ./include/lib -lcsfml-system \
 				-lcsfml-graphics -lcsfml-window -lcsfml-audio -lm
