@@ -52,13 +52,29 @@ void player_run(bool *direction)
     }
 }
 
-void check_collission_again(sfVector2f *prev_pos_player, sfVector2f *prev_pos_rect)
+void check_collission_again(
+    sfVector2f *prev_pos_player, sfVector2f *prev_pos_rect)
 {
     sfRectangleShape_setPosition(player.collision,
     (sfVector2f) {player.pos.x + (17 * player.scale.x), player.pos.y});
     check_collision_player(*prev_pos_player, *prev_pos_rect);
     *prev_pos_player = player.pos;
     *prev_pos_rect = sfRectangleShape_getPosition(player.collision);
+}
+
+void try_to_move(sfVector2f *prev_pos_player, sfVector2f *prev_pos_rect)
+{
+    if (sfKeyboard_isKeyPressed(sfKeyLeft))
+        player.pos.x -= player.speed;
+    check_collission_again(prev_pos_player, prev_pos_rect);
+    if (sfKeyboard_isKeyPressed(sfKeyRight))
+        player.pos.x += player.speed;
+    check_collission_again(prev_pos_player, prev_pos_rect);
+    if (sfKeyboard_isKeyPressed(sfKeyUp))
+        player.pos.y -= player.speed;
+    check_collission_again(prev_pos_player, prev_pos_rect);
+    if (sfKeyboard_isKeyPressed(sfKeyDown))
+        player.pos.y += player.speed;
 }
 
 void player_move(void)
@@ -68,23 +84,13 @@ void player_move(void)
     sfVector2f prev_pos_player = player.pos;
     sfVector2f prev_pos_rect = sfRectangleShape_getPosition(player.collision);
 
-    if (direction == LEFT && player_attack(&anim_attack_frame, ATTACK_LEFT) ||
-        direction == RIGHT && player_attack(&anim_attack_frame, ATTACK_RIGHT))
+    if ((direction == LEFT && player_attack(&anim_attack_frame, ATTACK_LEFT))
+    || (direction == RIGHT && player_attack(&anim_attack_frame, ATTACK_RIGHT)))
         return;
 
     player_run(&direction);
 
-    if (sfKeyboard_isKeyPressed(sfKeyLeft))
-        player.pos.x -= player.speed;
-    check_collission_again(&prev_pos_player, &prev_pos_rect);
-    if (sfKeyboard_isKeyPressed(sfKeyRight))
-        player.pos.x += player.speed;
-    check_collission_again(&prev_pos_player, &prev_pos_rect);
-    if (sfKeyboard_isKeyPressed(sfKeyUp))
-        player.pos.y -= player.speed;
-    check_collission_again(&prev_pos_player, &prev_pos_rect);
-    if (sfKeyboard_isKeyPressed(sfKeyDown))
-        player.pos.y += player.speed;
+    try_to_move(&prev_pos_player, &prev_pos_rect);
 
     sfRectangleShape_setPosition(player.collision,
     (sfVector2f) {player.pos.x + (17 * player.scale.x), player.pos.y});
