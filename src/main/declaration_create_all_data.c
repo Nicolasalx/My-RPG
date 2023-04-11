@@ -15,6 +15,8 @@
 #include "inventory.h"
 #include "level_arrow.h"
 #include "tree.h"
+#include "system_bot_skelet.h"
+#include "collision_map.h"
 
 void (*create[])(void) = {
     create_default_font,
@@ -26,6 +28,7 @@ void (*create[])(void) = {
     create_button_menu_game,
     create_front_inventory,
     create_tutorial,
+    create_system_bot,
     create_button_settings_game_menu,
     create_map,
     create_clothes_inventory,
@@ -33,6 +36,10 @@ void (*create[])(void) = {
     create_validate_saving_option,
     create_stuff_inventory,
     create_arrow_and_touret,
+<<<<<<< HEAD
     create_button_tree,
+=======
+    create_collision_map,
+>>>>>>> 6c46e4d512804d16c3f9101e6d2b5990c7cb2eee
     NULL
 };
