@@ -6,8 +6,11 @@
 */
 
 #include "game_menu.h"
+#include "tree.h"
 
-void display_tree_characteristic(void)
+void display_tree(void)
 {
-    print("TREE\n");
+    for (int i = 0; i < size_tree; ++i) {
+        sfRenderWindow_drawSprite(window, fondation[i].sprite, NULL);
+    }
 }

@@ -12,6 +12,7 @@
 #include "settings.h"
 #include "map.h"
 #include "game_menu.h"
+#include "tree.h"
 #include "level_arrow.h"
 
 render_func_t render_func[] = {

@@ -7,8 +7,7 @@
 
 #include "main.h"
 #include "game_menu.h"
-
-
+#include "tree.h"
 
 void render_all_game_menu(int *index_button_pressed, int i)
 {
@@ -51,7 +50,7 @@ void render_game_menu_button(void)
 
 render_fct_game_menu_t render_fct_game_menu[] = {
     {display_inventory, INVENTORY},
-    {display_tree_characteristic, TREE},
+    {display_tree, TREE},
     {display_settings_inventory, SETTINGS},
     {display_loading_inventory, LOADING},
     {display_saving_inventory, SAVING},

@@ -14,6 +14,7 @@
 #include "game_menu.h"
 #include "inventory.h"
 #include "level_arrow.h"
+#include "tree.h"
 
 void (*create[])(void) = {
     create_default_font,
@@ -32,5 +33,6 @@ void (*create[])(void) = {
     create_validate_saving_option,
     create_stuff_inventory,
     create_arrow_and_touret,
+    create_button_tree,
     NULL
 };

@@ -9,6 +9,7 @@
 #include "menu_game.h"
 #include "quest.h"
 #include "settings.h"
+#include "tree.h"
 
 sfFont* font;
 
