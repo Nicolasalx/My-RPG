@@ -37,10 +37,7 @@ void (*create[])(void) = {
     create_validate_saving_option,
     create_stuff_inventory,
     create_arrow_and_touret,
-<<<<<<< HEAD
     create_button_tree,
-=======
     create_collision_map,
->>>>>>> 6c46e4d512804d16c3f9101e6d2b5990c7cb2eee
     NULL
 };
