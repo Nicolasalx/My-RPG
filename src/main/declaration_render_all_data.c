@@ -19,6 +19,7 @@
 
 render_func_t render_func[] = {
     {render_map, GAME},
+    {render_collision_map, GAME},
     {render_menu, MENU},
     //{render_level_arrow, GAME},
     {render_system_bot, GAME},
@@ -26,6 +27,5 @@ render_func_t render_func[] = {
     {render_menu_quest, GAME},
     {render_tutorial, MENU},
     {render_game_menu_button, GAME},
-    {render_collision_map, GAME},
     {NULL, 0}
 };

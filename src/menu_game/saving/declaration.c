@@ -214,6 +214,27 @@ saving_content_t saving_content[] = {
         .text_to_write = "Validation Saving",
         .size_text = 80,
         .color_text = (sfColor) {COLOR_TEXT_SAVING},
+    },
+
+    {
+        .pos_text = {1100, 340},
+        .text_to_write = "Save 1",
+        .size_text = 80,
+        .color_text = (sfColor) {COLOR_TEXT_SAVING},
+    },
+
+    {
+        .pos_text = {1100, 490},
+        .text_to_write = "Save 2",
+        .size_text = 80,
+        .color_text = (sfColor) {COLOR_TEXT_SAVING},
+    },
+
+    {
+        .pos_text = {1100, 650},
+        .text_to_write = "Save 3",
+        .size_text = 80,
+        .color_text = (sfColor) {COLOR_TEXT_SAVING},
     }
 };
 
@@ -232,6 +253,34 @@ validate_saving_t validate_saving[] = {
     {.color_rectangle = (sfColor) {CLOTHES_RECTANGLE_COLOR},
     .pos_rectangle = {650, 760},
     .size_rectangle = {400, 100},
+
+    .size_sprite = {0, 0},
+    .pos_sprite = {470, 370},
+    .path_img = "game_src/Menu_game/clothes/50%_life.png",
+    },
+
+    {.color_rectangle = (sfColor) {CLOTHES_RECTANGLE_COLOR},
+    .pos_rectangle = {1080, 350},
+    .size_rectangle = {200, 100},
+
+    .size_sprite = {0, 0},
+    .pos_sprite = {470, 370},
+    .path_img = "game_src/Menu_game/clothes/50%_life.png",
+    },
+
+
+    {.color_rectangle = (sfColor) {CLOTHES_RECTANGLE_COLOR},
+    .pos_rectangle = {1080, 500},
+    .size_rectangle = {200, 100},
+
+    .size_sprite = {0, 0},
+    .pos_sprite = {470, 370},
+    .path_img = "game_src/Menu_game/clothes/50%_life.png",
+    },
+
+    {.color_rectangle = (sfColor) {CLOTHES_RECTANGLE_COLOR},
+    .pos_rectangle = {1080, 660},
+    .size_rectangle = {200, 100},
 
     .size_sprite = {0, 0},
     .pos_sprite = {470, 370},

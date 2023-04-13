@@ -115,6 +115,22 @@ typedef struct {
     sfVector2f pos_rectangle;
     sfVector2f size_rectangle;
 
+    sfText *text;
+    sfVector2f pos_text;
+    char *text_to_write;
+    int size_text;
+    sfColor color_text;
+
+    bool can_choose;
+    bool validate;
+} loading_content_t;
+
+typedef struct {
+    sfRectangleShape *rectangle;
+    sfColor color_rectangle;
+    sfVector2f pos_rectangle;
+    sfVector2f size_rectangle;
+
     sfSprite *sprite;
     sfTexture *texture;
     sfVector2f pos_sprite;
@@ -124,6 +140,9 @@ typedef struct {
 
 extern validate_saving_t validate_saving[];
 extern const int size_validate_saving;
+
+extern loading_content_t loading_content[];
+extern const int size_loading_content;
 
 extern stuff_inventory_t stuff_inventory[];
 extern const int size_stuff_inventory;
@@ -151,5 +170,6 @@ void create_saving_inventory(void);
 void create_validate_saving_option(void);
 void create_stuff_inventory(void);
 char* int_to_string(int value, char* buffer);
+void create_loading_content(void);
 
 #endif /* !INVENTORY_H_ */
