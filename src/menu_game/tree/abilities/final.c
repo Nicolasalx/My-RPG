@@ -6,13 +6,16 @@
 */
 
 #include "tree.h"
+#include "inventory.h"
 
 void final(int i)
 {
     if (is_fureur == true && is_bloodbath == true &&
-        is_glacial_slow == true && is_final == false) {
+        is_glacial_slow == true && is_final == false
+        && inventory_content.nb_xp >= 12) {
         sfSprite_setColor(fondation[i].sprite, (sfColor) {255, 255, 255, 255});
         is_final = true;
+        inventory_content.nb_xp -= 12;
         return;
     }
     if (is_fureur == false || is_bloodbath == false ||
@@ -22,5 +25,9 @@ void final(int i)
     }
     if (is_final == true) {
         print("You Already Have The Final Upgrade\n");
+        return;
+    }
+    if (inventory_content.nb_xp < 12) {
+        print("Not Enough XP\n");
     }
 }

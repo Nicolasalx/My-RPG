@@ -6,12 +6,15 @@
 */
 
 #include "tree.h"
+#include "inventory.h"
 
 void blood_bath(int i)
 {
-    if (regene == true && is_bloodbath == false) {
+    if (regene == true && is_bloodbath == false &&
+    inventory_content.nb_xp >= 10) {
         sfSprite_setColor(fondation[i].sprite, (sfColor) {255, 255, 255, 255});
         is_bloodbath = true;
+        inventory_content.nb_xp -= 10;
         return;
     }
     if (regene == false) {
@@ -20,5 +23,9 @@ void blood_bath(int i)
     }
     if (is_bloodbath == true) {
         print("Already Unlock Blood Bath\n");
+        return;
+    }
+    if (inventory_content.nb_xp < 10) {
+        print("Not Enough XP\n");
     }
 }
