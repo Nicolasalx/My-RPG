@@ -9,6 +9,7 @@
 
 sfView *window_view;
 bool go_to_next_level = {false};
+int current_level = {0};
 
 void create_view(void)
 {

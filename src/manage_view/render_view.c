@@ -17,6 +17,7 @@ void render_view(void)
         sfRenderWindow_setView(window, window_view);
         window_x += LEVEL_TRANSITION_SPEED;
         if (window_x > render_window.mode.width) {
+            ++ current_level;
             go_to_next_level = false;
             window_x = 0;
         }
