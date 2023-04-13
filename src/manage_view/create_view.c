@@ -8,9 +8,11 @@
 #include "main.h"
 
 sfView *window_view;
+bool go_to_next_level = {false};
 
 void create_view(void)
 {
+    window_view = sfView_create();
     sfView_reset(window_view,
         (sfFloatRect) {
             0,

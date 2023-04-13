@@ -41,6 +41,7 @@ extern player_t player;
 void create_player(void);
 void render_player(void);
 void player_move(void);
-void check_collision_player(sfVector2f prev_pos_player, sfVector2f prev_pos_rect);
+void check_collision_player(sfVector2f prev_pos_player,
+    sfVector2f prev_pos_rect);
 
 #endif /* !PLAYER_H_ */

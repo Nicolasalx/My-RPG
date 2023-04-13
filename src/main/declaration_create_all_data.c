@@ -17,6 +17,7 @@
 #include "tree.h"
 #include "system_bot_skelet.h"
 #include "collision_map.h"
+#include "manage_view.h"
 
 void (*create[])(void) = {
     create_default_font,
@@ -26,6 +27,7 @@ void (*create[])(void) = {
     create_img_settings,
     create_button_settings,
     create_button_menu_game,
+    create_button_tree,
     create_front_inventory,
     create_loading_content,
     create_tutorial,

@@ -16,6 +16,7 @@
 #include "level_arrow.h"
 #include "system_bot_skelet.h"
 #include "collision_map.h"
+#include "manage_view.h"
 
 render_func_t render_func[] = {
     {render_map, GAME},
@@ -27,5 +28,7 @@ render_func_t render_func[] = {
     {render_menu_quest, GAME},
     {render_tutorial, MENU},
     {render_game_menu_button, GAME},
+    {render_collision_map, GAME},
+    {render_view, GAME},
     {NULL, 0}
 };

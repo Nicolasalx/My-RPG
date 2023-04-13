@@ -5,7 +5,8 @@
 ## Makefile
 ##
 
-MANAGEVIEW_SRC	=	src/manage_view/create_view.c
+MANAGEVIEW_SRC	=	src/manage_view/create_view.c \
+					src/manage_view/render_view.c
 
 COLLISIONMAP_SRC=	src/collision_map/declaration_collision_map.c \
 					src/collision_map/create_collision_map.c \
@@ -29,7 +30,17 @@ LEVEL_ARROW_SRC	=	src/level_arrow/declaration.c \
 
 TREE_SRC		=	src/menu_game/tree/declaration.c \
 					src/menu_game/tree/create.c \
-					src/menu_game/tree/render.c
+					src/menu_game/tree/render.c \
+					src/menu_game/tree/abilities/speed_up.c \
+					src/menu_game/tree/abilities/add_strenght.c \
+					src/menu_game/tree/abilities/attack_speed.c \
+					src/menu_game/tree/abilities/upgrade_health.c \
+					src/menu_game/tree/abilities/regeneration.c \
+					src/menu_game/tree/abilities/critical.c \
+					src/menu_game/tree/abilities/fureur.c \
+					src/menu_game/tree/abilities/glacial_slow.c \
+					src/menu_game/tree/abilities/final.c \
+					src/menu_game/tree/abilities/blood_bath.c
 
 LEVEL_COLLISION = 	src/level_collision/create.c \
 					src/level_collision/declaration.c \
