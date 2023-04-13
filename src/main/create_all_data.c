@@ -22,6 +22,15 @@ void create_all_data(void)
     mouse_button_maintain = false;
     mouse_button_released = false;
     is_fullscreen = false;
+    is_speed_up = false;
+    strenght_up = false;
+    attackspeed_up = false;
+    health_up = false;
+    regene = false;
+    is_fureur = false;
+    is_bloodbath = false;
+    is_glacial_slow = false;
+    is_final = false;
 
     for (int i = 0; create[i] != NULL; ++i) {
         create[i]();
