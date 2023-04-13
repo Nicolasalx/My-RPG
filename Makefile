@@ -5,6 +5,10 @@
 ## Makefile
 ##
 
+CHEST_SRC		=	src/chest/create_chest.c \
+					src/chest/declaration_chest.c \
+					src/chest/render_chest.c
+
 MANAGEVIEW_SRC	=	src/manage_view/create_view.c \
 					src/manage_view/render_view.c
 
@@ -112,7 +116,8 @@ SRC			=	src/main.c \
 				$(LEVEL_ARROW_SRC) \
 				$(SYSTEM_BOT_SRC) \
 				$(COLLISIONMAP_SRC) \
-				$(MANAGEVIEW_SRC)
+				$(MANAGEVIEW_SRC) \
+				$(CHEST_SRC)
 
 CFLAGS		=	-W -Wall -Wextra -I ./include -I ./include/lib -lcsfml-system \
 				-lcsfml-graphics -lcsfml-window -lcsfml-audio -lm
