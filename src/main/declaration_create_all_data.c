@@ -17,6 +17,7 @@
 #include "tree.h"
 #include "system_bot_skelet.h"
 #include "collision_map.h"
+#include "manage_view.h"
 
 void (*create[])(void) = {
     create_default_font,
@@ -37,6 +38,7 @@ void (*create[])(void) = {
     create_validate_saving_option,
     create_stuff_inventory,
     create_arrow_and_touret,
+    create_button_tree,
     create_collision_map,
     NULL
 };

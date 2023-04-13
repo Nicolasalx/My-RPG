@@ -9,7 +9,14 @@
     #define MANAGE_VIEW_H_
 
     #include <SFML/Graphics.h>
+    #include <stdbool.h>
+
+    #define LEVEL_TRANSITION_SPEED 10
 
 extern sfView *window_view;
+extern bool go_to_next_level;
+
+void create_view(void);
+void render_view(void);
 
 #endif /* !MANAGE_VIEW_H_ */
