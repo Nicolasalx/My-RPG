@@ -27,6 +27,7 @@ typedef struct {
     int money;
     bool have_totem;
     bool have_amuletter;
+    unsigned int nb_life;
 } inventory_content_t;
 
 typedef enum {

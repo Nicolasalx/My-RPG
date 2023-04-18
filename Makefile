@@ -9,6 +9,14 @@ CHEST_SRC		=	src/chest/create_chest.c \
 					src/chest/declaration_chest.c \
 					src/chest/render_chest.c
 
+DIALOG_SRC		=	src/dialog/create.c \
+					src/dialog/declaration.c \
+					src/dialog/render.c
+
+HEAL_XP_BAR_SRC	=	src/heal_xp_bar/create.c \
+					src/heal_xp_bar/declaration.c \
+					src/heal_xp_bar/render.c
+
 MANAGEVIEW_SRC	=	src/manage_view/create_view.c \
 					src/manage_view/render_view.c
 
@@ -117,7 +125,9 @@ SRC			=	src/main.c \
 				$(SYSTEM_BOT_SRC) \
 				$(COLLISIONMAP_SRC) \
 				$(MANAGEVIEW_SRC) \
-				$(CHEST_SRC)
+				$(CHEST_SRC) \
+				$(HEAL_XP_BAR_SRC) \
+				$(DIALOG_SRC)
 
 CFLAGS		=	-W -Wall -Wextra -I ./include -I ./include/lib -lcsfml-system \
 				-lcsfml-graphics -lcsfml-window -lcsfml-audio -lm

@@ -303,10 +303,11 @@ inventory_content_t inventory_content = {
     .have_armor = false,
     .have_boot = false,
     .have_glove = true,
-    .nb_key = 1,
+    .nb_key = 3,
     .nb_potion = 2,
     .nb_xp = 6,
     .have_amuletter = true,
-    .have_totem = false,
+    .have_totem = true,
     .money = 9,
+    .nb_life = 80,
 };
