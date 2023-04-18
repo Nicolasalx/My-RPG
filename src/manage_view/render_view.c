@@ -20,7 +20,8 @@ void render_view(void)
         collision_map.pos.x = -LEVEL_TRANSITION_SPEED;
         window_x += LEVEL_TRANSITION_SPEED;
         for (int i = 0; i < nb_chest; ++i) {
-            sfSprite_move(chest[i].sprite, (sfVector2f) {-LEVEL_TRANSITION_SPEED, 0});
+            sfSprite_move(chest[i].sprite,
+            (sfVector2f) {-LEVEL_TRANSITION_SPEED, 0});
         }
         if (window_x > render_window.mode.width) {
             ++ current_level;
