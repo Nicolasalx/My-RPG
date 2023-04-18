@@ -7,20 +7,10 @@
 
 #include "main.h"
 
-sfView *window_view;
 bool go_to_next_level = {false};
 int current_level = {0};
 
 void create_view(void)
 {
-    window_view = sfView_create();
-    sfView_reset(window_view,
-        (sfFloatRect) {
-            0,
-            0,
-            render_window.mode.width,
-            render_window.mode.height
-        }
-    );
-    sfRenderWindow_setView(window, window_view);
+
 }

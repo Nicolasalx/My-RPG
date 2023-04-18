@@ -42,6 +42,7 @@ void render_collision_map(void)
     for (int i = 0; i < collision_map.nb_line; ++i) {
         for (int j = 0; j < collision_map.size_line ; ++j) {
             if (collision_map.full_map[i][j] != NULL) {
+                sfRectangleShape_move(collision_map.full_map[i][j], collision_map.pos);
                 sfRenderWindow_drawRectangleShape(window, collision_map.full_map[i][j], NULL);
             }
         }

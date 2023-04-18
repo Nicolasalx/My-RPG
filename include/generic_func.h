@@ -29,6 +29,16 @@ typedef struct {
     sprite_sheet_t sprite_sheet[MAX_SPRITE_SHEET];
 } anim_sprite_t;
 
+typedef struct {
+    unsigned int current_frame;
+    unsigned int nb_frame;
+    unsigned int frame_rate;
+    bool stop_playing;
+    bool play;
+    sfVector2u texture_size;
+    sfClock *clock;
+} single_anim_t;
+
 void anim_sprite(anim_sprite_t *anim_sprite, unsigned int anim_to_play);
 sfIntRect compute_rect_texture(sprite_sheet_t *sprite_sheet,
     unsigned int current_frame);

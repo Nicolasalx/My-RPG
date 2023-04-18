@@ -7,6 +7,7 @@
 
 #include "main.h"
 #include "manage_view.h"
+#include "chest.h"
 
 bool mouse_button_pressed;
 bool mouse_button_maintain;
@@ -23,6 +24,9 @@ void main_loop(void)
         render_all_data();
         if (sfKeyboard_isKeyPressed(sfKeyN)) { // ! tmp
             go_to_next_level = true;
+        }
+        if (sfKeyboard_isKeyPressed(sfKeyE)) {
+            chest[0].anim.play = true;
         }
         sfRenderWindow_display(window);
     }
