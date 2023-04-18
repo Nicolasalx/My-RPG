@@ -12,21 +12,21 @@
 
 settings_button_game_menu_t settings_button_game_menu[] = {
     {
-        .path_img = "game_src/Menu_button/setting.png",
-        .pos_sprite = {550, 300},
-        .size_sprite = {5, 5},
+        .path_img = "game_src/butons/Menu/Large/Colored/Settings.png",
+        .pos_sprite = {600, 200},
+        .size_sprite = {1, 1},
         .choose_opt = 1,
     },
     {
-        .path_img = "game_src/Menu_button/quit.png",
-        .pos_sprite = {500, 700},
-        .size_sprite = {5, 5},
+        .path_img = "game_src/butons/Menu/Large/Colored/Controls.png",
+        .pos_sprite = {600, 600},
+        .size_sprite = {1, 1},
         .choose_opt = 2,
     },
     {
-        .path_img = "game_src/Menu_button/quit.png",
-        .pos_sprite = {700, 900},
-        .size_sprite = {3, 3},
+        .path_img = "game_src/butons/Menu/Large/Colored/Quit.png",
+        .pos_sprite = {750, 900},
+        .size_sprite = {0.5, 0.5},
         .choose_opt = 3,
     }
 };

@@ -8,6 +8,24 @@
 #include "main.h"
 #include "quest.h"
 #include "menu_game.h"
+#include "player.h"
+#include "map.h"
+#include "manage_view.h"
+#include "stdio.h"
+
+void change_level(sfEvent event)
+{
+    if (current_level == 0 && player.pos.x >= 310 && player.pos.x <= 384 &&
+    player.pos.y >= 127 && player.pos.y <= 176 &&
+    sfKeyboard_isKeyPressed(sfKeyE)) {
+        go_to_next_level = true;
+    }
+    if (current_level == 0 && player.pos.x >= 1215 && player.pos.x <= 1285 &&
+    player.pos.y >= 127 && player.pos.y <= 176 &&
+    sfKeyboard_isKeyPressed(sfKeyE)) {
+        go_to_next_level = true;
+    }
+}
 
 void open_game_menu(sfEvent event)
 {
@@ -20,9 +38,6 @@ void open_game_menu(sfEvent event)
         event.key.code == sfKeyEscape) {
         can_open_game_menu = true;
     }
-    if (sfKeyboard_isKeyPressed(sfKeyLAlt) && sfKeyboard_isKeyPressed(sfKeyLControl)) {
-        sfRenderWindow_close(window);
-    }
 }
 
 void execute_event(sfEvent event)
@@ -32,8 +47,10 @@ void execute_event(sfEvent event)
     }
     open_game_menu(event);
     mouse_pos = sfMouse_getPositionRenderWindow(window);
-    if (event.type == sfEvtMouseButtonPressed)
+    if (event.type == sfEvtMouseButtonPressed) {
+        printf("x = %d y = %d\n", mouse_pos.x, mouse_pos.y);
         mouse_button_pressed = true;
+    }
     if (event.type == sfEvtMouseButtonReleased) {
         mouse_button_released = true;
     }
@@ -44,6 +61,7 @@ void execute_event(sfEvent event)
     && event.key.code == sfKeyH) {
         display_quest = false;
     }
+    change_level(event);
 }
 
 void manage_event(void)

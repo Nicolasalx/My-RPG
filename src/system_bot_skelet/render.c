@@ -7,6 +7,7 @@
 
 #include "system_bot_skelet.h"
 #include "main.h"
+#include "manage_view.h"
 #include "player.h"
 #include "math.h"
 
@@ -106,21 +107,23 @@ void render_system_bot(void)
         player.pos.y = 300;
         ini_pos_player = true;
     }
-    for (int i = 0; i < size_system_bot; ++i) {
-        check_if_player_enter(i);
-        get_direction_bot(i);
-        if (system_bot[i].bot_can_move == true) {
-            system_bot[i].pos_end_bot = player.pos;
-            bot_chase_player(i);
+    if (current_level == 1) {
+        for (int i = 0; i < size_system_bot; ++i) {
+            check_if_player_enter(i);
+            get_direction_bot(i);
+            if (system_bot[i].bot_can_move == true) {
+                system_bot[i].pos_end_bot = player.pos;
+                bot_chase_player(i);
+            }
+            if (system_bot[i].bot_can_move == false) {
+                bot_got_base(i);
+            }
+            sfRenderWindow_drawCircleShape(window, system_bot[i].zone, NULL);
+            sfRenderWindow_drawSprite(window, system_bot[i].bot, NULL);
+            sfRenderWindow_drawRectangleShape(window,
+                system_bot[i].big_life_rectangle, NULL);
+            sfRenderWindow_drawRectangleShape(window,
+                system_bot[i].little_life_rectangle, NULL);
         }
-        if (system_bot[i].bot_can_move == false) {
-            bot_got_base(i);
-        }
-        sfRenderWindow_drawCircleShape(window, system_bot[i].zone, NULL);
-        sfRenderWindow_drawSprite(window, system_bot[i].bot, NULL);
-        sfRenderWindow_drawRectangleShape(window,
-            system_bot[i].big_life_rectangle, NULL);
-        sfRenderWindow_drawRectangleShape(window,
-            system_bot[i].little_life_rectangle, NULL);
     }
 }

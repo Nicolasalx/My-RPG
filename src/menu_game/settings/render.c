@@ -35,10 +35,12 @@ void display_settings_and_tuto(bool *open_settings, bool *open_tuto)
 
 void choose_opt_tuto_or_settings(int i, bool *open_tuto, bool *open_settings)
 {
-    if (settings_button_game_menu[i].choose_opt == 2) {
+    if (settings_button_game_menu[i].choose_opt == 2 &&
+    *open_settings == false) {
         *open_settings = false;
         *open_tuto = true;
-    } else if (settings_button_game_menu[i].choose_opt == 1) {
+    } else if (settings_button_game_menu[i].choose_opt == 1 &&
+    *open_tuto == false) {
         *open_tuto = false;
         *open_settings = true;
     }
