@@ -20,6 +20,7 @@
 #include "manage_view.h"
 #include "dialog.h"
 #include "heal_xp_bar.h"
+#include "chest.h"
 
 void (*create[])(void) = {
     create_default_font,
@@ -45,5 +46,6 @@ void (*create[])(void) = {
     create_heal_xp_bar,
     create_dialog_text,
     create_collision_map,
+    create_chest,
     NULL
 };

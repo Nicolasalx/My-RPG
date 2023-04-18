@@ -20,6 +20,9 @@ void open_game_menu(sfEvent event)
         event.key.code == sfKeyEscape) {
         can_open_game_menu = true;
     }
+    if (sfKeyboard_isKeyPressed(sfKeyLAlt) && sfKeyboard_isKeyPressed(sfKeyLControl)) {
+        sfRenderWindow_close(window);
+    }
 }
 
 void execute_event(sfEvent event)

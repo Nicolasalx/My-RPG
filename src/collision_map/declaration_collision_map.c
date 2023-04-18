@@ -13,6 +13,8 @@ collision_map_t collision_map = {
     .map_path = "config/collision_map.txt",
     .nb_line = 0,
     .size_line = 0,
+    .pos = {0, 0},
+    .scale = {1, 1},
     .collision_tile = {
         {
             .representation = ' ',

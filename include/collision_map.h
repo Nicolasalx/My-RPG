@@ -22,6 +22,7 @@ typedef struct {
     char *map_path;
     int nb_line;
     int size_line;
+    sfVector2f **fixed_pos_tile;
     sfRectangleShape ***full_map;
     collision_tile_t collision_tile[30];
 } collision_map_t;
