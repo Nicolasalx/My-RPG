@@ -41,8 +41,8 @@ void create_big_life_bot(int i)
     system_bot[i].little_life_rectangle = sfRectangleShape_create();
     sfRectangleShape_setSize(system_bot[i].little_life_rectangle,
         system_bot[i].little_life_size_rectangle);
-    system_bot[i].little_life_pos_rectangle = (sfVector2f)
-        {system_bot[i].bot_pos_sprite.x - 20, system_bot[i].
+    system_bot[i].little_life_pos_rectangle = (sfVector2f) {
+        system_bot[i].bot_pos_sprite.x - 20, system_bot[i].
             bot_pos_sprite.y - 15};
     sfRectangleShape_setPosition(system_bot[i].little_life_rectangle,
         system_bot[i].little_life_pos_rectangle);

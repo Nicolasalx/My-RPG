@@ -37,10 +37,10 @@ void no_opacity(void)
 
 void render_animation(void)
 {
-    int time_to_level = current_level + 2;
     static bool display_animation = false;
     static bool enter_opacity_more = false;
     static bool enter_no_opacity = false;
+
     if (sfKeyboard_isKeyPressed(sfKeyN)) {
         display_animation = true;
         enter_no_opacity = true;

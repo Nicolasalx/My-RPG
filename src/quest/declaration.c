@@ -97,4 +97,11 @@ const int size_quest_menu =
 
 bool display_quest;
 
-already_move_t already_move = {.boss_move = 0, .hamlet_move = 0, .totem_move = 0};
+manage_animation_t manage_animation = {
+    .dont_move_amuletter = 0,
+    .dont_move_boss = 0,
+    .dont_move_totem = 0,
+    .move_amuletter = false,
+    .move_boss = false,
+    .move_totem = false,
+};

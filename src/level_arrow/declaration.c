@@ -140,4 +140,5 @@ touret_arrow_t touret_arrow[] = {
 
 const int size_touret_arrow = NB_ELEM(touret_arrow);
 
-clock_level_arrow_t clock_level_arrow = {.clock_animation = NULL, .reset_pos = NULL};
+clock_level_arrow_t clock_level_arrow =
+{.clock_animation = NULL, .reset_pos = NULL};

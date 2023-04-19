@@ -19,14 +19,12 @@ void render_xp_heal_bar(void)
     for (int i = 0; i < size_heal_xp_bar; ++i) {
         if (heal_xp_bar[i].choose_text == HEAL) {
             char heal[10];
-            int_to_string(inventory_content.nb_life, heal);
+            my_strcat(heal, INT(inventory_content.nb_life));
             my_strcat(heal, "/ 100");
             sfText_setString(heal_xp_bar[i].text, heal);
         }
         if (heal_xp_bar[i].choose_text == XP_YES) {
-            char xp[10];
-            int_to_string(inventory_content.nb_xp, xp);
-            sfText_setString(heal_xp_bar[i].text, xp);
+            sfText_setString(heal_xp_bar[i].text, INT(inventory_content.nb_xp));
         }
         if (heal_xp_bar[i].can_upgrade_rectangle == true) {
             sfVector2f new_rectangle = {(inventory_content.nb_life * 300) / 100, 40};

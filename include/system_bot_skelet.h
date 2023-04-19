@@ -56,5 +56,9 @@ extern const int size_system_bot;
 
 void create_system_bot(void);
 void render_system_bot(void);
+void get_direction_bot(int i);
+void chase_set_pos(int i, float elapsed_seconds);
+bool bot_chase_player(int i);
+void bot_got_base(int i);
 
 #endif /* !SYSTEM_BOT_SKELET_H_ */

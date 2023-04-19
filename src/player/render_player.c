@@ -20,6 +20,7 @@ void render_player(void)
     sfRectangleShape_setPosition(player.collision,
     (sfVector2f) {player.pos.x + (17 * player.scale.x), player.pos.y});
     sfRenderWindow_drawRectangleShape(window, player.collision, NULL);
+    sfRenderWindow_drawRectangleShape(window, player.attack_collision, NULL);
     sfRenderWindow_drawSprite(window,
     player.player_anim.sprite_sheet[player.anim_to_play].sprite, NULL);
 }

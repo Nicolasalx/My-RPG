@@ -9,14 +9,17 @@
 
 bool player_attack(unsigned int *anim_attack_frame, player_anim_e player_anim)
 {
+    player.damage = 0;
     if (*anim_attack_frame != 0) {
         if (*anim_attack_frame
         >= player.player_anim.sprite_sheet[player_anim].nb_frame) {
             *anim_attack_frame = -1;
         }
-        if (sfClock_getElapsedTime(player.player_anim.clock).microseconds /1000
+        if (sfClock_getElapsedTime
+        (player.player_anim.clock).microseconds / 1000
         >= 1000 / player.player_anim.sprite_sheet[player_anim].frame_rate) {
             ++ *anim_attack_frame;
+            player.damage = player.player_dps;
         }
         return true;
     }
@@ -90,9 +93,13 @@ void player_move(void)
 
     player_run(&direction);
 
-    try_to_move(&prev_pos_player, &prev_pos_rect);
-
+    if (sfClock_getElapsedTime(player.clock_move).microseconds / 1000
+        >= 10) {
+        sfClock_restart(player.clock_move);
+        try_to_move(&prev_pos_player, &prev_pos_rect);
+    }
     sfRectangleShape_setPosition(player.collision,
     (sfVector2f) {player.pos.x + (17 * player.scale.x), player.pos.y});
+    set_pos_attack_collision(player.anim_to_play);
     check_collision_player(prev_pos_player, prev_pos_rect);
 }

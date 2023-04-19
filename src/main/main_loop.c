@@ -8,6 +8,7 @@
 #include "main.h"
 #include "manage_view.h"
 #include "chest.h"
+#include "player.h"
 
 bool mouse_button_pressed;
 bool mouse_button_maintain;

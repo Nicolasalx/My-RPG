@@ -21,17 +21,23 @@ bool compute_new_player_pos(bool is_collide,
     return false;
 }
 
+void collision(int i, sfVector2f prev_pos_player,
+sfVector2f prev_pos_rect)
+{
+    for (int j = 0; j < collision_map.size_line; ++j) {
+        if (collision_map.full_map[i][j] != NULL &&
+        compute_new_player_pos(check_collision(player.collision,
+        collision_map.full_map[i][j]),
+        prev_pos_player, prev_pos_rect) != false) {
+            return;
+        }
+    }
+}
+
 void check_collision_player(sfVector2f prev_pos_player,
 sfVector2f prev_pos_rect)
 {
     for (int i = 0; i < collision_map.nb_line; ++i) {
-        for (int j = 0; j < collision_map.size_line; ++j) {
-            if (collision_map.full_map[i][j] != NULL &&
-            compute_new_player_pos(check_collision(player.collision,
-            collision_map.full_map[i][j]),
-            prev_pos_player, prev_pos_rect) != false) {
-                return;
-            }
-        }
+        collision(i, prev_pos_player, prev_pos_rect);
     }
 }
