@@ -31,7 +31,11 @@ typedef struct {
     sfVector2f pos;
     sfVector2f scale;
     double speed;
+    sfClock *clock_move;
     sfRectangleShape *collision;
+    sfRectangleShape *attack_collision;
+    int damage;
+    int player_dps;
     player_anim_e anim_to_play;
     anim_sprite_t player_anim;
 } player_t;
@@ -43,5 +47,6 @@ void render_player(void);
 void player_move(void);
 void check_collision_player(sfVector2f prev_pos_player,
     sfVector2f prev_pos_rect);
+void set_pos_attack_collision(player_anim_e player_anim);
 
 #endif /* !PLAYER_H_ */

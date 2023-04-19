@@ -8,6 +8,7 @@
 #include "main.h"
 #include "manage_view.h"
 #include "chest.h"
+#include "player.h"
 
 bool mouse_button_pressed;
 bool mouse_button_maintain;
@@ -25,6 +26,7 @@ void main_loop(void)
         if (sfKeyboard_isKeyPressed(sfKeyN)) { // ! tmp
             go_to_next_level = true;
         }
+        print(INT(player.damage), "\n");
         if (sfKeyboard_isKeyPressed(sfKeyE)) {
             chest[0].anim.play = true;
         }
