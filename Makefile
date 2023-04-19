@@ -77,7 +77,8 @@ PLAYER_SRC	=	src/player/declaration_player.c \
 				src/player/create_player.c \
 				src/player/render_player.c \
 				src/player/player_move.c \
-				src/player/check_collision_player.c
+				src/player/check_collision_player.c \
+				src/player/set_pos_attack_collision.c
 
 SETTINGS_SRC=	src/menu/settings/create.c \
 				src/menu/settings/declaration.c \
