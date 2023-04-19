@@ -15,17 +15,18 @@ void render_view(void)
 {
     static unsigned int window_x = 0;
 
+    collision_map.pos.x = 0;
     if (go_to_next_level) {
         map.pos.x -= LEVEL_TRANSITION_SPEED;
         collision_map.pos.x = -LEVEL_TRANSITION_SPEED;
-        window_x += LEVEL_TRANSITION_SPEED;
         for (int i = 0; i < nb_chest; ++i) {
             sfSprite_move(chest[i].sprite,
             (sfVector2f) {-LEVEL_TRANSITION_SPEED, 0});
         }
-        if (window_x > render_window.mode.width) {
+        window_x += LEVEL_TRANSITION_SPEED;
+        print("TEST\n");
+        if (window_x >= render_window.mode.width) {
             ++ current_level;
-            collision_map.pos.x = 0;
             go_to_next_level = false;
             window_x = 0;
         }
