@@ -7,6 +7,7 @@
 
 #include "system_bot_skelet.h"
 #include "main.h"
+#include "manage_view.h"
 #include "player.h"
 #include "manage_view.h"
 #include "math.h"
@@ -102,12 +103,12 @@ void check_if_player_enter(int i)
 void render_system_bot(void)
 {   
     static bool ini_pos_player = false;
-    if (current_level == 2) {
-        if (ini_pos_player == false) {
-            player.pos.x = 300;
-            player.pos.y = 300;
-            ini_pos_player = true;
-        }
+    if (ini_pos_player == false) {
+        player.pos.x = 300;
+        player.pos.y = 300;
+        ini_pos_player = true;
+    }
+    if (current_level == 1) {
         for (int i = 0; i < size_system_bot; ++i) {
             check_if_player_enter(i);
             get_direction_bot(i);

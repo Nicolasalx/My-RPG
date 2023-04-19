@@ -42,7 +42,7 @@ system_bot_t system_bot[] = {
         .distance = 100.0f,
     },
     {
-        .bot_pos_sprite = {1200, 800},
+        .bot_pos_sprite = {1350, 300},
         .bot_size_sprite = {0.2, 0.2},
         .bot_path_img = "game_src/system_bot/skelet.png",
         .reset_pos_bot = {1000, 100},

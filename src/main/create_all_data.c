@@ -13,15 +13,8 @@
 
 sfFont* font;
 
-void create_all_data(void)
+void create_abilities(void)
 {
-    quit_status = false;
-    display_quest = false;
-    can_open_settings = false;
-    mouse_button_pressed = false;
-    mouse_button_maintain = false;
-    mouse_button_released = false;
-    is_fullscreen = false;
     is_speed_up = false;
     strenght_up = false;
     attackspeed_up = false;
@@ -31,6 +24,18 @@ void create_all_data(void)
     is_bloodbath = false;
     is_glacial_slow = false;
     is_final = false;
+}
+
+void create_all_data(void)
+{
+    quit_status = false;
+    display_quest = false;
+    can_open_settings = false;
+    mouse_button_pressed = false;
+    mouse_button_maintain = false;
+    mouse_button_released = false;
+    is_fullscreen = false;
+    create_abilities();
 
     for (int i = 0; create[i] != NULL; ++i) {
         create[i]();

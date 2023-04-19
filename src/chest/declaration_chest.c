@@ -11,7 +11,7 @@
 
 chest_t chest[] = {
     {
-        .pos = {1344, 100},
+        .pos = {1344, 800},
         .scale = {4, 4},
         .path = "game_src/chest/blue_chest.png",
         .anim = {

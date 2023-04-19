@@ -12,43 +12,43 @@ img_button_menu_t img_button_menu[] = {
 
     {
     .pos = {1860, 5},
-    .path_img = "game_src/Menu_button/play.png",
-    .size = {0.5, 0.5},
+    .path_img = "game_src/butons/Menu/Square/Buttons/fullscreen.png",
+    .size = {0.2, 0.2},
     .redirect = resize_button
     },
 
     {
     .pos = {800, 50},
-    .path_img = "game_src/Menu_button/play.png",
-    .size = {1.7, 1.7},
+    .path_img = "game_src/butons/Menu/Large/Colored/New_Game.png",
+    .size = {0.5, 0.5},
     .redirect = play_button
     },
 
     {
     .pos = {800, 250},
-    .path_img = "game_src/Menu_button/play.png",
-    .size = {1.7, 1.7},
+    .path_img = "game_src/butons/Menu/Large/Colored/Play.png",
+    .size = {0.5, 0.5},
     .redirect = play_button
     },
 
     {
     .pos = {800, 450},
-    .path_img = "game_src/Menu_button/setting.png",
-    .size = {1.7, 1.7},
+    .path_img = "game_src/butons/Menu/Large/Colored/Settings.png",
+    .size = {0.5, 0.5},
     .redirect = setting_button
     },
 
     {
     .pos = {790, 650},
-    .path_img = "game_src/Menu_button/quit.png",
-    .size = {1.7, 1.7},
+    .path_img = "game_src/butons/Menu/Large/Colored/Controls.png",
+    .size = {0.5, 0.5},
     .redirect = tutorial_button
     },
 
     {
     .pos = {790, 850},
-    .path_img = "game_src/Menu_button/quit.png",
-    .size = {1.7, 1.7},
+    .path_img = "game_src/butons/Menu/Large/Colored/Quit.png",
+    .size = {0.5, 0.5},
     .redirect = quit_button
     },
 };
