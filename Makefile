@@ -22,11 +22,14 @@ MAP_SRC			=	src/map/declaration_map.c \
 
 SYSTEM_BOT_SRC	=	src/system_bot_skelet/declaration.c \
 					src/system_bot_skelet/create.c \
-					src/system_bot_skelet/render.c
+					src/system_bot_skelet/render.c \
+					src/system_bot_skelet/skelet_ia.c
 
 INVENTORY_SRC	=	src/menu_game/inventory/declaration.c \
 					src/menu_game/inventory/create.c \
-					src/menu_game/inventory/render.c
+					src/menu_game/inventory/render.c \
+					src/menu_game/inventory/stuff.c \
+					src/menu_game/inventory/create_rectangle.c
 
 LEVEL_ARROW_SRC	=	src/level_arrow/declaration.c \
 					src/level_arrow/create.c \

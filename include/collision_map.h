@@ -31,5 +31,11 @@ extern collision_map_t collision_map;
 
 void create_collision_map(void);
 void render_collision_map(void);
+void exec_collisions(int i, char **config_map);
+sfVector2f find_matching_pos(char c, collision_tile_t *collision_tile);
+sfVector2f find_matching_size(char c, collision_tile_t *collision_tile);
+void create_map_rectangle_board(char **config_map);
+char **get_collision_map_config_file(void);
+void create_collision_map(void);
 
 #endif /* !COLLISION_MAP_H_ */

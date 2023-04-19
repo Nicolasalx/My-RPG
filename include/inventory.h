@@ -150,6 +150,9 @@ void create_button_settings_game_menu(void);
 void create_saving_inventory(void);
 void create_validate_saving_option(void);
 void create_stuff_inventory(void);
-char* int_to_string(int value, char* buffer);
+void anim_clothes(int i);
+void create_clothes_rectangle(int i);
+void create_front_inventory(void);
+void create_rectangle_front(int i);
 
 #endif /* !INVENTORY_H_ */

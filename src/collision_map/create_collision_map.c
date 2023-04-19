@@ -12,6 +12,7 @@
 #include <unistd.h>
 #include "my_file.h"
 
+
 sfVector2f find_matching_size(char c, collision_tile_t *collision_tile)
 {
     for (int i = 0; collision_tile[i].representation != '\0'; ++i) {
@@ -45,20 +46,7 @@ sfVector2f find_matching_pos(char c, collision_tile_t *collision_tile)
 void create_map_rectangle_board(char **config_map)
 {
     for (int i = 0; config_map[i] != NULL ; ++i) {
-        for (int j = 0; config_map[i][j] != '\0'; ++j) {
-            if (find_matching_size(config_map[i][j], collision_map.collision_tile).x != 0) {
-                collision_map.full_map[i][j] = sfRectangleShape_create();
-                sfRectangleShape_setFillColor(collision_map.full_map[i][j], sfTransparent);
-                sfRectangleShape_setOutlineColor(collision_map.full_map[i][j], sfGreen);
-                sfRectangleShape_setOutlineThickness(collision_map.full_map[i][j], 1);
-                sfRectangleShape_setSize(collision_map.full_map[i][j],
-                find_matching_size(config_map[i][j], collision_map.collision_tile));
-                sfRectangleShape_setPosition(collision_map.full_map[i][j],
-                find_matching_pos(config_map[i][j], collision_map.collision_tile));
-            } else {
-                collision_map.full_map[i][j] = NULL;
-            }
-        }
+        exec_collisions(i, config_map);
     }
 }
 

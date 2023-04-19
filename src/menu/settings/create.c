@@ -32,7 +32,6 @@ void create_button_settings(void)
         sfText_setPosition(button_settings[i].text,
         button_settings[i].pos_text);
         sfText_setFillColor(button_settings[i].text, sfWhite);
-
         button_settings[i].rectangle = sfRectangleShape_create();
         sfRectangleShape_setOutlineThickness(button_settings[i].rectangle,
             3);

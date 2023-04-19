@@ -33,8 +33,7 @@ void open_game_menu(sfEvent event)
         event.type == sfEvtKeyPressed &&
     event.key.code == sfKeyEscape) {
         can_open_game_menu = false;
-    }
-    else if (game_state == GAME && event.type == sfEvtKeyPressed &&
+    } else if (game_state == GAME && event.type == sfEvtKeyPressed &&
         event.key.code == sfKeyEscape) {
         can_open_game_menu = true;
     }

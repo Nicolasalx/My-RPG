@@ -14,7 +14,8 @@ bool player_attack(unsigned int *anim_attack_frame, player_anim_e player_anim)
         >= player.player_anim.sprite_sheet[player_anim].nb_frame) {
             *anim_attack_frame = -1;
         }
-        if (sfClock_getElapsedTime(player.player_anim.clock).microseconds /1000
+        if (sfClock_getElapsedTime
+        (player.player_anim.clock).microseconds / 1000
         >= 1000 / player.player_anim.sprite_sheet[player_anim].frame_rate) {
             ++ *anim_attack_frame;
         }

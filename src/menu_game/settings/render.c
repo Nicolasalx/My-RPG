@@ -22,7 +22,8 @@ void display_settings_and_tuto(bool *open_settings, bool *open_tuto)
         }
         sfRenderWindow_drawSprite(window, settings_button_game_menu[2].sprite,
             NULL);
-    } else if (*open_settings == true && *open_tuto == false) {
+        return;
+    }if (*open_settings == true && *open_tuto == false) {
         render_settings();
         if (is_mouse_over_sprite(settings_button_game_menu[2].sprite) &&
             mouse_button_pressed == true) {
