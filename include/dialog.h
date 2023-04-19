@@ -14,6 +14,7 @@
 typedef enum {
     PNJ_QUEST_ARROW,
     PNJ_QUEST_SKELET,
+    PNJ_QUEST_BOSS,
     NB_DIALOG,
 } when_active_dialog_t;
 
@@ -31,6 +32,20 @@ typedef struct {
     sfVector2f pos_sprite;
     sfVector2f size_sprite;
     char *path_img;
+
+    sfSprite *sprite_pnj;
+    sfTexture *texture_pnj;
+    sfVector2f pos_sprite_pnj;
+    sfVector2f size_sprite_pnj;
+    char *path_img_pnj;
+
+    sfCircleShape *circle;
+    sfVector2f position_circle;
+    float radius;
+    sfColor color_circle;
+    sfColor color_border_circle;
+    float outlineThickness;
+
     when_active_dialog_t when_active_dialog;
 
     sfClock *clock;

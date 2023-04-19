@@ -44,6 +44,10 @@ typedef struct {
 
 extern manage_animation_t manage_animation;
 
+extern bool quest_totem;
+extern bool quest_amuletter;
+extern bool quest_boss;
+
 extern img_quest_t img_quest_menu[];
 extern const int size_quest_menu;
 extern bool display_quest;

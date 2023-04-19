@@ -13,3 +13,5 @@ animation_level_t animation_level =
     .pos_rectangle = {0, 0},
     .size_rectangle = {1920, 1080},
 };
+
+bool display_animation = false;

@@ -8,19 +8,23 @@
 #include "quest.h"
 #include "main.h"
 #include "inventory.h"
+#include "animation.h"
 
 void check_text_move(void)
 {
     if (inventory_content.have_totem == true) {
         manage_animation.move_totem = true;
+        quest_totem = true;
     }
     if (manage_animation.move_totem == true && inventory_content.have_amuletter
         == true && inventory_content.nb_key > 0) {
         manage_animation.move_amuletter = true;
+        quest_amuletter = true;
     }
     if (manage_animation.move_totem == true && manage_animation.move_amuletter
         == true && inventory_content.nb_key > 2) {
         manage_animation.move_boss = true;
+        quest_boss = true;
     }
 }
 
@@ -49,8 +53,8 @@ void manage_text_quest(void)
 
 void render_menu_quest(void)
 {
+    check_text_move();
     if (display_quest == true) {
-        check_text_move();
         manage_text_quest();
     }
 }

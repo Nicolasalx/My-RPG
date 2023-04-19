@@ -35,7 +35,6 @@ render_func_t render_func[] = {
     {render_xp_heal_bar, GAME},
     {render_dialog, GAME},
     {render_player, GAME},
-    {render_animation, GAME},
     {render_menu_quest, GAME},
     {NULL, 0}
 };

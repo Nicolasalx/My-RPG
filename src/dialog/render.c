@@ -7,9 +7,23 @@
 
 #include "dialog.h"
 #include "main.h"
+#include "quest.h"
 #include "inventory.h"
+#include "player.h"
+#include "manage_view.h"
 
-#include <stdio.h>
+bool intersect_pnj(sfCircleShape *circle)
+{
+    sfFloatRect rectangleBounds = sfRectangleShape_getGlobalBounds(player.collision);
+    sfVector2f circleCenter = sfCircleShape_getPosition(circle);
+    float circleRadius = sfCircleShape_getRadius(circle);
+    sfFloatRect circleBounds = {circleCenter.x - circleRadius,
+    circleCenter.y - circleRadius, circleRadius * 2.f, circleRadius * 2.f};
+    if (sfFloatRect_intersects(&rectangleBounds, &circleBounds, NULL)) {
+        return true;
+    }
+    return false;
+}
 
 void print_text_char(int i)
 {
@@ -32,15 +46,57 @@ void print_text_char(int i)
     sfSleep((sfTime) {2000000});
 }
 
-void render_dialog(void)
+void pnj_amuletter(int i)
 {
-    for (int i = 0; i < size_create_dialog; ++i) {
-        if (sfKeyboard_isKeyPressed(sfKeyA)) {
+    if (create_dialog[i].when_active_dialog == PNJ_QUEST_SKELET) {
+        if (intersect_pnj(create_dialog[i].circle) == true && sfKeyboard_isKeyPressed(sfKeyE)) {
+            activated_dialog[PNJ_QUEST_SKELET] = true;
+        }
+        sfRenderWindow_drawCircleShape(window, create_dialog[i].circle, NULL);
+        sfRenderWindow_drawSprite(window, create_dialog[i].sprite_pnj, NULL);
+    }
+}
+
+void pnj_totem(int i)
+{
+    if (create_dialog[i].when_active_dialog == PNJ_QUEST_ARROW) {
+        if (intersect_pnj(create_dialog[i].circle) == true && sfKeyboard_isKeyPressed(sfKeyE)) {
             activated_dialog[PNJ_QUEST_ARROW] = true;
         }
+        sfRenderWindow_drawCircleShape(window, create_dialog[i].circle, NULL);
+        sfRenderWindow_drawSprite(window, create_dialog[i].sprite_pnj, NULL);
+    }
+}
 
-        if (sfKeyboard_isKeyPressed(sfKeyB)) {
-            activated_dialog[PNJ_QUEST_SKELET] = true;
+void pnj_boss(int i)
+{
+    if (create_dialog[i].when_active_dialog == PNJ_QUEST_BOSS) {
+        if (intersect_pnj(create_dialog[i].circle) == true && sfKeyboard_isKeyPressed(sfKeyE)) {
+            activated_dialog[PNJ_QUEST_BOSS] = true;
+        }
+        sfRenderWindow_drawCircleShape(window, create_dialog[i].circle, NULL);
+        sfRenderWindow_drawSprite(window, create_dialog[i].sprite_pnj, NULL);
+    }
+}
+
+void render_dialog(void)
+{
+    if (current_level != 0) {
+        return;
+    }
+    static bool player_pos_start = false;
+    if (player_pos_start == false) {
+        player.pos.x = 300;
+        player.pos.y = 450;
+        player_pos_start = true;
+    }
+    for (int i = 0; i < size_create_dialog; ++i) {
+        if (quest_boss == true) {
+            pnj_boss(i);
+        } else if (quest_amuletter == true) {
+            pnj_amuletter(i);
+        } else if (quest_totem == true) {
+            pnj_totem(i);
         }
 
         if (activated_dialog[PNJ_QUEST_ARROW] == true && create_dialog[i].when_active_dialog == PNJ_QUEST_ARROW) {
@@ -53,6 +109,12 @@ void render_dialog(void)
             sfRenderWindow_drawSprite(window, create_dialog[i].sprite, NULL);
             print_text_char(i);
             activated_dialog[PNJ_QUEST_SKELET] = false;
+        }
+
+        if (activated_dialog[PNJ_QUEST_BOSS] == true && create_dialog[i].when_active_dialog == PNJ_QUEST_BOSS) {
+            sfRenderWindow_drawSprite(window, create_dialog[i].sprite, NULL);
+            print_text_char(i);
+            activated_dialog[PNJ_QUEST_BOSS] = false;
         }
     }
 }

@@ -9,57 +9,29 @@
 #include "main.h"
 #include "manage_view.h"
 
-void more_opacity(void)
+void opacity_more(int level_choose)
 {
-    float elapsed_seconds = sfTime_asSeconds(sfClock_getElapsedTime(animation_level.clock));
-    if (elapsed_seconds > 0.1) {
-        if (animation_level.color_rectangle.a < 255) {
-            animation_level.color_rectangle.a += 30;
-        }
-        sfRectangleShape_setFillColor(animation_level.rectangle, animation_level.color_rectangle);
-        sfClock_restart(animation_level.clock);
+    sfTime elapsed = sfClock_getElapsedTime(animation_level.clock);
+    float elapsedTime = sfTime_asSeconds(elapsed);
+    if (elapsedTime < 2.f) {
+        animation_level.color_rectangle.a = (sfUint8)(255 * elapsedTime / 2.f);
+    } else if (elapsedTime > 1.90f && elapsedTime < 2.1f) {
+        current_level = level_choose;
+    } else if (elapsedTime < 4.f) {
+        animation_level.color_rectangle.a = (sfUint8)(255 * (4.f - elapsedTime) / 2.f);
     }
+    else {
+        sfClock_restart(animation_level.clock);
+        animation_level.color_rectangle.a = 0;
+        display_animation = false;
+    }
+    sfRectangleShape_setFillColor(animation_level.rectangle, animation_level.color_rectangle);
     sfRenderWindow_drawRectangleShape(window, animation_level.rectangle, NULL);
 }
 
-void no_opacity(void)
+void render_animation(int level_choose)
 {
-    float elapsed_seconds = sfTime_asSeconds(sfClock_getElapsedTime(animation_level.clock));
-    if (elapsed_seconds > 0.1) {
-        if (animation_level.color_rectangle.a > 0) {
-            animation_level.color_rectangle.a -= 30;
-        }
-        sfRectangleShape_setFillColor(animation_level.rectangle, animation_level.color_rectangle);
-        sfClock_restart(animation_level.clock);
-    }
-    sfRenderWindow_drawRectangleShape(window, animation_level.rectangle, NULL);
-}
-
-void render_animation(void)
-{
-    static bool display_animation = false;
-    static bool enter_opacity_more = false;
-    static bool enter_no_opacity = false;
-
-    if (sfKeyboard_isKeyPressed(sfKeyN)) {
-        display_animation = true;
-        enter_no_opacity = true;
-        enter_opacity_more = true;
-        sfClock_restart(animation_level.clock);
-        sfClock_restart(animation_level.clock_restart);
-    }
     if (display_animation == true) {
-        float elapsed_seconds_restart = sfTime_asSeconds(sfClock_getElapsedTime(animation_level.clock_restart));
-        if (elapsed_seconds_restart < 3 && enter_opacity_more == true) {
-            printf("More_opacity\n");
-            more_opacity();
-            enter_opacity_more = false;
-        } else if (elapsed_seconds_restart >= 3 && elapsed_seconds_restart < 6 && enter_no_opacity == true) {
-            no_opacity();
-            printf("NO\n");
-            enter_no_opacity = false;
-        } else {
-            display_animation = false;
-        }
+        opacity_more(level_choose);
     }
 }

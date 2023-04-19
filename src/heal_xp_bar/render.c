@@ -19,7 +19,7 @@ void render_xp_heal_bar(void)
     for (int i = 0; i < size_heal_xp_bar; ++i) {
         if (heal_xp_bar[i].choose_text == HEAL) {
             char heal[10];
-            my_strcat(heal, INT(inventory_content.nb_life));
+            my_nb_to_str(inventory_content.nb_life, heal);
             my_strcat(heal, "/ 100");
             sfText_setString(heal_xp_bar[i].text, heal);
         }

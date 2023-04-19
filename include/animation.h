@@ -21,8 +21,10 @@ typedef struct {
     sfClock *clock_restart;
 } animation_level_t;
 
+extern bool display_animation;
+
 extern animation_level_t animation_level;
 void create_animation(void);
-void render_animation(void);
+void render_animation(int level_choose);
 
 #endif /* !ANIMATION_H_ */

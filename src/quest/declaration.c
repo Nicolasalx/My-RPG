@@ -105,3 +105,7 @@ manage_animation_t manage_animation = {
     .move_boss = false,
     .move_totem = false,
 };
+
+bool quest_totem = false;
+bool quest_amuletter = false;
+bool quest_boss = false;
