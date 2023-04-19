@@ -21,6 +21,7 @@
 #include "dialog.h"
 #include "heal_xp_bar.h"
 #include "chest.h"
+#include "animation.h"
 
 void (*create[])(void) = {
     create_default_font,
@@ -35,6 +36,7 @@ void (*create[])(void) = {
     create_loading_content,
     create_tutorial,
     create_system_bot,
+    create_animation,
     create_button_settings_game_menu,
     create_map,
     create_clothes_inventory,

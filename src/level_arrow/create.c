@@ -13,11 +13,6 @@ void create_arrow_and_touret(void)
     clock_level_arrow.clock_animation = sfClock_create();
     clock_level_arrow.reset_pos = sfClock_create();
     for (int i = 0; i < size_touret_arrow; ++i) {
-        touret_arrow[i].position_touret.x += 1920;
-        touret_arrow[i].position_arrow.x += 1920;
-        touret_arrow[i].reset_pos_arrow.x += 1920;
-        touret_arrow[i].pos_start_arrow.x += 1920;
-        touret_arrow[i].pos_end_arrow.x += 1920;
 
         touret_arrow[i].direction_arrow.x = touret_arrow[i].pos_end_arrow.x - touret_arrow[i].pos_start_arrow.x;
         touret_arrow[i].direction_arrow.y = touret_arrow[i].pos_end_arrow.y - touret_arrow[i].pos_start_arrow.y;

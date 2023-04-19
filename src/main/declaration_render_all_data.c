@@ -20,6 +20,7 @@
 #include "heal_xp_bar.h"
 #include "dialog.h"
 #include "chest.h"
+#include "animation.h"
 
 render_func_t render_func[] = {
     {render_map, GAME},
@@ -35,5 +36,6 @@ render_func_t render_func[] = {
     {render_dialog, GAME},
     {render_chest, GAME},
     {render_player, GAME},
+    {render_animation, GAME},
     {NULL, 0}
 };

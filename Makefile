@@ -13,6 +13,10 @@ DIALOG_SRC		=	src/dialog/create.c \
 					src/dialog/declaration.c \
 					src/dialog/render.c
 
+ANIMATION_SRC	=	src/animation/create.c \
+					src/animation/declaration.c \
+					src/animation/render.c
+
 HEAL_XP_BAR_SRC	=	src/heal_xp_bar/create.c \
 					src/heal_xp_bar/declaration.c \
 					src/heal_xp_bar/render.c
@@ -127,7 +131,8 @@ SRC			=	src/main.c \
 				$(MANAGEVIEW_SRC) \
 				$(CHEST_SRC) \
 				$(HEAL_XP_BAR_SRC) \
-				$(DIALOG_SRC)
+				$(DIALOG_SRC) \
+				$(ANIMATION_SRC)
 
 CFLAGS		=	-W -Wall -Wextra -I ./include -I ./include/lib -lcsfml-system \
 				-lcsfml-graphics -lcsfml-window -lcsfml-audio -lm
