@@ -17,7 +17,8 @@ SRCBITSHIFT	=	bit_shift/get_bit_value.c \
 				bit_shift/set_all_bit_to_zero.c \
 				bit_shift/set_bit_to_one.c \
 				bit_shift/set_bit_to_zero.c \
-				bit_shift/my_memset.c
+				bit_shift/my_memset.c \
+				bit_shift/my_memcpy.c
 
 SRCFILE		=	file/count_nb_line.c \
 				file/count_lines_size.c \
