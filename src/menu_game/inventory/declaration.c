@@ -306,7 +306,8 @@ inventory_content_t inventory_content = {
     .nb_key = 1,
     .nb_potion = 2,
     .nb_xp = 6,
-    .have_amuletter = true,
+    .have_amuletter = false,
     .have_totem = false,
     .money = 9,
+    .nb_life = 80,
 };
