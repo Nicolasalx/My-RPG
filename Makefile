@@ -12,6 +12,10 @@ CHEST_SRC		=	src/chest/create_chest.c \
 					src/chest/declaration_chest.c \
 					src/chest/render_chest.c
 
+SHOP_SRC		=	src/shop/create.c \
+					src/shop/declaration.c \
+					src/shop/render.c
+
 DOOR_SRC		=	src/door/create.c \
 					src/door/declaration.c \
 					src/door/render.c
@@ -147,7 +151,8 @@ SRC			=	src/main.c \
 				$(DIALOG_SRC) \
 				$(ANIMATION_SRC) \
 				$(DOOR_SRC) \
-				$(SAVE_SYSTEM_SRC)
+				$(SAVE_SYSTEM_SRC) \
+				$(SHOP_SRC)
 
 CFLAGS		=	-W -Wall -Wextra -I ./include -I ./include/lib -lcsfml-system \
 				-lcsfml-graphics -lcsfml-window -lcsfml-audio -lm

@@ -23,6 +23,7 @@
 #include "chest.h"
 #include "animation.h"
 #include "door.h"
+#include "shop.h"
 
 void (*create[])(void) = {
     create_default_font,
@@ -50,6 +51,7 @@ void (*create[])(void) = {
     create_door,
     create_dialog_text,
     create_collision_map,
+    create_shop,
     create_chest,
     NULL
 };
