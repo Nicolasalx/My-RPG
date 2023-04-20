@@ -43,4 +43,5 @@ void render_view(void)
             go_to_next_level();
         }
     }
+    print("Current level :", INT(current_level), " Next level :", INT(next_level), "\n");
 }
