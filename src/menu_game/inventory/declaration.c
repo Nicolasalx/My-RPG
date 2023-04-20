@@ -299,16 +299,16 @@ stuff_inventory_t stuff_inventory[] = {
 const int size_stuff_inventory = NB_ELEM(stuff_inventory);
 
 inventory_content_t inventory_content = {
-    .have_a_helmet = true,
+    .have_a_helmet = false,
     .have_armor = true,
     .have_boot = true,
-    .have_glove = true,
+    .have_glove = false,
     .nb_key = 0,
     .nb_potion = 2,
-    .nb_xp = 50,
+    .nb_xp = 0,
     .have_amuletter = false,
     .have_totem = false,
-    .money = 9,
+    .money = 0,
     .nb_life = 80,
     .nb_life_max = 100
 };
