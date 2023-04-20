@@ -5,6 +5,8 @@
 ## Makefile
 ##
 
+MUSIC_SRC		=	src/music/launch_background_music.c
+
 SAVE_SYSTEM_SRC	=	src/saving_system/save_data.c \
 					src/saving_system/load_data.c \
 					src/saving_system/declaration_save_system.c \
@@ -159,7 +161,8 @@ SRC			=	src/main.c \
 				$(ANIMATION_SRC) \
 				$(DOOR_SRC) \
 				$(SAVE_SYSTEM_SRC) \
-				$(SHOP_SRC)
+				$(SHOP_SRC) \
+				$(MUSIC_SRC)
 
 CFLAGS		=	-W -Wall -Wextra -I ./include -I ./include/lib -lcsfml-system \
 				-lcsfml-graphics -lcsfml-window -lcsfml-audio -lm
