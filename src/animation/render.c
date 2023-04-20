@@ -38,4 +38,5 @@ void render_animation(int level_choose, bool *disable)
     if (display_animation == true && * disable == true) {
         opacity_more(level_choose, disable);
     }
+    
 }

@@ -18,13 +18,16 @@ typedef struct {
     sfVector2f size_rectangle;
 
     sfClock *clock;
+    sfClock *play;
     sfClock *clock_restart;
 } animation_level_t;
 
 extern bool display_animation;
+extern bool play_anim;
 
 extern animation_level_t animation_level;
 void create_animation(void);
 void render_animation(int level_choose, bool *disable);
+void play_animation(void);
 
 #endif /* !ANIMATION_H_ */

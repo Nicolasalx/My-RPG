@@ -54,5 +54,6 @@ render_fct_game_menu_t render_fct_game_menu[] = {
     {display_settings_inventory, SETTINGS},
     {display_loading_inventory, LOADING},
     {display_saving_inventory, SAVING},
+    {quit_in_game, QUIT},
     {NULL, 0}
 };
