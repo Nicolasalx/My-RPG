@@ -29,28 +29,23 @@ void verif_state(int i)
 void state(int i)
 {
     sfVector2f hover = {
-    .x = img_button_menu[i].pos.x - 5,
-    .y = img_button_menu[i].pos.y - 5
+        .x = img_button_menu[i].pos.x,
+        .y = img_button_menu[i].pos.y + 5
     };
-    sfVector2f pressed =
-    {
-    .x = img_button_menu[i].pos.x - 30,
-    .y = img_button_menu[i].pos.y - 30
+    sfVector2f pressed = {
+        .x = img_button_menu[i].pos.x,
+        .y = img_button_menu[i].pos.y + 30
     };
 
     if (img_button_menu[i].buton_state == NORMAL) {
-        sfSprite_setPosition(img_button_menu[i].sprite,
-        img_button_menu[i].pos);
+        sfSprite_setPosition(img_button_menu[i].sprite,img_button_menu[i].pos);
         return;
     }
     if (img_button_menu[i].buton_state == HOVER) {
-        sfSprite_setPosition(img_button_menu[i].sprite,
-        hover);
+        sfSprite_setPosition(img_button_menu[i].sprite, hover);
         return;
     }
     if (img_button_menu[i].buton_state == PRESSED) {
-        sfSprite_setPosition(img_button_menu[i].sprite,
-        pressed);
-        return;
+        sfSprite_setPosition(img_button_menu[i].sprite, pressed);
     }
 }

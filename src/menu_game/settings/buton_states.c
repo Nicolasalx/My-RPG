@@ -29,13 +29,12 @@ void verification(int i)
 void states(int i)
 {
     sfVector2f hover = {
-    .x = settings_button_game_menu[i].pos_sprite.x - 5,
-    .y = settings_button_game_menu[i].pos_sprite.y - 5
+        .x = settings_button_game_menu[i].pos_sprite.x,
+        .y = settings_button_game_menu[i].pos_sprite.y + 5
     };
-    sfVector2f pressed =
-    {
-    .x = settings_button_game_menu[i].pos_sprite.x - 30,
-    .y = settings_button_game_menu[i].pos_sprite.y - 30
+    sfVector2f pressed = {
+        .x = settings_button_game_menu[i].pos_sprite.x,
+        .y = settings_button_game_menu[i].pos_sprite.y + 30
     };
 
     if (settings_button_game_menu[i].states == NORMALED) {
@@ -44,13 +43,9 @@ void states(int i)
         return;
     }
     if (settings_button_game_menu[i].states == HOVERED) {
-        sfSprite_setPosition(settings_button_game_menu[i].sprite,
-        hover);
-        return;
+        sfSprite_setPosition(settings_button_game_menu[i].sprite, hover);
     }
     if (settings_button_game_menu[i].states == PRESS) {
-        sfSprite_setPosition(settings_button_game_menu[i].sprite,
-        pressed);
-        return;
+        sfSprite_setPosition(settings_button_game_menu[i].sprite, pressed);
     }
 }

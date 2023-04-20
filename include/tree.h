@@ -21,17 +21,22 @@ typedef struct {
     void (*abilities)(int);
 } create_tree_t;
 
+typedef enum {
+    SPEED_UP,
+    STRENGHT_UP,
+    ATTACKSPEED_UP,
+    HEALTH_UP,
+    CRITICAL_UP,
+    REGENE,
+    IS_FUREUR,
+    IS_BLOODBATH,
+    IS_GLACIAL_SLOW,
+    IS_FINAL
+} abilities_e;
+
 extern const int size_tree;
-extern bool is_speed_up;
-extern bool strenght_up;
-extern bool attackspeed_up;
-extern bool health_up;
-extern bool critical_up;
-extern bool regene;
-extern bool is_fureur;
-extern bool is_bloodbath;
-extern bool is_glacial_slow;
-extern bool is_final;
+
+extern bool abilities[];
 
 extern create_tree_t fondation[];
 
