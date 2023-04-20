@@ -9,6 +9,7 @@
 
 bool go_to_next_level = {false};
 int current_level = {0};
+int next_level = {0};
 
 void create_view(void)
 {
