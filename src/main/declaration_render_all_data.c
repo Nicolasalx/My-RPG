@@ -28,6 +28,8 @@ render_func_t render_func[] = {
     {render_map, GAME},
     {render_collision_map, GAME},
     {render_chest, GAME},
+    {render_dialog, GAME},
+    {render_player, GAME},
     {render_menu, MENU},
     {render_level_arrow, GAME},
     {render_system_bot, GAME},

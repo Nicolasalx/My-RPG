@@ -34,6 +34,7 @@ typedef struct {
     bool have_totem;
     bool have_amuletter;
     unsigned int nb_life;
+    unsigned int nb_life_max;
 } inventory_content_t;
 
 typedef enum {
