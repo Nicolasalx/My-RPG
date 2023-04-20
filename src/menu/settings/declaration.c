@@ -83,5 +83,3 @@ button_settings_t button_settings [] = {
 const int size_button_settings = NB_ELEM(button_settings);
 
 bool can_open_settings;
-
-buton_state_t buton_state = {NORMAL};

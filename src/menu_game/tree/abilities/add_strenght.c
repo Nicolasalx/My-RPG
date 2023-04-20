@@ -7,12 +7,14 @@
 
 #include "tree.h"
 #include "inventory.h"
+#include "player.h"
 
 void add_strenght(int i)
 {
     if (strenght_up == false && inventory_content.nb_xp >= 6){
         sfSprite_setColor(fondation[i].sprite, (sfColor) {255, 255, 255, 255});
         strenght_up = true;
+        player.player_dps += 1;
         inventory_content.nb_xp -= 6;
         return;
     }

@@ -16,18 +16,21 @@ settings_button_game_menu_t settings_button_game_menu[] = {
         .pos_sprite = {600, 200},
         .size_sprite = {1, 1},
         .choose_opt = 1,
+        .states = NORMALED
     },
     {
         .path_img = "game_src/butons/Menu/Large/Colored/Controls.png",
         .pos_sprite = {600, 600},
         .size_sprite = {1, 1},
         .choose_opt = 2,
+        .states = NORMALED
     },
     {
         .path_img = "game_src/butons/Menu/Large/Colored/Quit.png",
         .pos_sprite = {750, 900},
         .size_sprite = {0.5, 0.5},
         .choose_opt = 3,
+        .states = NORMALED
     }
 };
 

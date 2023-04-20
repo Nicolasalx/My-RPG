@@ -10,6 +10,12 @@
     #include "SFML/Graphics.h"
     #include <stdbool.h>
 
+typedef enum {
+    NORMAL,
+    HOVER,
+    PRESSED
+} buton_state_t;
+
 typedef struct {
     sfSprite *sprite;
     sfTexture *texture;
@@ -17,6 +23,7 @@ typedef struct {
     sfVector2f size;
     char *path_img;
     void (*redirect)(void);
+    buton_state_t buton_state;
 } img_button_menu_t;
 
 typedef struct {
@@ -51,5 +58,7 @@ void setting_button(void);
 void create_tutorial(void);
 void tutorial_button(void);
 void resize_button(void);
+void state(int i);
+void verif_state(int i);
 
 #endif /* !MENU_H_ */
