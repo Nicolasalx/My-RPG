@@ -17,6 +17,7 @@ void play_single_anim(sfSprite *sprite, single_anim_t *anim)
     if (anim->play == false || anim->stop_playing == true) {
         return;
     }
+    launch_open_chest_music();
     sfIntRect result_rect = {
         .left = anim->current_frame *
             (anim->texture_size.x / anim->nb_frame),

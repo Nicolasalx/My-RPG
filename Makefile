@@ -5,7 +5,8 @@
 ## Makefile
 ##
 
-MUSIC_SRC		=	src/music/launch_background_music.c
+MUSIC_SRC		=	src/music/launch_background_music.c \
+					src/music/launch_open_chest_music.c
 
 SAVE_SYSTEM_SRC	=	src/saving_system/save_data.c \
 					src/saving_system/load_data.c \
