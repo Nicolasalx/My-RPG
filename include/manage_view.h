@@ -11,7 +11,7 @@
     #include <SFML/Graphics.h>
     #include <stdbool.h>
 
-    #define LEVEL_TRANSITION_SPEED 10
+    #define LEVEL_TRANSITION_SPEED 1920
 
 extern sfView *window_view;
 extern int current_level;
