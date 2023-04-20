@@ -28,6 +28,9 @@ typedef struct {
     sfVector2f pos_sprite;
     sfVector2f size_sprite;
     char *path_img;
+
+    bool can_choose;
+    bool already_buy;
 } shop_t;
 
 typedef struct {

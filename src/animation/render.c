@@ -16,8 +16,6 @@ void opacity_more(int level_choose, bool *disable)
     float elapsedTime = sfTime_asSeconds(elapsed);
     if (elapsedTime >= 1.9f && elapsedTime <= 2.1f) {
         next_level = level_choose;
-        print(INT(next_level));
-        //current_level = level_choose;
     }
     if (elapsedTime < 2.f) {
         animation_level.color_rectangle.a = (sfUint8)(255 * elapsedTime / 2.f);

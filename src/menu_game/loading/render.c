@@ -7,6 +7,7 @@
 
 #include "inventory.h"
 #include <unistd.h>
+#include "save_system.h"
 
 void select_opt(int *last_choice, bool *can_validate, int i)
 {
@@ -19,16 +20,29 @@ void select_opt(int *last_choice, bool *can_validate, int i)
         }
         if (loading_content[i].validate == true && *can_validate == true) {
             print("Validate\n");
-            
+            switch (* last_choice)
+            {
+            case 1:
+                load_all_data(SAVE_1);
+                break;
+            case 2:
+                load_all_data(SAVE_2);
+                break;
+            case 3:
+                load_all_data(SAVE_3);
+                break;
+            default:
+                break;
+            }
+            print(INT(* last_choice), "\n");
         }
     }
 }
 
 void display_loading_inventory(void)
 {
-    //write(1, (const void *) &inventory_content, sizeof(inventory_content_t));
     static bool can_validate = false;
-    static int last_choice = false;
+    static int last_choice = 0;
     for (int i = 0; i < size_loading_content; ++i) {
         select_opt(&last_choice, &can_validate, i);
         sfRenderWindow_drawRectangleShape(window, loading_content[i].rectangle, NULL);

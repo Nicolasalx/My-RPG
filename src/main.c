@@ -11,7 +11,7 @@
 int main(void)
 {
     create_all_data();
-    load_all_data(SAVE_1);
+    //load_all_data(SAVE_1);
     if (is_create_success == false) {
         return 84;
     }

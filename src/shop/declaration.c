@@ -22,6 +22,8 @@ shop_t shop[] = {
         .pos_sprite = {0, 0},
         .size_sprite = {1 * 2.6, 1 * 2.6},
         .path_img = "game_src/shop/bg_shop.jpg",
+        .can_choose = false,
+        .already_buy = false,
     },
     {
         .pos_text = {100, 100},
@@ -36,6 +38,8 @@ shop_t shop[] = {
         .pos_sprite = {1850, 20},
         .size_sprite = {0.25, 0.25},
         .path_img = "game_src/butons/Menu/Square/Buttons/X.png",
+        .can_choose = true,
+        .already_buy = false,
     },
     {
         .pos_text = {100, 100},
@@ -50,6 +54,8 @@ shop_t shop[] = {
         .pos_sprite = {230, 400},
         .size_sprite = {0.7, 0.7},
         .path_img = "game_src/Menu_game/clothes/helmet.png",
+        .can_choose = true,
+        .already_buy = false,
     },
     {
         .pos_text = {100, 100},
@@ -64,6 +70,8 @@ shop_t shop[] = {
         .pos_sprite = {480, 400},
         .size_sprite = {0.6, 0.6},
         .path_img = "game_src/Menu_game/clothes/armor.png",
+        .can_choose = true,
+        .already_buy = false,
     },
     {
         .pos_text = {100, 100},
@@ -78,6 +86,8 @@ shop_t shop[] = {
         .pos_sprite = {700, 380},
         .size_sprite = {0.8, 0.8},
         .path_img = "game_src/Menu_game/clothes/glove.png",
+        .can_choose = true,
+        .already_buy = false,
     },
     {
         .pos_text = {100, 100},
@@ -92,6 +102,8 @@ shop_t shop[] = {
         .pos_sprite = {950, 390},
         .size_sprite = {0.8, 0.8},
         .path_img = "game_src/Menu_game/clothes/boot.png",
+        .can_choose = true,
+        .already_buy = false,
     },
     {
         .pos_text = {100, 100},
@@ -106,6 +118,8 @@ shop_t shop[] = {
         .pos_sprite = {1230, 393},
         .size_sprite = {0.25, 0.25},
         .path_img = "game_src/Menu_game/item/potion.png",
+        .can_choose = true,
+        .already_buy = false,
     },
     {
         .pos_text = {250, 580},
@@ -120,6 +134,8 @@ shop_t shop[] = {
         .pos_sprite = {200, 590},
         .size_sprite = {0.1, 0.1},
         .path_img = "game_src/Menu_game/item/money.png",
+        .can_choose = false,
+        .already_buy = false,
     },
     {
         .pos_text = {500, 580},
@@ -134,6 +150,8 @@ shop_t shop[] = {
         .pos_sprite = {450, 590},
         .size_sprite = {0.1, 0.1},
         .path_img = "game_src/Menu_game/item/money.png",
+        .can_choose = false,
+        .already_buy = false,
     },
     {
         .pos_text = {750, 580},
@@ -148,6 +166,8 @@ shop_t shop[] = {
         .pos_sprite = {700, 590},
         .size_sprite = {0.1, 0.1},
         .path_img = "game_src/Menu_game/item/money.png",
+        .can_choose = false,
+        .already_buy = false,
     },
     {
         .pos_text = {1000, 580},
@@ -162,6 +182,8 @@ shop_t shop[] = {
         .pos_sprite = {950, 590},
         .size_sprite = {0.1, 0.1},
         .path_img = "game_src/Menu_game/item/money.png",
+        .can_choose = false,
+        .already_buy = false,
     },
     {
         .pos_text = {1250, 580},
@@ -176,6 +198,25 @@ shop_t shop[] = {
         .pos_sprite = {1200, 590},
         .size_sprite = {0.1, 0.1},
         .path_img = "game_src/Menu_game/item/money.png",
+        .can_choose = false,
+        .already_buy = false,
+    },
+
+    {
+        .pos_text = {1535, 430},
+        .size_text = 50,
+        .text_to_write = "Validation",
+        .color_text = (sfColor) {0, 0, 0, 255},
+
+        .color_rectangle = (sfColor) {128, 128, 128, 180},
+        .pos_rectangle = {1500, 420},
+        .size_rectangle = {200, 100},
+
+        .pos_sprite = {1200, 590},
+        .size_sprite = {0.1, 0.1},
+        .path_img = "game_src/Menu_game/item/money.png",
+        .can_choose = false,
+        .already_buy = false,
     },
 };
 
