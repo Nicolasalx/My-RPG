@@ -10,6 +10,13 @@
 #include "inventory.h"
 #include "animation.h"
 
+void display_first_anim(void)
+{
+    if (play_anim == true) {
+        play_animation();
+    }
+}
+
 void check_text_move(void)
 {
     if (inventory_content.have_totem == false) {
@@ -59,4 +66,5 @@ void render_menu_quest(void)
     if (display_quest == true) {
         manage_text_quest();
     }
+    display_first_anim();
 }

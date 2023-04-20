@@ -19,22 +19,16 @@ void setting_button(void)
 
 void resize_button(void)
 {
-    if (is_fullscreen == true) {
+    if (is_fullscreen == false) {
         sfRenderWindow_destroy(window);
-        window = sfRenderWindow_create(
-            render_window.mode,
-            "my_rpg",
-            sfTitlebar | sfClose,
-            NULL);
-        is_fullscreen = false;
-    } else if (is_fullscreen == false) {
-        sfRenderWindow_destroy(window);
-        window = sfRenderWindow_create(
-            render_window.mode,
-            "my_rpg",
-            sfFullscreen,
-            NULL);
+        window = sfRenderWindow_create(render_window.mode, "my_rpg", sfFullscreen, NULL);
+        sfRenderWindow_setFramerateLimit(window, render_window.fps);
         is_fullscreen = true;
+    } else if (is_fullscreen == true) {
+        sfRenderWindow_destroy(window);
+        window = sfRenderWindow_create(render_window.mode, "my_rpg", sfResize | sfClose, NULL);
+        sfRenderWindow_setFramerateLimit(window, render_window.fps);
+        is_fullscreen = false;
     }
 }
 

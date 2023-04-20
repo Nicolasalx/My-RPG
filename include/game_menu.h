@@ -19,7 +19,8 @@ typedef enum {
     TREE,
     SETTINGS,
     LOADING,
-    SAVING
+    SAVING,
+    QUIT
 } game_menu_state_t;
 
 typedef struct {
@@ -79,5 +80,6 @@ void display_settings_inventory(void);
 void display_loading_inventory(void);
 void display_saving_inventory(void);
 void create_front_inventory(void);
+void quit_in_game(void);
 
 #endif /* !GAME_MENU_H_ */

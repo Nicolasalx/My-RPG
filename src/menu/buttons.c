@@ -9,6 +9,7 @@
 #include "my_def.h"
 #include "main.h"
 #include "settings.h"
+#include "animation.h"
 
 void quit_button(void)
 {
@@ -37,4 +38,6 @@ void go_home_button(void)
 void play_button(void)
 {
     game_state = GAME;
+    play_anim = true;
+    sfClock_restart(animation_level.play);
 }

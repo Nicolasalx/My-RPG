@@ -23,9 +23,6 @@ void main_loop(void)
         sfRenderWindow_clear(window, (sfColor) {20, 24, 46, 255});
         manage_event();
         render_all_data();
-        if (sfKeyboard_isKeyPressed(sfKeyE)) {
-            chest[0].anim.play = true;
-        }
         sfRenderWindow_display(window);
     }
     sfRenderWindow_destroy(window);
