@@ -13,35 +13,35 @@ shop_t shop[] = {
         .pos_text = {100, 100},
         .size_text = 50,
         .text_to_write = "Bjr",
-        .color_text = (sfColor) {128, 128, 128, 255},
+        .color_text = (sfColor) {128, 128, 128, 0},
 
         .color_rectangle = (sfColor) {0, 255, 0, 255},
         .pos_rectangle = {100, 100},
         .size_rectangle = {0, 0},
 
-        .pos_sprite = {150, 150},
-        .size_sprite = {2, 1.5},
+        .pos_sprite = {0, 0},
+        .size_sprite = {1 * 2.6, 1 * 2.6},
         .path_img = "game_src/shop/bg_shop.jpg",
     },
     {
         .pos_text = {100, 100},
         .size_text = 50,
         .text_to_write = "Bjr",
-        .color_text = (sfColor) {128, 128, 128, 255},
+        .color_text = (sfColor) {128, 128, 128, 0},
 
         .color_rectangle = (sfColor) {0, 255, 0, 255},
         .pos_rectangle = {100, 100},
         .size_rectangle = {0, 0},
 
-        .pos_sprite = {1500, 150},
-        .size_sprite = {0.2, 0.2},
-        .path_img = "game_src/Settings/quit.png",
+        .pos_sprite = {1850, 20},
+        .size_sprite = {0.25, 0.25},
+        .path_img = "game_src/butons/Menu/Square/Buttons/X.png",
     },
     {
         .pos_text = {100, 100},
         .size_text = 50,
         .text_to_write = "Bjr",
-        .color_text = (sfColor) {128, 128, 128, 255},
+        .color_text = (sfColor) {128, 128, 128, 0},
 
         .color_rectangle = (sfColor) {128, 128, 128, 255},
         .pos_rectangle = {200, 395},
@@ -55,7 +55,7 @@ shop_t shop[] = {
         .pos_text = {100, 100},
         .size_text = 50,
         .text_to_write = "Bjr",
-        .color_text = (sfColor) {128, 128, 128, 255},
+        .color_text = (sfColor) {128, 128, 128, 0},
 
         .color_rectangle = (sfColor) {128, 128, 128, 255},
         .pos_rectangle = {440, 395},
@@ -69,7 +69,7 @@ shop_t shop[] = {
         .pos_text = {100, 100},
         .size_text = 50,
         .text_to_write = "Bjr",
-        .color_text = (sfColor) {128, 128, 128, 255},
+        .color_text = (sfColor) {128, 128, 128, 0},
 
         .color_rectangle = (sfColor) {128, 128, 128, 255},
         .pos_rectangle = {689, 395},
@@ -83,7 +83,7 @@ shop_t shop[] = {
         .pos_text = {100, 100},
         .size_text = 50,
         .text_to_write = "Bjr",
-        .color_text = (sfColor) {128, 128, 128, 255},
+        .color_text = (sfColor) {128, 128, 128, 0},
 
         .color_rectangle = (sfColor) {128, 128, 128, 255},
         .pos_rectangle = {930, 395},
@@ -97,14 +97,14 @@ shop_t shop[] = {
         .pos_text = {100, 100},
         .size_text = 50,
         .text_to_write = "Bjr",
-        .color_text = (sfColor) {128, 128, 128, 255},
+        .color_text = (sfColor) {128, 128, 128, 0},
 
         .color_rectangle = (sfColor) {128, 128, 128, 255},
         .pos_rectangle = {1180, 395},
         .size_rectangle = {220, 140},
 
-        .pos_sprite = {1220, 390},
-        .size_sprite = {0.3, 0.3},
+        .pos_sprite = {1230, 393},
+        .size_sprite = {0.25, 0.25},
         .path_img = "game_src/Menu_game/item/potion.png",
     },
     {
