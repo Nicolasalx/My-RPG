@@ -23,10 +23,6 @@ data_to_save_t data_to_save[] = {
         .data = &inventory_content,
         .size = sizeof(inventory_content_t)
     }, {
-        .file = "player",
-        .data = &player,
-        .size = sizeof(player_t)
-    }, {
         .file = "next_level",
         .data = &next_level,
         .size = sizeof(int)

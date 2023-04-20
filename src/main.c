@@ -10,8 +10,8 @@
 
 int main(void)
 {
-//    load_all_data(SAVE_1);
     create_all_data();
+    load_all_data(SAVE_1);
     if (is_create_success == false) {
         return 84;
     }

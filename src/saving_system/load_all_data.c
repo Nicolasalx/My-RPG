@@ -18,7 +18,7 @@ void load_all_data(save_num_t save_num)
 
     for (int i = 0; data_to_save[i].data != NULL; ++i) {
         build_path_save(path, save_num);
-        load_data(my_strcpy(path, data_to_save[i].file),
+        load_data(my_strcat(path, data_to_save[i].file),
             data_to_save[i].data, data_to_save[i].size);
     }
 }

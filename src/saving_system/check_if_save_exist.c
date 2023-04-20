@@ -15,7 +15,7 @@ void check_if_save_exit(void)
 {
     char path[100];
 
-    for (int i = 0; i < NB_SAVE; ++i) {
+    for (int i = 1; i < NB_SAVE; ++i) {
         build_path_save(path, i);
         my_strcat(path, "save_");
         my_strcat(path, INT(i));
