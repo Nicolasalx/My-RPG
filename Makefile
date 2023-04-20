@@ -144,14 +144,11 @@ SRC			=	src/main.c \
 				$(COLLISIONMAP_SRC) \
 				$(MANAGEVIEW_SRC) \
 				$(CHEST_SRC) \
-<<<<<<< HEAD
 				$(HEAL_XP_BAR_SRC) \
 				$(DIALOG_SRC) \
 				$(ANIMATION_SRC) \
 				$(DOOR_SRC)
-=======
 				$(SAVE_SYSTEM_SRC)
->>>>>>> fb06f808ff8b12a5efd8314e0ab4f39e1d79c925
 
 CFLAGS		=	-W -Wall -Wextra -I ./include -I ./include/lib -lcsfml-system \
 				-lcsfml-graphics -lcsfml-window -lcsfml-audio -lm
