@@ -22,6 +22,7 @@
 #include "heal_xp_bar.h"
 #include "chest.h"
 #include "animation.h"
+#include "door.h"
 
 void (*create[])(void) = {
     create_default_font,
@@ -46,6 +47,7 @@ void (*create[])(void) = {
     create_arrow_and_touret,
     create_button_tree,
     create_heal_xp_bar,
+    create_door,
     create_dialog_text,
     create_collision_map,
     create_chest,

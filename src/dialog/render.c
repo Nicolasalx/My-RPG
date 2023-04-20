@@ -12,10 +12,14 @@
 #include "player.h"
 #include "manage_view.h"
 
+#define radius 90
+
 bool intersect_pnj(sfCircleShape *circle)
 {
     sfFloatRect rectangleBounds = sfRectangleShape_getGlobalBounds(player.collision);
     sfVector2f circleCenter = sfCircleShape_getPosition(circle);
+    circleCenter.x += radius;
+    circleCenter.y += radius;
     float circleRadius = sfCircleShape_getRadius(circle);
     sfFloatRect circleBounds = {circleCenter.x - circleRadius,
     circleCenter.y - circleRadius, circleRadius * 2.f, circleRadius * 2.f};
@@ -116,5 +120,6 @@ void render_dialog(void)
             print_text_char(i);
             activated_dialog[PNJ_QUEST_BOSS] = false;
         }
+        render_player();
     }
 }

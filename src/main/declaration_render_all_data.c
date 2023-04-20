@@ -21,6 +21,7 @@
 #include "dialog.h"
 #include "chest.h"
 #include "animation.h"
+#include "door.h"
 
 render_func_t render_func[] = {
     {render_map, GAME},
@@ -30,11 +31,12 @@ render_func_t render_func[] = {
     {render_level_arrow, GAME},
     {render_system_bot, GAME},
     {render_tutorial, MENU},
-    {render_game_menu_button, GAME},
     {render_view, GAME},
     {render_xp_heal_bar, GAME},
+    {render_door, GAME},
     {render_dialog, GAME},
     {render_player, GAME},
+    {render_game_menu_button, GAME},
     {render_menu_quest, GAME},
     {NULL, 0}
 };
