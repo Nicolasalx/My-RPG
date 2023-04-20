@@ -9,5 +9,6 @@
     #define MUSIC_H_
 
 void lauch_background_music(void);
+void launch_open_chest_music(void);
 
 #endif /* !MUSIC_H_ */
