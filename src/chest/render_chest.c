@@ -25,7 +25,6 @@ void play_single_anim(sfSprite *sprite, single_anim_t *anim)
         .width = anim->texture_size.x / anim->nb_frame
     };
     if (anim->current_frame >= anim->nb_frame) {
-        print("FIn\n");
         anim->stop_playing = true;
         return;
     }

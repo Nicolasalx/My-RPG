@@ -13,7 +13,7 @@
 
 chest_t chest[] = {
     {
-        .pos = {1344, 800},
+        .pos = {1550, 450},
         .scale = {4, 4},
         .path = "game_src/chest/blue_chest.png",
         .anim = {
@@ -26,8 +26,8 @@ chest_t chest[] = {
         .choice_chest = CHEST_ARROW,
 
         .color_rectangle = (sfColor) {COLOR_DETECTION},
-        .pos_rectangle = {1344, 800},
-        .size_rectangle = {100, 100}
+        .pos_rectangle = {1550, 450},
+        .size_rectangle = {80, 80}
     }, {
         .pos = {1344, 800},
         .scale = {4, 4},
@@ -42,9 +42,9 @@ chest_t chest[] = {
         .choice_chest = CHEST_SKELET,
         .color_rectangle = (sfColor) {COLOR_DETECTION},
         .pos_rectangle = {1344, 800},
-        .size_rectangle = {100, 100}
+        .size_rectangle = {80, 80}
     }, {
-        .pos = {1344, 800},
+        .pos = {1550, 450},
         .scale = {4, 4},
         .path = "game_src/chest/blue_chest.png",
         .anim = {
@@ -56,8 +56,8 @@ chest_t chest[] = {
         },
         .choice_chest = CHEST_BOSS,
         .color_rectangle = (sfColor) {COLOR_DETECTION},
-        .pos_rectangle = {1344, 800},
-        .size_rectangle = {100, 100}
+        .pos_rectangle = {1550, 450},
+        .size_rectangle = {80, 80}
     }
 };
 
