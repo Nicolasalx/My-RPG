@@ -66,7 +66,8 @@ SAVING_SRC		=	src/menu_game/saving/declaration.c \
 
 SETTINGS_MENU_SRC=	src/menu_game/settings/declaration.c \
 					src/menu_game/settings/create.c \
-					src/menu_game/settings/render.c
+					src/menu_game/settings/render.c \
+					src/menu_game/settings/buton_states.c
 
 MENU_GAME_SRC	=	src/menu_game/create.c \
 					src/menu_game/declaration.c \
@@ -101,7 +102,8 @@ MAIN_SRC	=	src/main/declaration_main.c \
 MENU_SRC 	=	src/menu/create.c \
 				src/menu/declaration.c \
 				src/menu/buttons.c \
-				src/menu/render.c
+				src/menu/render.c \
+				src/menu/buton_state.c
 
 QUEST_SRC	=	src/quest/create.c \
 				src/quest/declaration.c \

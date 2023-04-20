@@ -10,18 +10,18 @@
 
 void fureur(int i)
 {
-    if (critical_up == true && is_fureur == false &&
+    if (abilities[CRITICAL_UP] == true && abilities[IS_FUREUR] == false &&
     inventory_content.nb_xp >= 10) {
         sfSprite_setColor(fondation[i].sprite, (sfColor) {255, 255, 255, 255});
-        is_fureur = true;
+        abilities[IS_FUREUR] = true;
         inventory_content.nb_xp -= 10;
         return;
     }
-    if (critical_up == false) {
+    if (abilities[CRITICAL_UP] == false) {
         print("Please Unlock first Your Critical Chance\n");
         return;
     }
-    if (is_fureur == true) {
+    if (abilities[IS_FUREUR] == true) {
         print("Already Unlock Fureur\n");
         return;
     }

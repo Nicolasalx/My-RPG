@@ -11,18 +11,18 @@
 
 void critical(int i)
 {
-    if (strenght_up == true && critical_up == false &&
+    if (abilities[STRENGHT_UP] == true && abilities[CRITICAL_UP] == false &&
     inventory_content.nb_xp >= 8){
         sfSprite_setColor(fondation[i].sprite, (sfColor) {255, 255, 255, 255});
-        critical_up = true;
+        abilities[CRITICAL_UP] = true;
         inventory_content.nb_xp -= 8;
         return;
     }
-    if (strenght_up == false) {
+    if (abilities[STRENGHT_UP] == false) {
         print("Please Unlock First The Damages Upgrade\n");
         return;
     }
-    if (critical_up == true) {
+    if (abilities[CRITICAL_UP] == true) {
         print("Already Unlock Your Critical Chances\n");
         return;
     }

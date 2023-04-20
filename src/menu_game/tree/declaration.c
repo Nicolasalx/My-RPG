@@ -128,13 +128,15 @@ create_tree_t fondation[] = {
 
 const int size_tree = NB_ELEM(fondation);
 
-bool is_speed_up;
-bool strenght_up;
-bool attackspeed_up;
-bool health_up;
-bool critical_up;
-bool regene;
-bool is_fureur;
-bool is_bloodbath;
-bool is_glacial_slow;
-bool is_final;
+bool abilities[] = {
+    [SPEED_UP] = false,
+    [STRENGHT_UP] = false,
+    [ATTACKSPEED_UP] = false,
+    [HEALTH_UP] = false,
+    [CRITICAL_UP] = false,
+    [REGENE] = false,
+    [IS_FUREUR] = false,
+    [IS_BLOODBATH] = false,
+    [IS_GLACIAL_SLOW] = false,
+    [IS_FINAL] = false
+};

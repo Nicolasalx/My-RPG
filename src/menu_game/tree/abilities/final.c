@@ -10,20 +10,20 @@
 
 void final(int i)
 {
-    if (is_fureur == true && is_bloodbath == true &&
-        is_glacial_slow == true && is_final == false
+    if (abilities[IS_FUREUR] == true && abilities[IS_BLOODBATH] == true &&
+        abilities[IS_GLACIAL_SLOW] == true && abilities[IS_FINAL] == false
         && inventory_content.nb_xp >= 12) {
         sfSprite_setColor(fondation[i].sprite, (sfColor) {255, 255, 255, 255});
-        is_final = true;
+        abilities[IS_FINAL] = true;
         inventory_content.nb_xp -= 12;
         return;
     }
-    if (is_fureur == false || is_bloodbath == false ||
-        is_glacial_slow == false) {
+    if (abilities[IS_FUREUR] == false || abilities[IS_BLOODBATH] == false ||
+        abilities[IS_GLACIAL_SLOW] == false) {
         print("Please Unlock First The 3 Last Abilities Of Each Lines\n");
         return;
     }
-    if (is_final == true) {
+    if (abilities[IS_FINAL] == true) {
         print("You Already Have The Final Upgrade\n");
         return;
     }

@@ -62,5 +62,7 @@ void display_settings_inventory(void)
             sfRenderWindow_drawSprite(window, settings_button_game_menu[i].
                 sprite, NULL);
         }
+        verification(i);
+        states(i);
     }
 }

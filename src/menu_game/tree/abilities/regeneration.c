@@ -11,18 +11,18 @@
 
 void regeneration(int i)
 {
-    if (health_up == true && regene == false &&
+    if (abilities[HEALTH_UP] == true && abilities[REGENE] == false &&
     inventory_content.nb_xp >= 8) {
         sfSprite_setColor(fondation[i].sprite, (sfColor) {255, 255, 255, 255});
-        regene = true;
+        abilities[REGENE] = true;
         inventory_content.nb_xp -= 8;
         return;
     }
-    if (health_up == false) {
+    if (abilities[HEALTH_UP] == false) {
         print("Please Unlock First Your Health\n");
         return;
     }
-    if (regene == true) {
+    if (abilities[REGENE] == true) {
         print("Already Unlock Your Regeneration\n");
         return;
     }

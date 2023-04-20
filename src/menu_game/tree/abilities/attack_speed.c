@@ -11,18 +11,18 @@
 
 void attack_speed_upgrade(int i)
 {
-    if (is_speed_up == true && attackspeed_up == false &&
+    if (abilities[SPEED_UP] == true && abilities[ATTACKSPEED_UP] == false &&
     inventory_content.nb_xp >= 8) {
         sfSprite_setColor(fondation[i].sprite, (sfColor) {255, 255, 255, 255});
-        attackspeed_up = true;
+        abilities[ATTACKSPEED_UP] = true;
         inventory_content.nb_xp -= 8;
         return;
     }
-    if (is_speed_up == false) {
+    if (abilities[SPEED_UP] == false) {
         print("Please Unlock First Your Movement Speed Upgrade\n");
         return;
     }
-    if (attackspeed_up == true) {
+    if (abilities[ATTACKSPEED_UP] == true) {
         print("Already Upgrade Your Attack Speed \n");
         return;
     }
