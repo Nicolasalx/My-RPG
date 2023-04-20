@@ -19,6 +19,7 @@ void add_strenght(int i)
         return;
     }
     if (abilities[STRENGHT_UP] == true) {
+        sfSprite_setColor(fondation[i].sprite, (sfColor) {255, 255, 255, 255});
         print("Already Upgrade your strenght\n");
         return;
     }
