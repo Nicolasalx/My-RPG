@@ -22,6 +22,7 @@
 #include "chest.h"
 #include "animation.h"
 #include "door.h"
+#include "shop.h"
 
 render_func_t render_func[] = {
     {render_map, GAME},
@@ -35,6 +36,7 @@ render_func_t render_func[] = {
     {render_xp_heal_bar, GAME},
     {render_dialog, GAME},
     {render_game_menu_button, GAME},
+    {detect_shop_open, GAME},
     {render_player, GAME},
     {render_door, GAME},
     {render_menu_quest, GAME},

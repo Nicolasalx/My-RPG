@@ -10,6 +10,13 @@
 
 void create_shop(void)
 {
+    detect_shop.rectangle = sfRectangleShape_create();
+    sfRectangleShape_setOutlineThickness(detect_shop.rectangle, 3);
+    sfRectangleShape_setOutlineColor(detect_shop.rectangle, sfBlack);
+    sfRectangleShape_setSize(detect_shop.rectangle, detect_shop.size_rectangle);
+    sfRectangleShape_setFillColor(detect_shop.rectangle, detect_shop.color_rectangle);
+    sfRectangleShape_setPosition(detect_shop.rectangle, detect_shop.pos_rectangle);
+
     for (int i = 0; i < size_shop; ++i) {
         shop[i].text = sfText_create();
         sfText_setString(shop[i].text, shop[i].text_to_write);

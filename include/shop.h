@@ -30,9 +30,20 @@ typedef struct {
     char *path_img;
 } shop_t;
 
+typedef struct {
+    sfRectangleShape *rectangle;
+    sfColor color_rectangle;
+    sfVector2f pos_rectangle;
+    sfVector2f size_rectangle;
+} detect_shop_t;
+
+extern detect_shop_t detect_shop;
+
 extern shop_t shop[];
 extern const int size_shop;
 
 void create_shop(void);
+void render_shop(void);
+void detect_shop_open(void);
 
 #endif /* !SHOP_H_ */

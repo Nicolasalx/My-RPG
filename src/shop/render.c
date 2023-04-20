@@ -8,6 +8,11 @@
 #include "shop.h"
 #include "main.h"
 
+void detect_shop_open(void)
+{
+    sfRenderWindow_drawRectangleShape(window, detect_shop.rectangle, NULL);
+}
+
 void render_shop(void)
 {
     for (int i = 0; i < size_shop; ++i) {
