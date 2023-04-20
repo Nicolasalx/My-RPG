@@ -9,6 +9,8 @@
 #include "manage_view.h"
 #include "chest.h"
 #include "player.h"
+#include "manage_view.h"
+#include "save_system.h"
 
 bool mouse_button_pressed;
 bool mouse_button_maintain;
@@ -25,5 +27,6 @@ void main_loop(void)
         render_all_data();
         sfRenderWindow_display(window);
     }
+    save_all_data(SAVE_1);
     sfRenderWindow_destroy(window);
 }
