@@ -38,5 +38,6 @@ void go_home_button(void)
 void play_button(void)
 {
     game_state = GAME;
-    play_animation();
+    play_anim = true;
+    sfClock_restart(animation_level.play);
 }
