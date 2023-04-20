@@ -33,20 +33,20 @@ bool player_attack(unsigned int *anim_attack_frame, player_anim_e player_anim)
 
 void player_run(bool *direction)
 {
-    if (sfKeyboard_isKeyPressed(sfKeyLeft)) {
+    if (sfKeyboard_isKeyPressed(sfKeyQ)) {
         player.anim_to_play = RUN_LEFT;
         *direction = LEFT;
     } else if (*direction == LEFT) {
         player.anim_to_play = IDLE_LEFT;
     }
-    if (sfKeyboard_isKeyPressed(sfKeyRight)) {
+    if (sfKeyboard_isKeyPressed(sfKeyD)) {
         player.anim_to_play = RUN_RIGHT;
         *direction = RIGHT;
     } else if (*direction == RIGHT) {
         player.anim_to_play = IDLE_RIGHT;
     }
-    if (sfKeyboard_isKeyPressed(sfKeyUp)
-    || sfKeyboard_isKeyPressed(sfKeyDown)) {
+    if (sfKeyboard_isKeyPressed(sfKeyZ)
+    || sfKeyboard_isKeyPressed(sfKeyS)) {
         if (*direction == LEFT) {
             player.anim_to_play = RUN_LEFT;
         } else {
@@ -67,16 +67,16 @@ void check_collission_again(
 
 void try_to_move(sfVector2f *prev_pos_player, sfVector2f *prev_pos_rect)
 {
-    if (sfKeyboard_isKeyPressed(sfKeyLeft))
+    if (sfKeyboard_isKeyPressed(sfKeyQ))
         player.pos.x -= player.speed;
     check_collission_again(prev_pos_player, prev_pos_rect);
-    if (sfKeyboard_isKeyPressed(sfKeyRight))
+    if (sfKeyboard_isKeyPressed(sfKeyD))
         player.pos.x += player.speed;
     check_collission_again(prev_pos_player, prev_pos_rect);
-    if (sfKeyboard_isKeyPressed(sfKeyUp))
+    if (sfKeyboard_isKeyPressed(sfKeyZ))
         player.pos.y -= player.speed;
     check_collission_again(prev_pos_player, prev_pos_rect);
-    if (sfKeyboard_isKeyPressed(sfKeyDown))
+    if (sfKeyboard_isKeyPressed(sfKeyS))
         player.pos.y += player.speed;
 }
 
