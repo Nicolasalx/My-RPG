@@ -7,6 +7,11 @@
 
 #include "main.h"
 
+/*
+    inventory_content_t
+    abilitise_t
+*/
+
 int main(void)
 {
     create_all_data();
