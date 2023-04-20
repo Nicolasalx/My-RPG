@@ -10,6 +10,7 @@
 void create_animation(void)
 {
     animation_level.clock = sfClock_create();
+    animation_level.play = sfClock_create();
     animation_level.clock_restart = sfClock_create();
     animation_level.rectangle = sfRectangleShape_create();
     sfRectangleShape_setOutlineThickness(animation_level.rectangle, 3);

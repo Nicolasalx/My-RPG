@@ -15,3 +15,4 @@ animation_level_t animation_level =
 };
 
 bool display_animation = false;
+bool play_anim = true;

@@ -26,7 +26,8 @@ DIALOG_SRC		=	src/dialog/create.c \
 
 ANIMATION_SRC	=	src/animation/create.c \
 					src/animation/declaration.c \
-					src/animation/render.c
+					src/animation/render.c \
+					src/animation/play_animation.c
 
 HEAL_XP_BAR_SRC	=	src/heal_xp_bar/create.c \
 					src/heal_xp_bar/declaration.c \
