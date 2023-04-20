@@ -8,6 +8,7 @@
 #include "shop.h"
 #include "main.h"
 #include "player.h"
+#include "manage_view.h"
 
 void detect_shop_open(bool *can_open_shop)
 {
@@ -21,6 +22,9 @@ void detect_shop_open(bool *can_open_shop)
 void render_shop(void)
 {
     static bool can_open_shop = false;
+    if (next_level != 0) {
+        return;
+    }
     detect_shop_open(&can_open_shop);
     if (can_open_shop == true) {
         for (int i = 0; i < size_shop; ++i) {
