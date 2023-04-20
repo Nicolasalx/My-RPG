@@ -34,21 +34,7 @@ door_t door[] = {
     },
     {
         .color_rectangle = (sfColor) {COLOR_DOOR},
-        .pos_rectangle = {1225, 130},
-        .size_rectangle = {50, 50},
-
-        .choice_level = BACK_TO_START,
-    },
-    {
-        .color_rectangle = (sfColor) {COLOR_DOOR},
-        .pos_rectangle = {1225, 130},
-        .size_rectangle = {50, 50},
-
-        .choice_level = BACK_TO_START,
-    },
-    {
-        .color_rectangle = (sfColor) {COLOR_DOOR},
-        .pos_rectangle = {1225, 130},
+        .pos_rectangle = {1500, 130},
         .size_rectangle = {50, 50},
 
         .choice_level = BACK_TO_START,

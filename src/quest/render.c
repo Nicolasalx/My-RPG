@@ -12,17 +12,19 @@
 
 void check_text_move(void)
 {
-    if (inventory_content.have_totem == true) {
+    if (inventory_content.have_totem == false) {
         manage_animation.move_totem = true;
         quest_totem = true;
-    }
-    if (manage_animation.move_totem == true && inventory_content.have_amuletter
-        == true && inventory_content.nb_key > 0) {
+    } else if (inventory_content.have_totem == true && inventory_content.have_amuletter
+        == false && inventory_content.nb_key > 0) {
+        manage_animation.move_totem = true;
         manage_animation.move_amuletter = true;
         quest_amuletter = true;
     }
-    if (manage_animation.move_totem == true && manage_animation.move_amuletter
+    if (inventory_content.have_totem == true && inventory_content.have_amuletter
         == true && inventory_content.nb_key > 2) {
+        manage_animation.move_totem = true;
+        manage_animation.move_amuletter = true;
         manage_animation.move_boss = true;
         quest_boss = true;
     }

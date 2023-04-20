@@ -34,6 +34,7 @@ void print_text_char(int i)
     int current_char = 0;
     int max_char = my_strlen(create_dialog[i].text_to_write);
     char message[1000];
+    render_player();
     while (current_char < max_char) {
         float elapsed_seconds = sfTime_asSeconds(sfClock_getElapsedTime(create_dialog[i].clock));
         if (elapsed_seconds > 0.1) {
@@ -120,6 +121,5 @@ void render_dialog(void)
             print_text_char(i);
             activated_dialog[PNJ_QUEST_BOSS] = false;
         }
-        render_player();
     }
 }

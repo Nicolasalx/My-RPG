@@ -147,7 +147,7 @@ SRC			=	src/main.c \
 				$(HEAL_XP_BAR_SRC) \
 				$(DIALOG_SRC) \
 				$(ANIMATION_SRC) \
-				$(DOOR_SRC)
+				$(DOOR_SRC) \
 				$(SAVE_SYSTEM_SRC)
 
 CFLAGS		=	-W -Wall -Wextra -I ./include -I ./include/lib -lcsfml-system \
