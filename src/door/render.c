@@ -18,7 +18,7 @@ bool go_level_1 = false;
 bool go_level_2 = false;
 bool go_level_3 = false;
 
-void go_back_start(int i)
+bool go_back_start(int i)
 {
     if (door[i].choice_level == BACK_TO_START) {
         if (check_collision(door[i].rectangle, player.collision) && sfKeyboard_isKeyPressed(sfKeyE)) {
@@ -27,10 +27,12 @@ void go_back_start(int i)
         }
         if (display_animation == true && go_back == true) {
             render_animation(0, &go_back);
+            return true;
         } else {
             sfRenderWindow_drawRectangleShape(window, door[i].rectangle, NULL);
         }
     }
+    return false;
 }
 
 void choose_level(int *choose_level_go)
@@ -93,11 +95,14 @@ void render_door(void)
 {
     static int choose_level_go = 0;
     choose_level(&choose_level_go);
+
     for (int i = 0; i < size_door; ++i) {
-        if (current_level == 0) {
+        if (next_level == 0) {
             direction_level(&choose_level_go, i);
         } else {
-            go_back_start(i);
+            if (go_back_start(i) == true) {
+                sfRenderWindow_drawRectangleShape(window, door[i].rectangle, NULL);
+            }
         }
     }
 }
