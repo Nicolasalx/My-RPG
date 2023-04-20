@@ -50,7 +50,7 @@ void display_nb_item(void)
 {
     display_first_part_item();
     display_second_part_item();
-    if (inventory_content.have_a_helmet == true) {
+    if (inventory_content.have_amuletter == true) {
         sfText_setString(stuff_inventory[4].text,
             INT(1));
     } else {

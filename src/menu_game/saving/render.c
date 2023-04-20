@@ -13,7 +13,7 @@
 
 void display_valid_first_part(void)
 {
-if (inventory_content.have_a_helmet == true) {
+    if (inventory_content.have_a_helmet == true) {
         sfRenderWindow_drawText(window, saving_content[2].text, NULL);
     } else {
         sfRenderWindow_drawText(window, saving_content[3].text, NULL);

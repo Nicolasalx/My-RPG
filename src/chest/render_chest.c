@@ -38,29 +38,45 @@ void play_single_anim(sfSprite *sprite, single_anim_t *anim)
 
 void render_chest(void)
 {
+    static bool chest_1 = false;
+    static bool chest_2 = false;
+    static bool chest_3 = false;
     for (int i = 0; i < nb_chest; ++i) {
         if (next_level == 1 && chest[i].choice_chest == CHEST_ARROW) {
             if (check_collision(chest[i].rectangle, player.collision) && sfKeyboard_isKeyPressed(sfKeyE)) {
-                chest[i].anim.play = true;
-                inventory_content.have_totem = true;
-                inventory_content.nb_key += 1;
+                if (chest_1 == false) {
+                    chest[i].anim.play = true;
+                    inventory_content.have_totem = true;
+                    inventory_content.nb_key += 1;
+                    inventory_content.nb_xp += 50;
+                    inventory_content.money += 400;
+                    chest_1 = true;
+                }
             }
             play_single_anim(chest[i].sprite, &chest[i].anim);
             sfRenderWindow_drawSprite(window, chest[i].sprite, NULL);
             sfRenderWindow_drawRectangleShape(window, chest[i].rectangle, NULL);
         } else if (next_level == 2 && chest[i].choice_chest == CHEST_SKELET) {
             if (check_collision(chest[i].rectangle, player.collision) && sfKeyboard_isKeyPressed(sfKeyE)) {
-                chest[i].anim.play = true;
-                inventory_content.have_amuletter = true;
-                inventory_content.nb_key += 1;
+                if (chest_2 == false) {
+                    chest[i].anim.play = true;
+                    inventory_content.have_amuletter = true;
+                    inventory_content.nb_key += 2;
+                    inventory_content.nb_xp += 50;
+                    inventory_content.money += 600;
+                    chest_2 = true;
+                }
             }
             play_single_anim(chest[i].sprite, &chest[i].anim);
             sfRenderWindow_drawSprite(window, chest[i].sprite, NULL);
             sfRenderWindow_drawRectangleShape(window, chest[i].rectangle, NULL);
         } else if (next_level == 3 && chest[i].choice_chest == CHEST_BOSS) {
             if (check_collision(chest[i].rectangle, player.collision) && sfKeyboard_isKeyPressed(sfKeyE)) {
-                chest[i].anim.play = true;
-                inventory_content.nb_key += 2;
+                if (chest_3 == false) {
+                    chest[i].anim.play = true;
+                    inventory_content.nb_key += 2;
+                    chest_3 = true;
+                }
             }
             play_single_anim(chest[i].sprite, &chest[i].anim);
             sfRenderWindow_drawSprite(window, chest[i].sprite, NULL);
