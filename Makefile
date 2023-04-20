@@ -91,8 +91,7 @@ MENU_GAME_SRC	=	src/menu_game/create.c \
 
 GENERIC_FUNC_SRC=	src/generic_func/anim_sprite.c \
 					src/generic_func/compute_rect_texture.c \
-					src/generic_func/check_collision.c \
-					src/generic_func/is_rect_collide.c
+					src/generic_func/check_collision.c
 
 PLAYER_SRC	=	src/player/declaration_player.c \
 				src/player/create_player.c \
