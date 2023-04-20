@@ -6,7 +6,12 @@
 ##
 
 SAVE_SYSTEM_SRC	=	src/saving_system/save_data.c \
-					src/saving_system/load_data.c
+					src/saving_system/load_data.c \
+					src/saving_system/declaration_save_system.c \
+					src/saving_system/check_if_save_exist.c \
+					src/saving_system/build_path_save.c \
+					src/saving_system/load_all_data.c \
+					src/saving_system/save_all_data.c
 
 CHEST_SRC		=	src/chest/create_chest.c \
 					src/chest/declaration_chest.c \
