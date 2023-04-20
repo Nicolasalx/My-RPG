@@ -5,6 +5,9 @@
 ## Makefile
 ##
 
+SAVE_SYSTEM_SRC	=	src/saving_system/save_data.c \
+					src/saving_system/load_data.c
+
 CHEST_SRC		=	src/chest/create_chest.c \
 					src/chest/declaration_chest.c \
 					src/chest/render_chest.c
@@ -71,7 +74,8 @@ MENU_GAME_SRC	=	src/menu_game/create.c \
 
 GENERIC_FUNC_SRC=	src/generic_func/anim_sprite.c \
 					src/generic_func/compute_rect_texture.c \
-					src/generic_func/check_collision.c
+					src/generic_func/check_collision.c \
+					src/generic_func/is_rect_collide.c
 
 PLAYER_SRC	=	src/player/declaration_player.c \
 				src/player/create_player.c \
@@ -121,7 +125,8 @@ SRC			=	src/main.c \
 				$(SYSTEM_BOT_SRC) \
 				$(COLLISIONMAP_SRC) \
 				$(MANAGEVIEW_SRC) \
-				$(CHEST_SRC)
+				$(CHEST_SRC) \
+				$(SAVE_SYSTEM_SRC)
 
 CFLAGS		=	-W -Wall -Wextra -I ./include -I ./include/lib -lcsfml-system \
 				-lcsfml-graphics -lcsfml-window -lcsfml-audio -lm
