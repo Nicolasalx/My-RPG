@@ -31,7 +31,8 @@ typedef enum {
     IS_FUREUR,
     IS_BLOODBATH,
     IS_GLACIAL_SLOW,
-    IS_FINAL
+    IS_FINAL,
+    NB_ABILITIES
 } abilities_e;
 
 extern const int size_tree;

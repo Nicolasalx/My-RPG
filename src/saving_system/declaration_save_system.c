@@ -10,6 +10,7 @@
 #include "inventory.h"
 #include "player.h"
 #include "manage_view.h"
+#include "tree.h"
 
 bool is_save_exist[] = {
     [SAVE_1] = false,
@@ -22,6 +23,10 @@ data_to_save_t data_to_save[] = {
         .file = "inventory",
         .data = &inventory_content,
         .size = sizeof(inventory_content_t)
+    }, {
+        .file = "abilities",
+        .data = abilities,
+        .size = sizeof(bool) * NB_ABILITIES
     }, {
         .file = "next_level",
         .data = &next_level,
