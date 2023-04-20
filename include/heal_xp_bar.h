@@ -36,6 +36,7 @@ extern sfClock *clock_heal_bar;
 
 extern heal_xp_bar_t heal_xp_bar[];
 extern const int size_heal_xp_bar;
+extern int nb_regene;
 
 void create_heal_xp_bar(void);
 void render_xp_heal_bar(void);

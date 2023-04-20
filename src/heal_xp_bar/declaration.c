@@ -64,3 +64,5 @@ heal_xp_bar_t heal_xp_bar[] = {
 const int size_heal_xp_bar = NB_ELEM(heal_xp_bar);
 
 sfClock *clock_heal_bar = NULL;
+
+int nb_regene = 1;
