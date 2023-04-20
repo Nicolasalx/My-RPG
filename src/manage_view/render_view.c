@@ -37,7 +37,7 @@ void render_view(void)
 {
     collision_map.pos.x = 0;
     if (current_level != next_level) {
-        if (my_delta(current_level, next_level) > 0) {
+        if (my_delta(current_level, next_level) < 0) {
             go_to_prev_level();
         } else {
             go_to_next_level();
