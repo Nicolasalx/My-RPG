@@ -91,7 +91,8 @@ SETTINGS_MENU_SRC=	src/menu_game/settings/declaration.c \
 
 MENU_GAME_SRC	=	src/menu_game/create.c \
 					src/menu_game/declaration.c \
-					src/menu_game/render.c
+					src/menu_game/render.c \
+					src/menu_game/quit/create.c
 
 GENERIC_FUNC_SRC=	src/generic_func/anim_sprite.c \
 					src/generic_func/compute_rect_texture.c \

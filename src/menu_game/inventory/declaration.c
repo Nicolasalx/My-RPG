@@ -300,14 +300,14 @@ const int size_stuff_inventory = NB_ELEM(stuff_inventory);
 
 inventory_content_t inventory_content = {
     .have_a_helmet = true,
-    .have_armor = false,
-    .have_boot = false,
+    .have_armor = true,
+    .have_boot = true,
     .have_glove = true,
     .nb_key = 1,
     .nb_potion = 2,
     .nb_xp = 50,
     .have_amuletter = false,
-    .have_totem = false,
+    .have_totem = true,
     .money = 9,
     .nb_life = 80,
     .nb_life_max = 100
