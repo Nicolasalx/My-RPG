@@ -11,24 +11,36 @@
 #include "collision_map.h"
 #include "chest.h"
 
+void go_to_next_level(void)
+{
+    map.pos.x -= LEVEL_TRANSITION_SPEED;
+    collision_map.pos.x = -LEVEL_TRANSITION_SPEED;
+    for (int i = 0; i < nb_chest; ++i) {
+        sfSprite_move(chest[i].sprite,
+        (sfVector2f) {-LEVEL_TRANSITION_SPEED, 0});
+    }
+    ++ current_level;
+}
+
+void go_to_prev_level(void)
+{
+    map.pos.x += LEVEL_TRANSITION_SPEED;
+    collision_map.pos.x = LEVEL_TRANSITION_SPEED;
+    for (int i = 0; i < nb_chest; ++i) {
+        sfSprite_move(chest[i].sprite,
+        (sfVector2f) {LEVEL_TRANSITION_SPEED, 0});
+    }
+    -- current_level;
+}
+
 void render_view(void)
 {
-    static unsigned int window_x = 0;
-
     collision_map.pos.x = 0;
-    if (go_to_next_level) {
-        map.pos.x -= LEVEL_TRANSITION_SPEED;
-        collision_map.pos.x = -LEVEL_TRANSITION_SPEED;
-        for (int i = 0; i < nb_chest; ++i) {
-            sfSprite_move(chest[i].sprite,
-            (sfVector2f) {-LEVEL_TRANSITION_SPEED, 0});
-        }
-        window_x += LEVEL_TRANSITION_SPEED;
-        print("TEST\n");
-        if (window_x >= render_window.mode.width) {
-            ++ current_level;
-            go_to_next_level = false;
-            window_x = 0;
+    if (current_level != next_level) {
+        if (my_delta(current_level, next_level) > 0) {
+            go_to_prev_level();
+        } else {
+            go_to_next_level();
         }
     }
 }
