@@ -43,5 +43,4 @@ void render_view(void)
             go_to_next_level();
         }
     }
-    print(INT(current_level), "\n");
 }
