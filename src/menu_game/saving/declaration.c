@@ -248,6 +248,8 @@ validate_saving_t validate_saving[] = {
     .size_sprite = {0.4, 0.2},
     .pos_sprite = {470, 370},
     .path_img = "game_src/Menu_game/clothes/50%_life.png",
+    .can_apply = false,
+    .can_validate = false,
     },
 
     {.color_rectangle = (sfColor) {CLOTHES_RECTANGLE_COLOR},
@@ -257,6 +259,8 @@ validate_saving_t validate_saving[] = {
     .size_sprite = {0, 0},
     .pos_sprite = {470, 370},
     .path_img = "game_src/Menu_game/clothes/50%_life.png",
+    .can_apply = false,
+    .can_validate = true,
     },
 
     {.color_rectangle = (sfColor) {CLOTHES_RECTANGLE_COLOR},
@@ -266,6 +270,8 @@ validate_saving_t validate_saving[] = {
     .size_sprite = {0, 0},
     .pos_sprite = {470, 370},
     .path_img = "game_src/Menu_game/clothes/50%_life.png",
+    .can_apply = true,
+    .can_validate = false,
     },
 
 
@@ -276,6 +282,8 @@ validate_saving_t validate_saving[] = {
     .size_sprite = {0, 0},
     .pos_sprite = {470, 370},
     .path_img = "game_src/Menu_game/clothes/50%_life.png",
+    .can_apply = true,
+    .can_validate = false
     },
 
     {.color_rectangle = (sfColor) {CLOTHES_RECTANGLE_COLOR},
@@ -285,6 +293,8 @@ validate_saving_t validate_saving[] = {
     .size_sprite = {0, 0},
     .pos_sprite = {470, 370},
     .path_img = "game_src/Menu_game/clothes/50%_life.png",
+    .can_apply = true,
+    .can_validate = false,
     }
 };
 

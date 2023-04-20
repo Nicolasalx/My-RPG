@@ -145,6 +145,8 @@ typedef struct {
     sfVector2f pos_sprite;
     sfVector2f size_sprite;
     char *path_img;
+    bool can_apply;
+    bool can_validate;
 } validate_saving_t;
 
 extern validate_saving_t validate_saving[];
