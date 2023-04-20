@@ -9,6 +9,7 @@
 #include "main.h"
 #include "manage_view.h"
 #include "player.h"
+#include "manage_view.h"
 #include "math.h"
 
 void check_if_player_enter(int i)
@@ -57,14 +58,14 @@ void create_skelets(void)
 }
 
 void render_system_bot(void)
-{
+{   
     static bool ini_pos_player = false;
-    if (ini_pos_player == false) {
-        player.pos.x = 300;
-        player.pos.y = 300;
-        ini_pos_player = true;
-    }
-    if (current_level == 1) {
+    if (current_level == 2) {
+        if (ini_pos_player == false) {
+            player.pos.x = 300;
+            player.pos.y = 300;
+            ini_pos_player = true;
+        }
         create_skelets();
     }
 }

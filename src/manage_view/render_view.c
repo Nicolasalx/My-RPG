@@ -24,7 +24,6 @@ void render_view(void)
             (sfVector2f) {-LEVEL_TRANSITION_SPEED, 0});
         }
         window_x += LEVEL_TRANSITION_SPEED;
-        print("TEST\n");
         if (window_x >= render_window.mode.width) {
             ++ current_level;
             go_to_next_level = false;
