@@ -44,6 +44,5 @@ extern const int size_shop;
 
 void create_shop(void);
 void render_shop(void);
-void detect_shop_open(void);
 
 #endif /* !SHOP_H_ */

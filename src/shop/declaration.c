@@ -29,6 +29,6 @@ const int size_shop = NB_ELEM(shop);
 
 detect_shop_t detect_shop = {
     .color_rectangle = (sfColor) {0, 0, 255, 100},
-    .pos_rectangle = {300, 130},
+    .pos_rectangle = {325, 130},
     .size_rectangle = {50, 50}
 };
