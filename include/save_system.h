@@ -9,8 +9,19 @@
     #define SAVE_SYSTEM_H_
 
     #include <stddef.h>
+    #include <stdbool.h>
 
+typedef enum {
+    SAVE_1,
+    SAVE_2,
+    SAVE_3,
+    NB_SAVE
+} save_num_t;
+
+char *build_path_save(char *path, save_num_t save_num);
 void save_data(char *save_file, void *data, size_t size);
 void load_data(char *save_file, void *data, size_t size);
+
+extern bool is_save_exist[];
 
 #endif /* !SAVE_SYSTEM_H_ */

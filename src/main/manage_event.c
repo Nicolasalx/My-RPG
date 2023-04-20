@@ -18,12 +18,12 @@ void change_level(void)
     if (current_level == 0 && player.pos.x >= 310 && player.pos.x <= 384 &&
     player.pos.y >= 127 && player.pos.y <= 176 &&
     sfKeyboard_isKeyPressed(sfKeyE)) {
-        next_level = 0;
+//        next_level = 0;
     }
     if (current_level == 0 && player.pos.x >= 1215 && player.pos.x <= 1285 &&
     player.pos.y >= 127 && player.pos.y <= 176 &&
     sfKeyboard_isKeyPressed(sfKeyE)) {
-        next_level = 0;
+//        next_level = 0;
     }
 }
 
