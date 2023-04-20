@@ -13,7 +13,6 @@
 
     #define LEVEL_TRANSITION_SPEED 1920
 
-extern sfView *window_view;
 extern int current_level;
 extern int next_level;
 
