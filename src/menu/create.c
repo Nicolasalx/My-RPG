@@ -34,7 +34,6 @@ void create_tutorial(void)
             size_sprite);
         sfSprite_setPosition(tutorial_info[i].sprite,
             tutorial_info[i].pos_sprite);
-
         tutorial_info[i].text = sfText_create();
         sfText_setString(tutorial_info[i].text, tutorial_info[i].text_to_write);
         sfText_setFont(tutorial_info[i].text, font);

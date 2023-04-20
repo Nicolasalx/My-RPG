@@ -11,13 +11,13 @@
 
 void upgrade_health(int i)
 {
-    if (health_up == false && inventory_content.nb_xp >= 6) {
+    if (abilities[HEALTH_UP] == false && inventory_content.nb_xp >= 6) {
         sfSprite_setColor(fondation[i].sprite, (sfColor) {255, 255, 255, 255});
-        health_up = true;
+        abilities[HEALTH_UP] = true;
         inventory_content.nb_xp -= 6;
         return;
     }
-    if (health_up == true) {
+    if (abilities[HEALTH_UP] == true) {
         print("Already Upgrade Your Health\n");
         return;
     }

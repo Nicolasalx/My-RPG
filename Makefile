@@ -5,6 +5,9 @@
 ## Makefile
 ##
 
+SAVE_SYSTEM_SRC	=	src/saving_system/save_data.c \
+					src/saving_system/load_data.c
+
 CHEST_SRC		=	src/chest/create_chest.c \
 					src/chest/declaration_chest.c \
 					src/chest/render_chest.c
@@ -79,7 +82,8 @@ SAVING_SRC		=	src/menu_game/saving/declaration.c \
 
 SETTINGS_MENU_SRC=	src/menu_game/settings/declaration.c \
 					src/menu_game/settings/create.c \
-					src/menu_game/settings/render.c
+					src/menu_game/settings/render.c \
+					src/menu_game/settings/buton_states.c
 
 MENU_GAME_SRC	=	src/menu_game/create.c \
 					src/menu_game/declaration.c \
@@ -87,7 +91,8 @@ MENU_GAME_SRC	=	src/menu_game/create.c \
 
 GENERIC_FUNC_SRC=	src/generic_func/anim_sprite.c \
 					src/generic_func/compute_rect_texture.c \
-					src/generic_func/check_collision.c
+					src/generic_func/check_collision.c \
+					src/generic_func/is_rect_collide.c
 
 PLAYER_SRC	=	src/player/declaration_player.c \
 				src/player/create_player.c \
@@ -113,7 +118,8 @@ MAIN_SRC	=	src/main/declaration_main.c \
 MENU_SRC 	=	src/menu/create.c \
 				src/menu/declaration.c \
 				src/menu/buttons.c \
-				src/menu/render.c
+				src/menu/render.c \
+				src/menu/buton_state.c
 
 QUEST_SRC	=	src/quest/create.c \
 				src/quest/declaration.c \
@@ -138,10 +144,14 @@ SRC			=	src/main.c \
 				$(COLLISIONMAP_SRC) \
 				$(MANAGEVIEW_SRC) \
 				$(CHEST_SRC) \
+<<<<<<< HEAD
 				$(HEAL_XP_BAR_SRC) \
 				$(DIALOG_SRC) \
 				$(ANIMATION_SRC) \
 				$(DOOR_SRC)
+=======
+				$(SAVE_SYSTEM_SRC)
+>>>>>>> fb06f808ff8b12a5efd8314e0ab4f39e1d79c925
 
 CFLAGS		=	-W -Wall -Wextra -I ./include -I ./include/lib -lcsfml-system \
 				-lcsfml-graphics -lcsfml-window -lcsfml-audio -lm

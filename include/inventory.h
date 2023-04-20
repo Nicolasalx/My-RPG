@@ -16,6 +16,12 @@
     #define COLOR_BG_SAVING 128, 128, 128, 255
     #define COLOR_TEXT_SAVING 255, 255, 255, 255
 
+typedef enum {
+    NORMALED,
+    HOVERED,
+    PRESS
+} state_buton_t;
+
 typedef struct {
     bool have_a_helmet;
     bool have_armor;
@@ -99,6 +105,7 @@ typedef struct {
     sfVector2f size_sprite;
     char *path_img;
     int choose_opt;
+    state_buton_t states;
 } settings_button_game_menu_t;
 
 typedef struct {
@@ -176,5 +183,7 @@ void anim_clothes(int i);
 void create_clothes_rectangle(int i);
 void create_front_inventory(void);
 void create_rectangle_front(int i);
+void verification(int i);
+void states(int i);
 
 #endif /* !INVENTORY_H_ */

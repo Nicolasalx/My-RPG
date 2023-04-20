@@ -11,14 +11,14 @@
 
 void speed_up(int i)
 {
-    if (is_speed_up == false && inventory_content.nb_xp >= 6) {
+    if (abilities[SPEED_UP] == false && inventory_content.nb_xp >= 6) {
         player.speed *= 2;
         sfSprite_setColor(fondation[i].sprite, (sfColor) {255, 255, 255, 255});
-        is_speed_up = true;
+        abilities[SPEED_UP] = true;
         inventory_content.nb_xp -= 6;
         return;
     }
-    if (is_speed_up == true){
+    if (abilities[SPEED_UP] == true){
         print("Already Upgrade Your Movement Speed\n");
         return;
     }
