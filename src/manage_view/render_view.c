@@ -15,10 +15,6 @@ void go_to_next_level(void)
 {
     map.pos.x -= LEVEL_TRANSITION_SPEED;
     collision_map.pos.x = -LEVEL_TRANSITION_SPEED;
-    for (int i = 0; i < nb_chest; ++i) {
-        sfSprite_move(chest[i].sprite,
-        (sfVector2f) {-LEVEL_TRANSITION_SPEED, 0});
-    }
     ++ current_level;
 }
 
@@ -26,10 +22,6 @@ void go_to_prev_level(void)
 {
     map.pos.x += LEVEL_TRANSITION_SPEED;
     collision_map.pos.x = LEVEL_TRANSITION_SPEED;
-    for (int i = 0; i < nb_chest; ++i) {
-        sfSprite_move(chest[i].sprite,
-        (sfVector2f) {LEVEL_TRANSITION_SPEED, 0});
-    }
     -- current_level;
 }
 
