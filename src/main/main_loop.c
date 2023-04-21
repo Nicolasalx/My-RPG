@@ -11,6 +11,7 @@
 #include "player.h"
 #include "manage_view.h"
 #include "save_system.h"
+#include "music.h"
 
 bool mouse_button_pressed;
 bool mouse_button_maintain;
@@ -21,6 +22,7 @@ void main_loop(void)
 {
     create_render_window();
     create_view();
+    lauch_background_music();
     while (sfRenderWindow_isOpen(window)) {
         sfRenderWindow_clear(window, (sfColor) {20, 24, 46, 255});
         manage_event();
