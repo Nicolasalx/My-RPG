@@ -59,7 +59,7 @@ void check_collission_again(
     sfVector2f *prev_pos_player, sfVector2f *prev_pos_rect)
 {
     sfRectangleShape_setPosition(player.collision,
-    (sfVector2f) {player.pos.x + (17 * player.scale.x), player.pos.y});
+    (sfVector2f) {player.pos.x + (17 * player.scale.x), player.pos.y + 18});
     check_collision_player(*prev_pos_player, *prev_pos_rect);
     *prev_pos_player = player.pos;
     *prev_pos_rect = sfRectangleShape_getPosition(player.collision);
@@ -99,7 +99,7 @@ void player_move(void)
         try_to_move(&prev_pos_player, &prev_pos_rect);
     }
     sfRectangleShape_setPosition(player.collision,
-    (sfVector2f) {player.pos.x + (17 * player.scale.x), player.pos.y});
+    (sfVector2f) {player.pos.x + (17 * player.scale.x), player.pos.y + 18});
     set_pos_attack_collision(player.anim_to_play);
     check_collision_player(prev_pos_player, prev_pos_rect);
 }
