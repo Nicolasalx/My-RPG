@@ -16,11 +16,11 @@ system_bot_t system_bot[] = {
         .reset_pos_bot = {1000, 100},
         .pos_bot_ini = {0, 0},
 
-        .big_life_color_rectangle = (sfColor) {0, 0, 0, 255},
+        .big_life_color_rectangle = (sfColor) {0, 0, 0, 100},
         .big_life_pos_rectangle = {100, 100},
         .big_life_size_rectangle = {100, 10},
 
-        .little_life_color_rectangle = (sfColor) {0, 0, 0, 255},
+        .little_life_color_rectangle = (sfColor) {0, 0, 255, 255},
         .little_life_pos_rectangle = {100, 100},
         .little_life_size_rectangle = {100, 10},
 
@@ -40,6 +40,8 @@ system_bot_t system_bot[] = {
         .pos_end_bot = {0, 0},
         .speed_bot = 50.0f,
         .distance = 100.0f,
+        .nb_life_bot = 100,
+        .can_draw = true
     },
     {
         .bot_pos_sprite = {1350, 300},
@@ -48,11 +50,11 @@ system_bot_t system_bot[] = {
         .reset_pos_bot = {1000, 100},
         .pos_bot_ini = {0, 0},
 
-        .big_life_color_rectangle = (sfColor) {0, 0, 0, 255},
+        .big_life_color_rectangle = (sfColor) {0, 0, 0, 100},
         .big_life_pos_rectangle = {100, 100},
         .big_life_size_rectangle = {100, 10},
 
-        .little_life_color_rectangle = (sfColor) {0, 0, 0, 255},
+        .little_life_color_rectangle = (sfColor) {0, 0, 255, 255},
         .little_life_pos_rectangle = {100, 100},
         .little_life_size_rectangle = {100, 10},
 
@@ -72,6 +74,8 @@ system_bot_t system_bot[] = {
         .pos_end_bot = {0, 0},
         .speed_bot = 50.0f,
         .distance = 100.0f,
+        .nb_life_bot = 100,
+        .can_draw = true
     }
 };
 

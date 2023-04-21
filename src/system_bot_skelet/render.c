@@ -12,6 +12,14 @@
 #include "manage_view.h"
 #include "math.h"
 
+bool collision_rectangle_sprite(sfRectangleShape *rect, sfSprite *sprite)
+{
+    sfFloatRect rect_bound = sfRectangleShape_getGlobalBounds(rect);
+    sfFloatRect sprite_bound = sfSprite_getGlobalBounds(sprite);
+
+    return sfFloatRect_intersects(&rect_bound, &sprite_bound, NULL);
+}
+
 void check_if_player_enter(int i)
 {
     sfVector2f rectPos = sfRectangleShape_getPosition(player.collision);
@@ -36,24 +44,55 @@ void check_if_player_enter(int i)
     }
 }
 
+bool skelet_die(int i)
+{
+    if (system_bot[i].nb_life_bot <= 0) {
+        system_bot[i].can_draw = false;
+        return true;
+    }
+    return false;
+}
+
+void setup_life_skelet(int i)
+{
+    int rule_of_3 = 0;
+    rule_of_3 = (100 * system_bot[i].nb_life_bot) / 100.0;
+    system_bot[i].little_life_size_rectangle = (sfVector2f) {rule_of_3, 10};
+    sfRectangleShape_setSize(system_bot[i].little_life_rectangle, system_bot[i].little_life_size_rectangle);
+}
+
+void combat_skelet(int i)
+{
+    if (collision_rectangle_sprite(player.attack_collision, system_bot[i].bot) == true) {
+        system_bot[i].nb_life_bot -= player.damage;
+        if (skelet_die(i) == true) {
+            return;
+        }
+        setup_life_skelet(i);
+    }
+}
+
 void create_skelets(void)
 {
     for (int i = 0; i < size_system_bot; ++i) {
-        check_if_player_enter(i);
-        get_direction_bot(i);
-        if (system_bot[i].bot_can_move == true) {
-            system_bot[i].pos_end_bot = player.pos;
-            bot_chase_player(i);
+        if (system_bot[i].can_draw == true) {
+            combat_skelet(i);
+            check_if_player_enter(i);
+            get_direction_bot(i);
+            if (system_bot[i].bot_can_move == true) {
+                system_bot[i].pos_end_bot = player.pos;
+                bot_chase_player(i);
+            }
+            if (system_bot[i].bot_can_move == false) {
+                bot_got_base(i);
+            }
+            sfRenderWindow_drawCircleShape(window, system_bot[i].zone, NULL);
+            sfRenderWindow_drawSprite(window, system_bot[i].bot, NULL);
+            sfRenderWindow_drawRectangleShape(window,
+                system_bot[i].big_life_rectangle, NULL);
+            sfRenderWindow_drawRectangleShape(window,
+                system_bot[i].little_life_rectangle, NULL);
         }
-        if (system_bot[i].bot_can_move == false) {
-            bot_got_base(i);
-        }
-        sfRenderWindow_drawCircleShape(window, system_bot[i].zone, NULL);
-        sfRenderWindow_drawSprite(window, system_bot[i].bot, NULL);
-        sfRenderWindow_drawRectangleShape(window,
-            system_bot[i].big_life_rectangle, NULL);
-        sfRenderWindow_drawRectangleShape(window,
-            system_bot[i].little_life_rectangle, NULL);
     }
 }
 
