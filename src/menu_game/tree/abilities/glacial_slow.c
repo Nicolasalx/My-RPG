@@ -13,7 +13,6 @@ void glacial_slow(int i)
     if (abilities[ATTACKSPEED_UP] == true &&
     abilities[IS_GLACIAL_SLOW] == false &&
     inventory_content.nb_xp >= 10) {
-        sfSprite_setColor(fondation[i].sprite, (sfColor) {255, 255, 255, 255});
         abilities[IS_GLACIAL_SLOW] = true;
         inventory_content.nb_xp -= 10;
         return;

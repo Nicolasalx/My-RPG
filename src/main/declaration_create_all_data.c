@@ -33,6 +33,7 @@ void (*create[])(void) = {
     create_button_settings,
     create_button_menu_game,
     create_button_tree,
+    create_arrows,
     create_front_inventory,
     create_loading_content,
     create_tutorial,

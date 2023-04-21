@@ -13,7 +13,6 @@ void critical(int i)
 {
     if (abilities[STRENGHT_UP] == true && abilities[CRITICAL_UP] == false &&
     inventory_content.nb_xp >= 8){
-        sfSprite_setColor(fondation[i].sprite, (sfColor) {255, 255, 255, 255});
         abilities[CRITICAL_UP] = true;
         inventory_content.nb_xp -= 8;
         return;

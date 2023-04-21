@@ -13,7 +13,6 @@ void final(int i)
     if (abilities[IS_FUREUR] == true && abilities[IS_BLOODBATH] == true &&
         abilities[IS_GLACIAL_SLOW] == true && abilities[IS_FINAL] == false
         && inventory_content.nb_xp >= 12) {
-        sfSprite_setColor(fondation[i].sprite, (sfColor) {255, 255, 255, 255});
         abilities[IS_FINAL] = true;
         inventory_content.nb_xp -= 12;
         return;

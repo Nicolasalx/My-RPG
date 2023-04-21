@@ -13,7 +13,6 @@ void attack_speed_upgrade(int i)
 {
     if (abilities[SPEED_UP] == true && abilities[ATTACKSPEED_UP] == false &&
     inventory_content.nb_xp >= 8) {
-        sfSprite_setColor(fondation[i].sprite, (sfColor) {255, 255, 255, 255});
         abilities[ATTACKSPEED_UP] = true;
         inventory_content.nb_xp -= 8;
         return;

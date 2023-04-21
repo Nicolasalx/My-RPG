@@ -11,16 +11,6 @@
     #include "SFML/Graphics.h"
     #include "main.h"
 
-typedef struct {
-    bool can_opac;
-    sfSprite *sprite;
-    sfTexture *texture;
-    sfVector2f pos;
-    sfVector2f size;
-    char *path_img;
-    void (*abilities)(int);
-} create_tree_t;
-
 typedef enum {
     SPEED_UP,
     STRENGHT_UP,
@@ -35,17 +25,38 @@ typedef enum {
     NB_ABILITIES
 } abilities_e;
 
+typedef struct {
+    sfSprite *sprite;
+    sfTexture *texture;
+    sfVector2f pos;
+    sfVector2f size;
+    char *path_img;
+    void (*abilities)(int);
+} create_tree_t;
+
+typedef struct {
+    sfSprite *sprite;
+    sfTexture *texture;
+    sfVector2f pos;
+    sfVector2f size;
+    char *path_img;
+} create_arrow_t;
+
 extern const int size_tree;
+
+extern const int size_arrows;
 
 extern bool abilities[];
 
 extern create_tree_t fondation[];
 
+extern create_arrow_t arrows[];
+
 void display_tree(void);
 void speed_up(int i);
 void add_strenght(int i);
 void create_button_tree(void);
-void def(int i);
+void create_arrows(void);
 void attack_speed_upgrade(int i);
 void upgrade_health(int i);
 void critical(int i);
