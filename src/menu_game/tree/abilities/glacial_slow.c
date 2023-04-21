@@ -8,7 +8,7 @@
 #include "tree.h"
 #include "inventory.h"
 
-void glacial_slow(int i)
+void glacial_slow()
 {
     if (abilities[ATTACKSPEED_UP] == true &&
     abilities[IS_GLACIAL_SLOW] == false &&

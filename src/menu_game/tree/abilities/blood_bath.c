@@ -8,7 +8,7 @@
 #include "tree.h"
 #include "inventory.h"
 
-void blood_bath(int i)
+void blood_bath()
 {
     if (abilities[REGENE] == true && abilities[IS_BLOODBATH] == false &&
     inventory_content.nb_xp >= 10) {

@@ -10,11 +10,10 @@
 #include "inventory.h"
 #include "heal_xp_bar.h"
 
-void regeneration(int i)
+void regeneration()
 {
     if (abilities[HEALTH_UP] == true && abilities[REGENE] == false &&
     inventory_content.nb_xp >= 8) {
-        nb_regene = 3;
         abilities[REGENE] = true;
         inventory_content.nb_xp -= 8;
         return;

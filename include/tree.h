@@ -31,7 +31,7 @@ typedef struct {
     sfVector2f pos;
     sfVector2f size;
     char *path_img;
-    void (*abilities)(int);
+    void (*abilities)(void);
 } create_tree_t;
 
 typedef struct {
@@ -53,17 +53,17 @@ extern create_tree_t fondation[];
 extern create_arrow_t arrows[];
 
 void display_tree(void);
-void speed_up(int i);
-void add_strenght(int i);
+void speed_up();
+void add_strenght();
 void create_button_tree(void);
 void create_arrows(void);
-void attack_speed_upgrade(int i);
-void upgrade_health(int i);
-void critical(int i);
-void regeneration(int i);
-void blood_bath(int i);
-void glacial_slow(int i);
-void final(int i);
-void fureur(int i);
+void attack_speed_upgrade();
+void upgrade_health();
+void critical();
+void regeneration();
+void blood_bath();
+void glacial_slow();
+void final();
+void fureur();
 
 #endif /* !TREE_H_ */
