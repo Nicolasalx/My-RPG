@@ -26,11 +26,11 @@ void create_player(void)
     sfRectangleShape_setFillColor(player.collision, sfTransparent);
     sfRectangleShape_setOutlineColor(player.collision, sfRed);
     sfRectangleShape_setOutlineThickness(player.collision, 2);
-    sfRectangleShape_setSize(player.collision, (sfVector2f) {22 * player.scale.x, 33 * player.scale.y});
+    sfRectangleShape_setSize(player.collision, (sfVector2f) {22 * player.scale.x, 22 * player.scale.y});
     player.clock_move = sfClock_create();
     player.attack_collision = sfRectangleShape_create();
     sfRectangleShape_setFillColor(player.attack_collision, sfTransparent);
     sfRectangleShape_setOutlineColor(player.attack_collision, sfCyan);
     sfRectangleShape_setOutlineThickness(player.attack_collision, 2);
-    sfRectangleShape_setSize(player.attack_collision, (sfVector2f) {22 * player.scale.x, 33 * player.scale.y});
+    sfRectangleShape_setSize(player.attack_collision, (sfVector2f) {22 * player.scale.x, 22 * player.scale.y});
 }
