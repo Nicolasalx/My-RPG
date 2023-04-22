@@ -5,6 +5,10 @@
 ## Makefile
 ##
 
+BOSS_SRC		=	src/boss/create_boss.c \
+					src/boss/declaration_boss.c \
+					src/boss/render_boss.c
+
 MUSIC_SRC		=	src/music/launch_background_music.c \
 					src/music/launch_open_chest_music.c
 
@@ -105,7 +109,9 @@ MENU_GAME_SRC	=	src/menu_game/create.c \
 
 GENERIC_FUNC_SRC=	src/generic_func/anim_sprite.c \
 					src/generic_func/compute_rect_texture.c \
-					src/generic_func/check_collision.c
+					src/generic_func/check_collision.c \
+					src/generic_func/my_leading_coeff.c \
+					src/generic_func/get_rect_center.c
 
 PLAYER_SRC	=	src/player/declaration_player.c \
 				src/player/create_player.c \
@@ -163,7 +169,8 @@ SRC			=	src/main.c \
 				$(DOOR_SRC) \
 				$(SAVE_SYSTEM_SRC) \
 				$(SHOP_SRC) \
-				$(MUSIC_SRC)
+				$(MUSIC_SRC) \
+				$(BOSS_SRC)
 
 CFLAGS		=	-W -Wall -Wextra -I ./include -I ./include/lib -lcsfml-system \
 				-lcsfml-graphics -lcsfml-window -lcsfml-audio -lm

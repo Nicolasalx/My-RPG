@@ -23,6 +23,7 @@
 #include "animation.h"
 #include "door.h"
 #include "shop.h"
+#include "boss.h"
 
 render_func_t render_func[] = {
     {render_map, GAME},
@@ -41,5 +42,6 @@ render_func_t render_func[] = {
     {render_door, GAME},
     {render_shop, GAME},
     {render_menu_quest, GAME},
+    {render_boss, GAME},
     {NULL, 0}
 };

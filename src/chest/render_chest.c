@@ -11,6 +11,7 @@
 #include "generic_func.h"
 #include "manage_view.h"
 #include "inventory.h"
+#include "music.h"
 
 void play_single_anim(sfSprite *sprite, single_anim_t *anim)
 {
