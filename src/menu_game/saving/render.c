@@ -92,31 +92,40 @@ void display_valid_info_save(void)
     sfRenderWindow_drawText(window, saving_content[26].text, NULL);
 }
 
+void save_each_data(int *index_saving)
+{
+    switch (* index_saving) {
+    case 2:
+        save_all_data(SAVE_1);
+        break;
+    case 3:
+        save_all_data(SAVE_2);
+        break;
+    case 4:
+        save_all_data(SAVE_3);
+        break;
+    default:
+        break;
+    }
+}
+
 void button_saving(int i, int *index_saving)
 {
-    if (is_mouse_over_rectangle_shape(validate_saving[i].rectangle) == true && mouse_button_pressed == true) {
+    if (is_mouse_over_rectangle_shape(validate_saving[i].rectangle) == true &&
+        mouse_button_pressed == true) {
         if (validate_saving[i].can_apply == true) {
-            sfRectangleShape_setFillColor(validate_saving[* index_saving].rectangle, (sfColor) {128, 128, 128, 255});
-            sfRectangleShape_setFillColor(validate_saving[i].rectangle, (sfColor) {0, 0, 255, 255});
+            sfRectangleShape_setFillColor(validate_saving[* index_saving].
+                rectangle, (sfColor) {128, 128, 128, 255});
+            sfRectangleShape_setFillColor(validate_saving[i].rectangle,
+                (sfColor) {0, 0, 255, 255});
             * index_saving = i;
         } else if (validate_saving[i].can_validate == true) {
-            switch (* index_saving) {
-            case 2:
-                save_all_data(SAVE_1);
-                break;
-            case 3:
-                save_all_data(SAVE_2);
-                break;
-            case 4:
-                save_all_data(SAVE_3);
-                break;
-            default:
-                break;
-            }
+            save_each_data(index_saving);
         }
     }
     sfRenderWindow_drawSprite(window, validate_saving[i].sprite, NULL);
-    sfRenderWindow_drawRectangleShape(window, validate_saving[i].rectangle, NULL);
+    sfRenderWindow_drawRectangleShape(window, validate_saving[i].rectangle,
+        NULL);
 }
 
 void display_saving_inventory(void)

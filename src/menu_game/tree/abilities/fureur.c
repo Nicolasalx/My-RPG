@@ -8,7 +8,7 @@
 #include "tree.h"
 #include "inventory.h"
 
-void fureur()
+void fureur(void)
 {
     if (abilities[CRITICAL_UP] == true && abilities[IS_FUREUR] == false &&
     inventory_content.nb_xp >= 10) {

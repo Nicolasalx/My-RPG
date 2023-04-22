@@ -9,7 +9,7 @@
 #include "player.h"
 #include "inventory.h"
 
-void attack_speed_upgrade()
+void attack_speed_upgrade(void)
 {
     if (abilities[SPEED_UP] == true && abilities[ATTACKSPEED_UP] == false &&
     inventory_content.nb_xp >= 8) {

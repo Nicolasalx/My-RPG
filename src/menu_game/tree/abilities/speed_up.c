@@ -9,7 +9,7 @@
 #include "player.h"
 #include "inventory.h"
 
-void speed_up()
+void speed_up(void)
 {
     if (abilities[SPEED_UP] == false && inventory_content.nb_xp >= 6) {
         abilities[SPEED_UP] = true;

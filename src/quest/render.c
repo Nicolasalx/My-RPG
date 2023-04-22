@@ -62,9 +62,10 @@ void manage_text_quest(void)
     for (int i = 0; i < size_quest_menu; ++i) {
         if (manage_animation.dont_move_totem < 2 && manage_animation.move_totem
             == true && img_quest_menu[i].text_choose == text_totem) {
-            img_quest_menu[i].pos_text = (sfVector2f) {img_quest_menu[i].pos_text.x
-                + 750, img_quest_menu[i].pos_text.y};
-            sfText_setPosition(img_quest_menu[i].text, img_quest_menu[i].pos_text);
+            img_quest_menu[i].pos_text = (sfVector2f) {img_quest_menu[i].
+                pos_text.x + 750, img_quest_menu[i].pos_text.y};
+            sfText_setPosition(img_quest_menu[i].text, img_quest_menu[i].
+                pos_text);
             ++ manage_animation.dont_move_totem;
         }
         manage_text_part_2(i);

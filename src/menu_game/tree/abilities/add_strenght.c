@@ -9,7 +9,7 @@
 #include "player.h"
 #include "inventory.h"
 
-void add_strenght()
+void add_strenght(void)
 {
     if (abilities[STRENGHT_UP] == false && inventory_content.nb_xp >= 6){
         abilities[STRENGHT_UP] = true;

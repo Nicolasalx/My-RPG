@@ -39,7 +39,7 @@ img_quest_t img_quest_menu[] = {
 
         .pos_text = {300, 280},
         .text_to_write = "Meet in the arrow room\n"
-                         "No prerequisites",
+        "No prerequisites",
         .size_text = 40,
         .color_text = (sfColor) {COLOR_TEXT_QUEST},
         .text_choose = text_totem
@@ -62,7 +62,7 @@ img_quest_t img_quest_menu[] = {
 
         .pos_text = {300, 480},
         .text_to_write = "Meet in the Skeleton Room\n"
-                         "Prerequisites: Totem and 1 key",
+        "Prerequisites: Totem and 1 key",
         .size_text = 40,
         .color_text = (sfColor) {COLOR_TEXT_QUEST},
         .text_choose = text_amulet
@@ -85,7 +85,7 @@ img_quest_t img_quest_menu[] = {
 
         .pos_text = {300, 680},
         .text_to_write = "Meet in the boss room\n"
-                         "Prerequisites: Totem, Amulet and 3 keys",
+        "Prerequisites: Totem, Amulet and 3 keys",
         .size_text = 40,
         .color_text = (sfColor) {COLOR_TEXT_QUEST},
         .text_choose = text_boss

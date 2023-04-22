@@ -9,7 +9,7 @@
 #include "player.h"
 #include "inventory.h"
 
-void upgrade_health()
+void upgrade_health(void)
 {
     if (abilities[HEALTH_UP] == false && inventory_content.nb_xp >= 6) {
         abilities[HEALTH_UP] = true;
