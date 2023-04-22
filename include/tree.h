@@ -53,17 +53,17 @@ extern create_tree_t fondation[];
 extern create_arrow_t arrows[];
 
 void display_tree(void);
-void speed_up();
-void add_strenght();
+void speed_up(void);
+void add_strenght(void);
 void create_button_tree(void);
 void create_arrows(void);
-void attack_speed_upgrade();
-void upgrade_health();
-void critical();
-void regeneration();
-void blood_bath();
-void glacial_slow();
-void final();
-void fureur();
+void attack_speed_upgrade(void);
+void upgrade_health(void);
+void critical(void);
+void regeneration(void);
+void blood_bath(void);
+void glacial_slow(void);
+void final(void);
+void fureur(void);
 
 #endif /* !TREE_H_ */

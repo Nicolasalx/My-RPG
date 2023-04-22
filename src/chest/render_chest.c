@@ -37,6 +37,57 @@ void play_single_anim(sfSprite *sprite, single_anim_t *anim)
     }
 }
 
+void render_first_chest(int i, bool *chest_1)
+{
+    if (check_collision(chest[i].rectangle, player.collision) &&
+        sfKeyboard_isKeyPressed(sfKeyE)) {
+        if (*chest_1 == false) {
+            chest[i].anim.play = true;
+            inventory_content.have_totem = true;
+            inventory_content.nb_key += 1;
+            inventory_content.nb_xp += 50;
+            inventory_content.money += 400;
+            *chest_1 = true;
+        }
+    }
+    play_single_anim(chest[i].sprite, &chest[i].anim);
+    sfRenderWindow_drawSprite(window, chest[i].sprite, NULL);
+    sfRenderWindow_drawRectangleShape(window, chest[i].rectangle, NULL);
+}
+
+void render_second_chest(int i, bool *chest_2)
+{
+    if (check_collision(chest[i].rectangle, player.collision) &&
+        sfKeyboard_isKeyPressed(sfKeyE)) {
+        if (*chest_2 == false) {
+            chest[i].anim.play = true;
+            inventory_content.have_amuletter = true;
+            inventory_content.nb_key += 2;
+            inventory_content.nb_xp += 50;
+            inventory_content.money += 600;
+            *chest_2 = true;
+        }
+    }
+    play_single_anim(chest[i].sprite, &chest[i].anim);
+    sfRenderWindow_drawSprite(window, chest[i].sprite, NULL);
+    sfRenderWindow_drawRectangleShape(window, chest[i].rectangle, NULL);
+}
+
+void render_third_chest(int i, bool *chest_3)
+{
+    if (check_collision(chest[i].rectangle, player.collision) &&
+        sfKeyboard_isKeyPressed(sfKeyE)) {
+        if (*chest_3 == false) {
+            chest[i].anim.play = true;
+            inventory_content.nb_key += 2;
+            *chest_3 = true;
+        }
+    }
+    play_single_anim(chest[i].sprite, &chest[i].anim);
+    sfRenderWindow_drawSprite(window, chest[i].sprite, NULL);
+    sfRenderWindow_drawRectangleShape(window, chest[i].rectangle, NULL);
+}
+
 void render_chest(void)
 {
     static bool chest_1 = false;
@@ -44,44 +95,11 @@ void render_chest(void)
     static bool chest_3 = false;
     for (int i = 0; i < nb_chest; ++i) {
         if (next_level == 1 && chest[i].choice_chest == CHEST_ARROW) {
-            if (check_collision(chest[i].rectangle, player.collision) && sfKeyboard_isKeyPressed(sfKeyE)) {
-                if (chest_1 == false) {
-                    chest[i].anim.play = true;
-                    inventory_content.have_totem = true;
-                    inventory_content.nb_key += 1;
-                    inventory_content.nb_xp += 50;
-                    inventory_content.money += 400;
-                    chest_1 = true;
-                }
-            }
-            play_single_anim(chest[i].sprite, &chest[i].anim);
-            sfRenderWindow_drawSprite(window, chest[i].sprite, NULL);
-            sfRenderWindow_drawRectangleShape(window, chest[i].rectangle, NULL);
+            render_first_chest(i, &chest_1);
         } else if (next_level == 2 && chest[i].choice_chest == CHEST_SKELET) {
-            if (check_collision(chest[i].rectangle, player.collision) && sfKeyboard_isKeyPressed(sfKeyE)) {
-                if (chest_2 == false) {
-                    chest[i].anim.play = true;
-                    inventory_content.have_amuletter = true;
-                    inventory_content.nb_key += 2;
-                    inventory_content.nb_xp += 50;
-                    inventory_content.money += 600;
-                    chest_2 = true;
-                }
-            }
-            play_single_anim(chest[i].sprite, &chest[i].anim);
-            sfRenderWindow_drawSprite(window, chest[i].sprite, NULL);
-            sfRenderWindow_drawRectangleShape(window, chest[i].rectangle, NULL);
+            render_second_chest(i, &chest_2);
         } else if (next_level == 3 && chest[i].choice_chest == CHEST_BOSS) {
-            if (check_collision(chest[i].rectangle, player.collision) && sfKeyboard_isKeyPressed(sfKeyE)) {
-                if (chest_3 == false) {
-                    chest[i].anim.play = true;
-                    inventory_content.nb_key += 2;
-                    chest_3 = true;
-                }
-            }
-            play_single_anim(chest[i].sprite, &chest[i].anim);
-            sfRenderWindow_drawSprite(window, chest[i].sprite, NULL);
-            sfRenderWindow_drawRectangleShape(window, chest[i].rectangle, NULL);
+            render_third_chest(i, &chest_3);
         }
         
     }
