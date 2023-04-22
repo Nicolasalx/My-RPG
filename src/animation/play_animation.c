@@ -16,12 +16,14 @@ void play_animation(void)
     if (elapsedTime < 1.f) {
         animation_level.color_rectangle.a = 255;
     } else if (elapsedTime < 4.f) {
-        animation_level.color_rectangle.a = (sfUint8)(255 * (4.f - elapsedTime) / 3.f);
+        animation_level.color_rectangle.a = (sfUint8)(255 *
+            (4.f - elapsedTime) / 3.f);
     } else {
         play_anim = false;
         sfClock_restart(animation_level.play);
         animation_level.color_rectangle.a = 0;
     }
-    sfRectangleShape_setFillColor(animation_level.rectangle, animation_level.color_rectangle);
+    sfRectangleShape_setFillColor(animation_level.rectangle,
+        animation_level.color_rectangle);
     sfRenderWindow_drawRectangleShape(window, animation_level.rectangle, NULL);
 }

@@ -22,8 +22,11 @@ void create_heal_xp_bar(void)
         heal_xp_bar[i].rectangle = sfRectangleShape_create();
         sfRectangleShape_setOutlineThickness(heal_xp_bar[i].rectangle, 3);
         sfRectangleShape_setOutlineColor(heal_xp_bar[i].rectangle, sfBlack);
-        sfRectangleShape_setSize(heal_xp_bar[i].rectangle, heal_xp_bar[i].size_rectangle);
-        sfRectangleShape_setFillColor(heal_xp_bar[i].rectangle, heal_xp_bar[i].color_rectangle);
-        sfRectangleShape_setPosition(heal_xp_bar[i].rectangle, heal_xp_bar[i].pos_rectangle);
+        sfRectangleShape_setSize(heal_xp_bar[i].rectangle, heal_xp_bar[i].
+            size_rectangle);
+        sfRectangleShape_setFillColor(heal_xp_bar[i].rectangle, heal_xp_bar[i].
+            color_rectangle);
+        sfRectangleShape_setPosition(heal_xp_bar[i].rectangle, heal_xp_bar[i].
+            pos_rectangle);
     }
 }

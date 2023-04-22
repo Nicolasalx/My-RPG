@@ -10,7 +10,8 @@
 
 void render_video(void)
 {
-    float elapsed_seconds = sfTime_asSeconds(sfClock_getElapsedTime(video_start.clock));
+    float elapsed_seconds = sfTime_asSeconds
+        (sfClock_getElapsedTime(video_start.clock));
     if (elapsed_seconds > 0.02) {
         if (video_start.rect.left == 3000) {
             video_start.rect.left = 0;
