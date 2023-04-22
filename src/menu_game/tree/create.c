@@ -10,6 +10,19 @@
 #include "player.h"
 #include "inventory.h"
 
+void create_arrows(void)
+{
+    for (int i = 0; i < size_arrows; ++i) {
+        arrows[i].texture = sfTexture_createFromFile
+        (arrows[i].path_img, NULL);
+        arrows[i].sprite = sfSprite_create();
+        sfSprite_setTexture(arrows[i].sprite,
+            arrows[i].texture, sfTrue);
+        sfSprite_setScale(arrows[i].sprite, arrows[i].size);
+        sfSprite_setPosition(arrows[i].sprite, arrows[i].pos);
+    }
+}
+
 void create_button_tree(void)
 {
     for (int i = 0; i < size_tree; ++i) {
@@ -20,9 +33,7 @@ void create_button_tree(void)
             fondation[i].texture, sfTrue);
         sfSprite_setScale(fondation[i].sprite, fondation[i].size);
         sfSprite_setPosition(fondation[i].sprite, fondation[i].pos);
-        if (fondation[i].can_opac == true) {
-            sfSprite_setColor(fondation[i].sprite,
-            (sfColor) {255, 255, 255, 122});
-        }
+        sfSprite_setColor(fondation[i].sprite,
+        (sfColor) {255, 255, 255, 122});
     }
 }
