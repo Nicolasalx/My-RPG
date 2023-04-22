@@ -24,6 +24,14 @@ typedef struct {
 } settings_img_t;
 
 typedef struct {
+    int last_index_frame;
+    int last_index_reso;
+    int nb_button_pressed;
+    bool little_frame;
+    bool little_reso;
+} info_setting_t;
+
+typedef struct {
     sfRectangleShape *rectangle;
     sfColor color;
     sfVector2f pos;
@@ -43,6 +51,8 @@ extern const int size_settings_img;
 
 extern bool can_open_settings;
 extern bool can_open_tutorial;
+
+extern info_setting_t info_setting;
 
 void create_img_settings(void);
 void render_settings(void);
