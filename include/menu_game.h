@@ -60,5 +60,8 @@ void tutorial_button(void);
 void resize_button(void);
 void state(int i);
 void verif_state(int i);
+void display_valid_first_part(void);
+void display_valid_second_part(void);
+void display_valid_third_part(void);
 
 #endif /* !MENU_H_ */

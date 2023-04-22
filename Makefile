@@ -26,7 +26,8 @@ VIDEO_SRC		=	src/video_start/create.c \
 
 SHOP_SRC		=	src/shop/create.c \
 					src/shop/declaration.c \
-					src/shop/render.c
+					src/shop/render.c \
+					src/shop/interaction_shop.c
 
 DOOR_SRC		=	src/door/create.c \
 					src/door/declaration.c \
@@ -96,7 +97,8 @@ LOADING_SRC		=	src/menu_game/loading/declaration.c \
 
 SAVING_SRC		=	src/menu_game/saving/declaration.c \
 					src/menu_game/saving/create.c \
-					src/menu_game/saving/render.c
+					src/menu_game/saving/render.c \
+					src/menu_game/saving/display_saving.c
 
 SETTINGS_MENU_SRC=	src/menu_game/settings/declaration.c \
 					src/menu_game/settings/create.c \

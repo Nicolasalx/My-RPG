@@ -47,5 +47,14 @@ extern const int size_shop;
 
 void create_shop(void);
 void render_shop(void);
+void detect_shop_open(bool *can_open_shop);
+void close_menu_shop(int i, bool *can_open_shop);
+void validation_buy_potion(int *index_previous_shop);
+void validation_buy(int *index_previous_shop);
+void set_color_shop(int i, int *index_previous_shop);
+bool display_shop(int i, bool *can_open_shop, int *index_previous_shop);
+void detect_item_can_buy(void);
+void display_opt_shop(bool *can_open_shop, int *previous_index_choose);
+void render_shop(void);
 
 #endif /* !SHOP_H_ */
