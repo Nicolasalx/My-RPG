@@ -9,12 +9,10 @@
 #include "player.h"
 #include "inventory.h"
 
-void upgrade_health(int i)
+void upgrade_health()
 {
     if (abilities[HEALTH_UP] == false && inventory_content.nb_xp >= 6) {
-        sfSprite_setColor(fondation[i].sprite, (sfColor) {255, 255, 255, 255});
         abilities[HEALTH_UP] = true;
-        inventory_content.nb_life_max = 110;
         inventory_content.nb_xp -= 6;
         return;
     }
