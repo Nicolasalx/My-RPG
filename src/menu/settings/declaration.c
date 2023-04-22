@@ -83,3 +83,11 @@ button_settings_t button_settings [] = {
 const int size_button_settings = NB_ELEM(button_settings);
 
 bool can_open_settings;
+
+info_setting_t info_setting = {
+    .last_index_frame = 0,
+    .last_index_reso = 0,
+    .little_frame = false,
+    .little_reso = false,
+    .nb_button_pressed = 0
+};
