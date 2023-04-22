@@ -58,5 +58,7 @@ void create_img_settings(void);
 void render_settings(void);
 void create_button_settings(void);
 void render_tutorial(void);
+void change_resolution(int i);
+void change_fps(int i);
 
 #endif /* !SETTINGS_H_ */

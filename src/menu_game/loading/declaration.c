@@ -7,8 +7,6 @@
 
 #include "inventory.h"
 
-#define BG_LOADING 128, 128, 128, 255
-
 loading_content_t loading_content[] = {
     {
         .color_rectangle = (sfColor) {BG_LOADING},

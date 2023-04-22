@@ -9,6 +9,9 @@
     #define DOOR_H_
 
     #include "SFML/Graphics.h"
+    #include <stdbool.h>
+
+    #define COLOR_DOOR 128, 128, 128, 255
 
 typedef enum {
     LEVEL_SKELET,
@@ -28,6 +31,12 @@ typedef struct {
 
 extern door_t door[];
 extern const int size_door;
+
+extern bool go_back;
+extern bool go_level_1;
+extern bool go_level_2;
+extern bool go_level_3;
+
 
 void create_door(void);
 void render_door(void);

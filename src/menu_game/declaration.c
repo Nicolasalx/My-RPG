@@ -77,3 +77,6 @@ game_menu_selection_t game_menu_selection [] = {
 const int size_game_menu_selection = NB_ELEM(game_menu_selection);
 
 game_menu_state_t game_menu_state = {INVENTORY};
+
+int number_of_item = 0;
+bool can_open_game_menu = false;

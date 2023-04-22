@@ -64,5 +64,13 @@ void get_direction_bot(int i);
 void chase_set_pos(int i, float elapsed_seconds);
 bool bot_chase_player(int i);
 void bot_got_base(int i);
+void setup_life_skelet(int i);
+void combat_skelet(int i);
+void set_direction_skelet(int i);
+void create_skelets(void);
+void render_system_bot(void);
+bool collision_rectangle_sprite(sfRectangleShape *rect, sfSprite *sprite);
+void check_if_player_enter(int i);
+bool skelet_die(int i);
 
 #endif /* !SYSTEM_BOT_SKELET_H_ */

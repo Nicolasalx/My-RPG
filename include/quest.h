@@ -10,6 +10,8 @@
     #include "SFML/Graphics.h"
     #include <stdbool.h>
 
+    #define COLOR_TEXT_QUEST 0, 0, 0, 255
+
 typedef enum {
     text_totem,
     text_amulet,

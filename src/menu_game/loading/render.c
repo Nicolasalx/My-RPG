@@ -12,8 +12,7 @@
 void select_opt_validate(int *last_choice, bool *can_validate, int i)
 {
     if (loading_content[i].validate == true && *can_validate == true) {
-        switch (* last_choice)
-        {
+        switch (* last_choice) {
         case 1:
             load_all_data(SAVE_1);
             break;

@@ -8,8 +8,6 @@
 #include "dialog.h"
 #include "main.h"
 
-#define COLOR_TEXT_DIALOG 0, 0, 0, 255
-
 create_dialog_t create_dialog[] = {
     {
         .pos_sprite = {1150, 150},

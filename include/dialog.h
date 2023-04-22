@@ -11,6 +11,9 @@
     #include <SFML/Graphics.h>
     #include <stdbool.h>
 
+    #define COLOR_TEXT_DIALOG 0, 0, 0, 255
+    #define radius_90 90
+
 typedef enum {
     PNJ_QUEST_ARROW,
     PNJ_QUEST_SKELET,

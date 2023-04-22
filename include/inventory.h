@@ -11,6 +11,8 @@
     #include "SFML/Graphics.h"
     #include "main.h"
 
+    #define BG_LOADING 128, 128, 128, 255
+
     #define CLOTHES_RECTANGLE_COLOR 255, 255, 255, 255
     #define COLOR_TEXT 0, 0, 0, 255
     #define COLOR_BG_SAVING 128, 128, 128, 255

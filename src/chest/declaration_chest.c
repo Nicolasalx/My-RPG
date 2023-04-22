@@ -9,8 +9,6 @@
 #include "my_def.h"
 #include <stdlib.h>
 
-#define COLOR_DETECTION 128, 128, 128, 100
-
 chest_t chest[] = {
     {
         .pos = {1550, 450},

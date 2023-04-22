@@ -13,11 +13,6 @@
 #include "generic_func.h"
 #include "player.h"
 
-bool go_back = false;
-bool go_level_1 = false;
-bool go_level_2 = false;
-bool go_level_3 = false;
-
 bool go_back_start(int i)
 {
     if (door[i].choice_level == BACK_TO_START) {

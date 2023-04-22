@@ -7,8 +7,6 @@
 
 #include "quest.h"
 
-#define COLOR_TEXT_QUEST 0, 0, 0, 255
-
 img_quest_t img_quest_menu[] = {
     {
         .pos = {0, 0},

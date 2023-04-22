@@ -65,6 +65,8 @@ extern game_menu_state_t game_menu_state;
 
 extern int number_of_item;
 
+extern int number_of_item;
+extern bool can_open_game_menu;
 
 extern game_menu_selection_t game_menu_selection[];
 extern const int size_game_menu_selection;

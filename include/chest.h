@@ -12,6 +12,8 @@
     #include <stdbool.h>
     #include "generic_func.h"
 
+    #define COLOR_DETECTION 128, 128, 128, 100
+
 typedef enum {
     CHEST_ARROW,
     CHEST_SKELET,

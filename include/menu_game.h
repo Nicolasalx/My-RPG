@@ -46,6 +46,8 @@ extern const int size_img_button_menu;
 
 extern bool quit_status;
 
+extern bool can_open_tutorial;
+
 extern bool is_fullscreen;
 
 void create_menu_button(void);

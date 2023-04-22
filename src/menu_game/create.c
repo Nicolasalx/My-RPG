@@ -8,9 +8,6 @@
 #include "main.h"
 #include "game_menu.h"
 
-int number_of_item = 0;
-bool can_open_game_menu = false;
-
 void create_rectangle_menu_game(int i)
 {
     game_menu_selection[i].rectangle = sfRectangleShape_create();

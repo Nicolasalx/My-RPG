@@ -21,6 +21,21 @@ void create_img_settings(void)
     }
 }
 
+void create_button_rectangle(int i)
+{
+    button_settings[i].rectangle = sfRectangleShape_create();
+    sfRectangleShape_setOutlineThickness(button_settings[i].rectangle,
+        3);
+    sfRectangleShape_setOutlineColor(button_settings[i].rectangle,
+    sfBlack);
+    sfRectangleShape_setSize(button_settings[i].rectangle,
+        button_settings[i].size);
+    sfRectangleShape_setFillColor(button_settings[i].rectangle,
+        (sfColor) {COLOR_BG_BUTTON_SETTINGS});
+    sfRectangleShape_setPosition(button_settings[i].rectangle,
+        button_settings[i].pos);
+}
+
 void create_button_settings(void)
 {
     for (int i = 0; i < size_button_settings; ++i) {
@@ -32,16 +47,6 @@ void create_button_settings(void)
         sfText_setPosition(button_settings[i].text,
         button_settings[i].pos_text);
         sfText_setFillColor(button_settings[i].text, sfWhite);
-        button_settings[i].rectangle = sfRectangleShape_create();
-        sfRectangleShape_setOutlineThickness(button_settings[i].rectangle,
-            3);
-        sfRectangleShape_setOutlineColor(button_settings[i].rectangle,
-        sfBlack);
-        sfRectangleShape_setSize(button_settings[i].rectangle,
-            button_settings[i].size);
-        sfRectangleShape_setFillColor(button_settings[i].rectangle,
-            (sfColor) {COLOR_BG_BUTTON_SETTINGS});
-        sfRectangleShape_setPosition(button_settings[i].rectangle,
-            button_settings[i].pos);
+        create_button_rectangle(i);
     }
 }

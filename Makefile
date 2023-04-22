@@ -61,7 +61,8 @@ MAP_SRC			=	src/map/declaration_map.c \
 SYSTEM_BOT_SRC	=	src/system_bot_skelet/declaration.c \
 					src/system_bot_skelet/create.c \
 					src/system_bot_skelet/render.c \
-					src/system_bot_skelet/skelet_ia.c
+					src/system_bot_skelet/skelet_ia.c \
+					src/system_bot_skelet/skelet_life.c
 
 INVENTORY_SRC	=	src/menu_game/inventory/declaration.c \
 					src/menu_game/inventory/create.c \
@@ -123,7 +124,8 @@ PLAYER_SRC	=	src/player/declaration_player.c \
 
 SETTINGS_SRC=	src/menu/settings/create.c \
 				src/menu/settings/declaration.c \
-				src/menu/settings/render.c
+				src/menu/settings/render.c \
+				src/menu/settings/reso_fps.c
 
 MAIN_SRC	=	src/main/declaration_main.c \
 				src/main/create_render_window.c \

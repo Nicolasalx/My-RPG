@@ -8,8 +8,6 @@
 #include "main.h"
 #include "heal_xp_bar.h"
 
-#define COLOR_TEXT_BAR 255, 255, 255, 255
-
 heal_xp_bar_t heal_xp_bar[] = {
     {
         .pos_rectangle = {1600, 50},
