@@ -34,7 +34,8 @@ DOOR_SRC		=	src/door/create.c \
 
 DIALOG_SRC		=	src/dialog/create.c \
 					src/dialog/declaration.c \
-					src/dialog/render.c
+					src/dialog/render.c \
+					src/dialog/pnj_render.c
 
 ANIMATION_SRC	=	src/animation/create.c \
 					src/animation/declaration.c \
