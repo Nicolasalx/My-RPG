@@ -53,7 +53,6 @@ bool bot_chase_player(int i)
 {
     float elapsed_seconds = sfTime_asSeconds
     (sfClock_getElapsedTime(system_bot[i].clock));
-    printf("%f\n", elapsed_seconds);
     if (elapsed_seconds < system_bot[i].distance / system_bot[i].speed_bot) {
         chase_set_pos(i, elapsed_seconds);
         return false;

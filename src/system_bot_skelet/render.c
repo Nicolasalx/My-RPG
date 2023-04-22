@@ -11,6 +11,7 @@
 #include "player.h"
 #include "manage_view.h"
 #include "math.h"
+#include "inventory.h"
 
 bool collision_rectangle_sprite(sfRectangleShape *rect, sfSprite *sprite)
 {
@@ -58,19 +59,33 @@ void setup_life_skelet(int i)
     int rule_of_3 = 0;
     rule_of_3 = (100 * system_bot[i].nb_life_bot) / 100.0;
     system_bot[i].little_life_size_rectangle = (sfVector2f) {rule_of_3, 10};
-    sfRectangleShape_setSize(system_bot[i].little_life_rectangle, system_bot[i].little_life_size_rectangle);
+    sfRectangleShape_setSize(system_bot[i].little_life_rectangle,
+        system_bot[i].little_life_size_rectangle);
 }
 
 void combat_skelet(int i)
 {
-    if (collision_rectangle_sprite(player.attack_collision, system_bot[i].bot) == true) {
+    static double stack_damage = 0.0;
+
+    if (collision_rectangle_sprite(player.attack_collision,
+        system_bot[i].bot) == true) {
         system_bot[i].nb_life_bot -= player.damage;
         if (skelet_die(i) == true) {
             return;
         }
         setup_life_skelet(i);
     }
+    if (collision_rectangle_sprite(player.collision,
+        system_bot[i].bot) == true) {
+        stack_damage += 0.1;
+        if (stack_damage >= 1.0) {
+            inventory_content.nb_life -= 1;
+            stack_damage = 0.0;
+        }
+    }
 }
+
+
 
 void create_skelets(void)
 {

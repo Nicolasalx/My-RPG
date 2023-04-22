@@ -35,6 +35,18 @@ void render_xp_mod(void)
     }
 }
 
+void potion_utilisation(void)
+{
+    static int count_potion = 0;
+
+    if (count_potion >= 60 && inventory_content.nb_potion > 0 && sfKeyboard_isKeyPressed(sfKeyF)) {
+        inventory_content.nb_life += 30;
+        inventory_content.nb_potion -= 1;
+        count_potion = 0;
+    }
+    ++ count_potion;
+}
+
 void render_xp_heal_bar(void)
 {
     float elapsed_seconds = sfTime_asSeconds
@@ -48,4 +60,5 @@ void render_xp_heal_bar(void)
         inventory_content.nb_life = inventory_content.nb_life_max;
     }
     render_xp_mod();
+    potion_utilisation();
 }

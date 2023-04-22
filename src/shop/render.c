@@ -97,8 +97,7 @@ bool display_shop(int i, bool *can_open_shop, int *index_previous_shop)
             validation_buy(index_previous_shop);
             return true;
         }
-    }
-    return false;
+    } return false;
 }
 
 void detect_item_can_buy(void)

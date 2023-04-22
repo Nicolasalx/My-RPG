@@ -49,6 +49,10 @@ typedef struct {
     float distance;
 
     sfVector2f pos_bot_ini;
+
+    unsigned int nb_life_bot;
+
+    bool can_draw;
 } system_bot_t;
 
 extern system_bot_t system_bot[];

@@ -23,8 +23,10 @@
 #include "animation.h"
 #include "door.h"
 #include "shop.h"
+#include "video_start.h"
 
 render_func_t render_func[] = {
+    {render_video, MENU},
     {render_map, GAME},
     {render_collision_map, GAME},
     {render_chest, GAME},
