@@ -50,7 +50,7 @@ typedef struct {
 
     sfVector2f pos_bot_ini;
 
-    unsigned int nb_life_bot;
+    int nb_life_bot;
 
     bool can_draw;
 } system_bot_t;

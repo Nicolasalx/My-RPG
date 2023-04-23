@@ -25,6 +25,7 @@
 #include "shop.h"
 #include "boss.h"
 #include "video_start.h"
+#include "win.h"
 
 render_func_t render_func[] = {
     {render_video, MENU},
@@ -45,5 +46,7 @@ render_func_t render_func[] = {
     {render_door, GAME},
     {render_shop, GAME},
     {render_menu_quest, GAME},
+    {render_screen_win, WIN},
+    {execute_abilities, GAME},
     {NULL, 0}
 };

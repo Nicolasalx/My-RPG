@@ -46,6 +46,8 @@ extern const int size_tree;
 
 extern const int size_arrows;
 
+extern sfClock *time_usable;
+
 extern bool abilities[];
 
 extern create_tree_t fondation[];
@@ -65,5 +67,6 @@ void blood_bath(void);
 void glacial_slow(void);
 void final(void);
 void fureur(void);
+void execute_abilities(void);
 
 #endif /* !TREE_H_ */

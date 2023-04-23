@@ -25,6 +25,10 @@ CHEST_SRC		=	src/chest/create_chest.c \
 					src/chest/declaration_chest.c \
 					src/chest/render_chest.c
 
+WIN_SRC			=	src/win/create.c \
+					src/win/declaration.c \
+					src/win/render.c
+
 VIDEO_SRC		=	src/video_start/create.c \
 					src/video_start/declaration.c \
 					src/video_start/render.c
@@ -52,7 +56,8 @@ ANIMATION_SRC	=	src/animation/create.c \
 
 HEAL_XP_BAR_SRC	=	src/heal_xp_bar/create.c \
 					src/heal_xp_bar/declaration.c \
-					src/heal_xp_bar/render.c
+					src/heal_xp_bar/render.c \
+					src/heal_xp_bar/upgrade_health.c
 
 MANAGEVIEW_SRC	=	src/manage_view/create_view.c \
 					src/manage_view/render_view.c
@@ -182,6 +187,7 @@ SRC			=	src/main.c \
 				$(SAVE_SYSTEM_SRC) \
 				$(SHOP_SRC) \
 				$(MUSIC_SRC) \
+				$(WIN_SRC) \
 				$(BOSS_SRC) \
 				$(VIDEO_SRC)
 
