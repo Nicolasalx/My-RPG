@@ -7,6 +7,7 @@
 
 #include "inventory.h"
 #include "main.h"
+#include "heal_xp_bar.h"
 #include "game_menu.h"
 
 void anim_helmet(sfColor *color)

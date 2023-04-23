@@ -118,3 +118,5 @@ create_tree_t fondation[] = {
 const int size_tree = NB_ELEM(fondation);
 
 const int size_arrows = NB_ELEM(arrows);
+
+sfClock *time_usable;

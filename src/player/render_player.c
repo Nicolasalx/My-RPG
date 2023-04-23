@@ -8,9 +8,16 @@
 #include "main.h"
 #include "generic_func.h"
 #include "player.h"
+#include "inventory.h"
+#include "manage_view.h"
 
 void render_player(void)
 {
+    if (inventory_content.nb_life <= 1) {
+        next_level = 0;
+        player.pos = (sfVector2f) {300, 500};
+        inventory_content.nb_life = inventory_content.nb_life_max;
+    }
     player_move();
     anim_sprite(&player.player_anim, player.anim_to_play);
     for (int i = 0; i < NB_ANIM_PLAYER; ++i) {
