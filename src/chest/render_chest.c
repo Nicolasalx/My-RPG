@@ -78,6 +78,7 @@ void render_third_chest(int i, bool *chest_3)
             chest[i].anim.play = true;
             inventory_content.nb_key += 2;
             *chest_3 = true;
+            game_state = WIN;
         }
     }
     play_single_anim(chest[i].sprite, &chest[i].anim);

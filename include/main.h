@@ -30,7 +30,8 @@ typedef struct {
 
 typedef enum {
     MENU,
-    GAME
+    GAME,
+    WIN
 } game_state_t;
 
 typedef struct {

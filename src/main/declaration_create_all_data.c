@@ -25,6 +25,7 @@
 #include "door.h"
 #include "shop.h"
 #include "video_start.h"
+#include "win.h"
 
 void (*create[])(void) = {
     create_default_font,
@@ -42,6 +43,7 @@ void (*create[])(void) = {
     create_animation,
     create_button_settings_game_menu,
     create_player,
+    create_win_screen,
     create_map,
     create_clothes_inventory,
     create_saving_inventory,

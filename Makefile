@@ -20,6 +20,10 @@ CHEST_SRC		=	src/chest/create_chest.c \
 					src/chest/declaration_chest.c \
 					src/chest/render_chest.c
 
+WIN_SRC			=	src/win/create.c \
+					src/win/declaration.c \
+					src/win/render.c
+
 VIDEO_SRC		=	src/video_start/create.c \
 					src/video_start/declaration.c \
 					src/video_start/render.c
@@ -175,7 +179,8 @@ SRC			=	src/main.c \
 				$(SAVE_SYSTEM_SRC) \
 				$(SHOP_SRC) \
 				$(MUSIC_SRC) \
-				$(VIDEO_SRC)
+				$(VIDEO_SRC) \
+				$(WIN_SRC)
 
 CFLAGS		=	-W -Wall -Wextra -I ./include -I ./include/lib -lcsfml-system \
 				-lcsfml-graphics -lcsfml-window -lcsfml-audio -lm
