@@ -9,6 +9,12 @@
 #include "player.h"
 #include "inventory.h"
 
+void upgrade_ad(void)
+{
+    player.player_anim.sprite_sheet[2].frame_rate = 15;
+    player.player_anim.sprite_sheet[5].frame_rate = 15;
+}
+
 void attack_speed_upgrade(void)
 {
     if (abilities[SPEED_UP] == true && abilities[ATTACKSPEED_UP] == false &&

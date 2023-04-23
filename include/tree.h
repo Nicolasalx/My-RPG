@@ -68,5 +68,6 @@ void glacial_slow(void);
 void final(void);
 void fureur(void);
 void execute_abilities(void);
+void upgrade_ad(void);
 
 #endif /* !TREE_H_ */

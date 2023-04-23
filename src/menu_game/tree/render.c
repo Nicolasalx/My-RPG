@@ -82,6 +82,7 @@ void unlock_abilities(void)
     }
     if (abilities[ATTACKSPEED_UP] == true) {
         sfSprite_setColor(fondation[4].sprite, (sfColor) {255, 255, 255, 255});
+        upgrade_as();
     }
     unlock_other();
 }
