@@ -59,8 +59,6 @@ void draw_colision(int i)
         if (collision_map.full_map[i][j] != NULL) {
             sfRectangleShape_move(collision_map.full_map[i][j],
             collision_map.pos);
-            sfRenderWindow_drawRectangleShape(window,
-            collision_map.full_map[i][j], NULL);
         }
     }
 }
