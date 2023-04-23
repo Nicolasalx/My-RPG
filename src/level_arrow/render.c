@@ -34,6 +34,24 @@ void calculate(float elapsed_seconds, int i)
         }
 }
 
+void direction_render_arrow(int i, sfFloatRect rectangleBounds)
+{
+    sfVector2f circleCenter =
+    sfCircleShape_getPosition(touret_arrow[i].arrow);
+    float circleRadius = sfCircleShape_getRadius(touret_arrow[i].arrow);
+    sfFloatRect circleBounds = {circleCenter.x - circleRadius,
+    circleCenter.y - circleRadius, circleRadius * 2.f, circleRadius * 2.f};
+    if (sfFloatRect_intersects(&rectangleBounds, &circleBounds, NULL)) {
+        player.pos.x = 300;
+        player.pos.y = 450;
+    }
+    float elapsed_seconds =
+    sfTime_asSeconds(sfClock_getElapsedTime(clock_level_arrow.reset_pos));
+    calculate(elapsed_seconds, i);
+    sfRenderWindow_drawSprite(window, touret_arrow[i].sprite, NULL);
+    sfRenderWindow_drawCircleShape(window, touret_arrow[i].arrow, NULL);
+}
+
 void render_level_arrow(void)
 {
     static bool first_time_enter_level = false;
@@ -46,20 +64,7 @@ void render_level_arrow(void)
         sfFloatRect rectangleBounds =
         sfRectangleShape_getGlobalBounds(player.collision);
         for (int i = 0; i < size_touret_arrow; ++i) {
-            sfVector2f circleCenter =
-            sfCircleShape_getPosition(touret_arrow[i].arrow);
-            float circleRadius = sfCircleShape_getRadius(touret_arrow[i].arrow);
-            sfFloatRect circleBounds = {circleCenter.x - circleRadius,
-            circleCenter.y - circleRadius, circleRadius * 2.f, circleRadius * 2.f};
-            if (sfFloatRect_intersects(&rectangleBounds, &circleBounds, NULL)) {
-                player.pos.x = 300;
-                player.pos.y = 450;
-            }
-            float elapsed_seconds =
-            sfTime_asSeconds(sfClock_getElapsedTime(clock_level_arrow.reset_pos));
-            calculate(elapsed_seconds, i);
-            sfRenderWindow_drawSprite(window, touret_arrow[i].sprite, NULL);
-            sfRenderWindow_drawCircleShape(window, touret_arrow[i].arrow, NULL);
+            direction_render_arrow(i, rectangleBounds);
         }
     }
 }

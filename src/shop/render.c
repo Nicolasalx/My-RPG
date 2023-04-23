@@ -13,45 +13,39 @@
 
 void detect_shop_open(bool *can_open_shop)
 {
-    if (check_collision(detect_shop.rectangle, player.collision) && sfKeyboard_isKeyPressed(sfKeyE)) {
+    if (check_collision(detect_shop.rectangle, player.collision) &&
+        sfKeyboard_isKeyPressed(sfKeyE)) {
         * can_open_shop = true;
     } else {
-        sfRenderWindow_drawRectangleShape(window, detect_shop.rectangle, NULL);
+        sfRenderWindow_drawRectangleShape(window, detect_shop.rectangle,
+            NULL);
     }
 }
 
 void close_menu_shop(int i, bool *can_open_shop)
 {
-    if (is_mouse_over_sprite(shop[i].sprite) == true && mouse_button_pressed == true) {
-        if (my_strcmp(shop[i].path_img, "game_src/butons/Menu/Square/Buttons/X.png") == 0) {
+    if (is_mouse_over_sprite(shop[i].sprite) == true && mouse_button_pressed
+        == true) {
+        if (my_strcmp(shop[i].path_img,
+            "game_src/butons/Menu/Square/Buttons/X.png") == 0) {
             * can_open_shop = false;
         }
     }
 }
 
-void validation_buy(int *index_previous_shop)
+void validation_buy_potion(int *index_previous_shop)
 {
-    static bool helmet = false;
-    static bool armor = false;
     static bool glove = false;
     static bool boot = false;
 
-    if (*index_previous_shop == 2 && inventory_content.money >= 150 && helmet == false) {
-        inventory_content.have_a_helmet = true;
-        inventory_content.money -= 150;
-        helmet = true;
-    }
-    if (*index_previous_shop == 3 && inventory_content.money >= 150 && armor == false) {
-        inventory_content.have_armor = true;
-        inventory_content.money -= 150;
-        armor = true;
-    }
-    if (*index_previous_shop == 4 && inventory_content.money >= 150 && glove == false) {
+    if (*index_previous_shop == 4 && inventory_content.money >= 150 && glove
+        == false) {
         inventory_content.have_glove = true;
         inventory_content.money -= 150;
         glove = true;
     }
-    if (*index_previous_shop == 5 && inventory_content.money >= 150 && boot == false) {
+    if (*index_previous_shop == 5 && inventory_content.money >= 150 && boot ==
+        false) {
         inventory_content.have_boot = true;
         inventory_content.money -= 150;
         boot = true;
@@ -60,6 +54,26 @@ void validation_buy(int *index_previous_shop)
         inventory_content.nb_potion += 1;
         inventory_content.money -= 50;
     }
+}
+
+void validation_buy(int *index_previous_shop)
+{
+    static bool helmet = false;
+    static bool armor = false;
+
+    if (*index_previous_shop == 2 && inventory_content.money >= 150 && helmet
+        == false) {
+        inventory_content.have_a_helmet = true;
+        inventory_content.money -= 150;
+        helmet = true;
+    }
+    if (*index_previous_shop == 3 && inventory_content.money >= 150 && armor ==
+        false) {
+        inventory_content.have_armor = true;
+        inventory_content.money -= 150;
+        armor = true;
+    }
+    validation_buy_potion(index_previous_shop);
 }
 
 bool display_shop(int i, bool *can_open_shop, int *index_previous_shop)
@@ -83,8 +97,7 @@ bool display_shop(int i, bool *can_open_shop, int *index_previous_shop)
             validation_buy(index_previous_shop);
             return true;
         }
-    }
-    return false;
+    } return false;
 }
 
 void detect_item_can_buy(void)
@@ -111,6 +124,15 @@ void detect_item_can_buy(void)
     }
 }
 
+void display_opt_shop(bool *can_open_shop, int *previous_index_choose)
+{
+    for (int i = 0; i < size_shop; ++i) {
+        if (display_shop(i, can_open_shop, previous_index_choose) == true) {
+            break;
+        }
+    }
+}
+
 void render_shop(void)
 {
     static bool can_open_shop = false;
@@ -122,11 +144,7 @@ void render_shop(void)
     detect_shop_open(&can_open_shop);
     if (can_open_shop == true) {
         detect_item_can_buy();
-        for (int i = 0; i < size_shop; ++i) {
-            if (display_shop(i, &can_open_shop, &previous_index_choose) == true) {
-                break;
-            }
-        }
+        display_opt_shop(&can_open_shop, &previous_index_choose);
         for (int i = 0; i < size_shop; ++i) {
             sfRenderWindow_drawRectangleShape(window, shop[i].rectangle, NULL);
             sfRenderWindow_drawText(window, shop[i].text, NULL);

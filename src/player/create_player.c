@@ -7,6 +7,23 @@
 
 #include "player.h"
 
+void create_player_rectangle_sprite(void)
+{
+    player.collision = sfRectangleShape_create();
+    sfRectangleShape_setFillColor(player.collision, sfTransparent);
+    sfRectangleShape_setOutlineColor(player.collision, sfRed);
+    sfRectangleShape_setOutlineThickness(player.collision, 2);
+    sfRectangleShape_setSize(player.collision, (sfVector2f)
+        {22 * player.scale.x, 22 * player.scale.y});
+    player.clock_move = sfClock_create();
+    player.attack_collision = sfRectangleShape_create();
+    sfRectangleShape_setFillColor(player.attack_collision, sfTransparent);
+    sfRectangleShape_setOutlineColor(player.attack_collision, sfCyan);
+    sfRectangleShape_setOutlineThickness(player.attack_collision, 2);
+    sfRectangleShape_setSize(player.attack_collision, (sfVector2f)
+        {22 * player.scale.x, 22 * player.scale.y});
+}
+
 void create_player(void)
 {
     for (int i = 0; i < NB_ANIM_PLAYER; ++i) {
@@ -22,15 +39,5 @@ void create_player(void)
             player.player_anim.sprite_sheet[i].texture);
         player.player_anim.clock = sfClock_create();
     }
-    player.collision = sfRectangleShape_create();
-    sfRectangleShape_setFillColor(player.collision, sfTransparent);
-    sfRectangleShape_setOutlineColor(player.collision, sfRed);
-    sfRectangleShape_setOutlineThickness(player.collision, 2);
-    sfRectangleShape_setSize(player.collision, (sfVector2f) {22 * player.scale.x, 22 * player.scale.y});
-    player.clock_move = sfClock_create();
-    player.attack_collision = sfRectangleShape_create();
-    sfRectangleShape_setFillColor(player.attack_collision, sfTransparent);
-    sfRectangleShape_setOutlineColor(player.attack_collision, sfCyan);
-    sfRectangleShape_setOutlineThickness(player.attack_collision, 2);
-    sfRectangleShape_setSize(player.attack_collision, (sfVector2f) {22 * player.scale.x, 22 * player.scale.y});
+    create_player_rectangle_sprite();
 }

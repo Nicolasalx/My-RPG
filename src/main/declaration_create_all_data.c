@@ -25,6 +25,7 @@
 #include "door.h"
 #include "shop.h"
 #include "boss.h"
+#include "video_start.h"
 
 void (*create[])(void) = {
     create_default_font,
@@ -56,5 +57,6 @@ void (*create[])(void) = {
     create_shop,
     create_chest,
     create_boss,
+    create_video,
     NULL
 };

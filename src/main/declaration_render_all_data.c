@@ -24,8 +24,10 @@
 #include "door.h"
 #include "shop.h"
 #include "boss.h"
+#include "video_start.h"
 
 render_func_t render_func[] = {
+    {render_video, MENU},
     {render_map, GAME},
     {render_collision_map, GAME},
     {render_chest, GAME},
@@ -34,11 +36,11 @@ render_func_t render_func[] = {
     {render_menu, MENU},
     {render_level_arrow, GAME},
     {render_system_bot, GAME},
+    {render_boss, GAME},
     {render_tutorial, MENU},
     {render_view, GAME},
     {render_xp_heal_bar, GAME},
     {render_player, GAME},
-    {render_boss, GAME},
     {render_game_menu_button, GAME},
     {render_door, GAME},
     {render_shop, GAME},

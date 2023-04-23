@@ -31,16 +31,21 @@ typedef struct {
     sfRectangleShape *collision;
     sfRectangleShape *attack_collision;
     sfRectangleShape *health_bar;
+    sfVector2f max_healt_bar_size;
     sfRectangleShape *health_bar_outline;
     int healt;
     int max_healt;
     int damage;
     int boss_dps;
+    bool die;
+    int dead;
+    bool direc;
     boss_anim_t anim_to_play;
     anim_sprite_t boss_anim;
 } boss_t;
 
 extern boss_t boss[];
+extern const int nb_boss;
 
 void create_boss(void);
 void render_boss(void);

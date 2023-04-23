@@ -8,6 +8,8 @@
 #include "boss.h"
 #include "main.h"
 #include "player.h"
+#include "manage_view.h"
+#include "inventory.h"
 #include <SFML/Graphics.h>
 
 sfVector2f boss_direction(double x_1, double y_1, double x_2, double y_2)
@@ -30,12 +32,14 @@ bool manage_attack_boss(int j, sfVector2f boss_dir)
     && boss_dir.x > 0.0) {
         boss[j].anim_to_play = BOSS_ATTACK_RIGHT;
         boss[j].damage = boss[j].boss_dps;
+        boss[j].direc = RIGHT;
         return true;
     }
     if (check_collision(boss[j].attack_collision, player.collision)
     && boss_dir.x < 0.0) {
         boss[j].anim_to_play = BOSS_ATTACK_LEFT;
         boss[j].damage = boss[j].boss_dps;
+        boss[j].direc = LEFT;
         return true;
     }
     return false;
@@ -43,6 +47,7 @@ bool manage_attack_boss(int j, sfVector2f boss_dir)
 
 void manage_move_boss(int j)
 {
+    static double stack_damage = 0.0;
     sfVector2f boss_dir = boss_direction(
         get_rect_center(boss[j].collision).x, get_rect_center(boss[j].collision).y,
         get_rect_center(player.collision).x, get_rect_center(player.collision).y
@@ -51,15 +56,22 @@ void manage_move_boss(int j)
         sfRectangleShape_setPosition(boss[j].attack_collision,
         (sfVector2f) {boss[j].pos.x + (20 * boss[j].scale.x), boss[j].pos.y + (12 * boss[j].scale.y)});
         boss[j].anim_to_play = BOSS_RUN_RIGHT;
+        boss[j].direc = RIGHT;
     } else if (boss_dir.x < 0.0) {
         boss[j].anim_to_play = BOSS_RUN_LEFT;
+        boss[j].direc = LEFT;
         sfRectangleShape_setPosition(boss[j].attack_collision,
         (sfVector2f) {boss[j].pos.x - (2 * boss[j].scale.x), boss[j].pos.y + (12 * boss[j].scale.y)});
     }
     if (manage_attack_boss(j, boss_dir)) {
+        stack_damage += 0.1;
+        if (stack_damage >= 5.0) {
+            inventory_content.nb_life -= boss[j].damage;
+            stack_damage = 0.0;
+        }
         return;
     }
-    if (sfClock_getElapsedTime(boss[j].clock_move).microseconds / 1000 >= 10) {
+    if (sfClock_getElapsedTime(boss[j].clock_move).microseconds / 1000 >= boss[j].speed) {
         sfClock_restart(boss[j].clock_move);
         vect_arithm(boss[j].pos, +=, boss_dir);
     }
@@ -67,27 +79,56 @@ void manage_move_boss(int j)
 
 void manage_health_boss(int j)
 {
-    print(INT(player.damage));
     if (check_collision(boss[j].collision, player.attack_collision)) {
         boss[j].healt -= player.damage;
     }
     sfRectangleShape_setSize(boss[j].health_bar, (sfVector2f) {
-        (sfRectangleShape_getSize(boss[j].health_bar).x / 100.0) *
+        (boss[j].max_healt_bar_size.x / 100.0) *
         ((100.0 / boss[j].max_healt) * boss[j].healt),
         sfRectangleShape_getSize(boss[j].health_bar).y,
         });
     sfRectangleShape_setPosition(boss[j].health_bar,
-        (sfVector2f) {boss[j].pos.x + (8 * boss[j].scale.x), boss[j].pos.y + (5 * boss[j].scale.y)});
+        (sfVector2f) {boss[j].pos.x + (8 * boss[j].scale.x),
+        boss[j].pos.y + (5 * boss[j].scale.y)});
     sfRectangleShape_setPosition(boss[j].health_bar_outline,
-        (sfVector2f) {boss[j].pos.x + (8 * boss[j].scale.x), boss[j].pos.y + (5 * boss[j].scale.y)});
+        (sfVector2f) {boss[j].pos.x + (8 * boss[j].scale.x),
+        boss[j].pos.y + (5 * boss[j].scale.y)});
+    if (boss[j].healt <= 0.0) {
+        boss[j].die = true;
+    }
+}
+
+void manage_boss_die(int j)
+{
+    if (boss[j].direc == LEFT)
+        boss[j].anim_to_play = BOSS_DIE_LEFT;
+    if (boss[j].direc == RIGHT)
+        boss[j].anim_to_play = BOSS_DIE_RIGHT;
+    if (sfClock_getElapsedTime(boss[j].boss_anim.clock).microseconds
+        / 1000 >= 1000 /
+        boss[j].boss_anim.sprite_sheet[boss[j].anim_to_play].frame_rate) {
+        ++ boss[j].dead;
+    }
+    anim_sprite(&boss[j].boss_anim, boss[j].anim_to_play);
 }
 
 void render_boss(void)
 {
-    for (int j = 0; j < 1; ++j) {
+    if (next_level != 3) {
+        return;
+    }
+    for (int j = 0; j < nb_boss; ++j) {
+        if (boss[j].dead >= 5)
+            continue;
+        if (boss[j].die == true) {
+            manage_boss_die(j);
+            sfRenderWindow_drawSprite(window,
+            boss[j].boss_anim.sprite_sheet[boss[j].anim_to_play].sprite, NULL);
+            continue;
+        }
         boss[j].damage = 0;
-        manage_move_boss(j);
         manage_health_boss(j);
+        manage_move_boss(j);
         anim_sprite(&boss[j].boss_anim, boss[j].anim_to_play);
         for (int i = 0; i < NB_ANIM_BOSS; ++i) {
             sfSprite_setPosition(

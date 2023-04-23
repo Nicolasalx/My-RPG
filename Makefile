@@ -24,6 +24,10 @@ CHEST_SRC		=	src/chest/create_chest.c \
 					src/chest/declaration_chest.c \
 					src/chest/render_chest.c
 
+VIDEO_SRC		=	src/video_start/create.c \
+					src/video_start/declaration.c \
+					src/video_start/render.c
+
 SHOP_SRC		=	src/shop/create.c \
 					src/shop/declaration.c \
 					src/shop/render.c
@@ -34,7 +38,8 @@ DOOR_SRC		=	src/door/create.c \
 
 DIALOG_SRC		=	src/dialog/create.c \
 					src/dialog/declaration.c \
-					src/dialog/render.c
+					src/dialog/render.c \
+					src/dialog/pnj_render.c
 
 ANIMATION_SRC	=	src/animation/create.c \
 					src/animation/declaration.c \
@@ -170,7 +175,8 @@ SRC			=	src/main.c \
 				$(SAVE_SYSTEM_SRC) \
 				$(SHOP_SRC) \
 				$(MUSIC_SRC) \
-				$(BOSS_SRC)
+				$(BOSS_SRC) \
+				$(VIDEO_SRC)
 
 CFLAGS		=	-W -Wall -Wextra -I ./include -I ./include/lib -lcsfml-system \
 				-lcsfml-graphics -lcsfml-window -lcsfml-audio -lm

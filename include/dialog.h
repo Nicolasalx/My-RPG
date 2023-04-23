@@ -56,5 +56,14 @@ extern const int size_create_dialog;
 
 void create_dialog_text(void);
 void render_dialog(void);
+void pnj_boss(int i);
+void dialog_arrow(int i);
+void dialog_skelet(int i);
+void dialog_boss(int i);
+void render_dialog(void);
+bool intersect_pnj(sfCircleShape *circle);
+void print_text_char(int i);
+void pnj_amuletter(int i);
+void pnj_totem(int i);
 
 #endif /* !DIALOG_H_ */

@@ -10,7 +10,7 @@
 
 void create_boss(void)
 {
-    for (int j = 0; j < 1; ++j) {
+    for (int j = 0; j < nb_boss; ++j) {
         for (int i = 0; i < NB_ANIM_BOSS; ++i) {
             boss[j].boss_anim.sprite_sheet[i].texture = sfTexture_createFromFile(
                 boss[j].boss_anim.sprite_sheet[i].sheet_path, NULL);
@@ -45,5 +45,6 @@ void create_boss(void)
 
         sfRectangleShape_setFillColor(boss[j].health_bar, sfBlue);
         sfRectangleShape_setSize(boss[j].health_bar, (sfVector2f) {15 * boss[j].scale.x, 2 * boss[j].scale.y});
+        boss[j].max_healt_bar_size = (sfVector2f) {15 * boss[j].scale.x, 2 * boss[j].scale.y};
     }
 }

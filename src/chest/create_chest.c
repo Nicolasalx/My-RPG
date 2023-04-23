@@ -7,6 +7,17 @@
 
 #include "chest.h"
 
+void create_chest_rectangle(int i)
+{
+    chest[i].rectangle = sfRectangleShape_create();
+    sfRectangleShape_setOutlineThickness(chest[i].rectangle, 3);
+    sfRectangleShape_setOutlineColor(chest[i].rectangle, sfBlack);
+    sfRectangleShape_setSize(chest[i].rectangle, chest[i].size_rectangle);
+    sfRectangleShape_setFillColor(chest[i].rectangle, chest[i].
+        color_rectangle);
+    sfRectangleShape_setPosition(chest[i].rectangle, chest[i].pos_rectangle);
+}
+
 void create_chest(void)
 {
     for (int i = 0; i < nb_chest; ++i) {
@@ -25,12 +36,6 @@ void create_chest(void)
         sfSprite_setScale(chest[i].sprite, chest[i].scale);
         sfSprite_setTextureRect(chest[i].sprite, result_rect);
         chest[i].anim.clock = sfClock_create();
-
-        chest[i].rectangle = sfRectangleShape_create();
-        sfRectangleShape_setOutlineThickness(chest[i].rectangle, 3);
-        sfRectangleShape_setOutlineColor(chest[i].rectangle, sfBlack);
-        sfRectangleShape_setSize(chest[i].rectangle, chest[i].size_rectangle);
-        sfRectangleShape_setFillColor(chest[i].rectangle, chest[i].color_rectangle);
-        sfRectangleShape_setPosition(chest[i].rectangle, chest[i].pos_rectangle);
+        create_chest_rectangle(i);
     }
 }

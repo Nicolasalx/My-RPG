@@ -17,7 +17,8 @@ create_dialog_t create_dialog[] = {
         .size_sprite = {1, 1},
 
         .pos_text = {1200, 200},
-        .text_to_write = "Go to the room of arrows.\nThere you will find a totem.",
+        .text_to_write =
+            "Go to the room of arrows.\nThere you will find a totem.",
         .size_text = 40,
         .color_text = (sfColor) {COLOR_TEXT_DIALOG},
 
@@ -39,7 +40,8 @@ create_dialog_t create_dialog[] = {
         .size_sprite = {1.2, 1},
 
         .pos_text = {1200, 200},
-        .text_to_write = "Go to the Skeleton Room.\nThere you will find an amulet.",
+        .text_to_write =
+            "Go to the Skeleton Room.\nThere you will find an amulet.",
         .size_text = 40,
         .color_text = (sfColor) {COLOR_TEXT_DIALOG},
 
@@ -61,7 +63,8 @@ create_dialog_t create_dialog[] = {
         .size_sprite = {1.2, 1},
 
         .pos_text = {1200, 200},
-        .text_to_write = "Go to the boss room.\nYou can save the world !!!",
+        .text_to_write =
+            "Go to the boss room.\nYou can save the world !!!",
         .size_text = 40,
         .color_text = (sfColor) {COLOR_TEXT_DIALOG},
 
