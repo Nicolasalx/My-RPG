@@ -7,7 +7,8 @@
 
 BOSS_SRC		=	src/boss/create_boss.c \
 					src/boss/declaration_boss.c \
-					src/boss/render_boss.c
+					src/boss/render_boss.c \
+					src/boss/manage_boss_move.c
 
 MUSIC_SRC		=	src/music/launch_background_music.c \
 					src/music/launch_open_chest_music.c
@@ -23,6 +24,10 @@ SAVE_SYSTEM_SRC	=	src/saving_system/save_data.c \
 CHEST_SRC		=	src/chest/create_chest.c \
 					src/chest/declaration_chest.c \
 					src/chest/render_chest.c
+
+WIN_SRC			=	src/win/create.c \
+					src/win/declaration.c \
+					src/win/render.c
 
 VIDEO_SRC		=	src/video_start/create.c \
 					src/video_start/declaration.c \
@@ -182,6 +187,7 @@ SRC			=	src/main.c \
 				$(SAVE_SYSTEM_SRC) \
 				$(SHOP_SRC) \
 				$(MUSIC_SRC) \
+				$(WIN_SRC) \
 				$(BOSS_SRC) \
 				$(VIDEO_SRC)
 
