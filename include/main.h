@@ -67,4 +67,6 @@ extern sfFont* font;
 
 extern bool can_open_game_menu;
 
+void free_all_data(void);
+
 #endif /* !MY_H_ */

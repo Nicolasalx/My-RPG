@@ -149,7 +149,8 @@ MAIN_SRC	=	src/main/declaration_main.c \
 				src/main/create_all_data.c \
 				src/main/declaration_render_all_data.c \
 				src/main/declaration_create_all_data.c \
-				src/main/create_default_font.c
+				src/main/create_default_font.c \
+				src/main/free_all_data.c
 
 MENU_SRC 	=	src/menu/create.c \
 				src/menu/declaration.c \
