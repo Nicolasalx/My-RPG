@@ -23,6 +23,6 @@ void blood_bath(void)
         return;
     }
     if (inventory_content.nb_xp < 10) {
-        return
+        return;
     }
 }
