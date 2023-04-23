@@ -24,8 +24,6 @@ void direction_level_3(int i)
         }
         if (display_animation == true && go_level_3 == true) {
             render_animation(3, &go_level_3);
-        } else {
-            sfRenderWindow_drawRectangleShape(window, door[i].rectangle, NULL);
         }
     }
 }
@@ -41,8 +39,6 @@ void direction_level_2(int i)
         }
         if (display_animation == true && go_level_2 == true) {
             render_animation(2, &go_level_2);
-        } else {
-            sfRenderWindow_drawRectangleShape(window, door[i].rectangle, NULL);
         }
     }
 }
@@ -58,8 +54,6 @@ void direction_level_1(int i)
         }
         if (display_animation == true && go_level_1 == true) {
             render_animation(1, &go_level_1);
-        } else {
-            sfRenderWindow_drawRectangleShape(window, door[i].rectangle, NULL);
         }
     }
 }
