@@ -49,5 +49,6 @@ extern const int nb_boss;
 
 void create_boss(void);
 void render_boss(void);
+void manage_move_boss(int j);
 
 #endif /* !BOSS_H_ */

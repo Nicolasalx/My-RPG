@@ -7,7 +7,8 @@
 
 BOSS_SRC		=	src/boss/create_boss.c \
 					src/boss/declaration_boss.c \
-					src/boss/render_boss.c
+					src/boss/render_boss.c \
+					src/boss/manage_boss_move.c
 
 MUSIC_SRC		=	src/music/launch_background_music.c \
 					src/music/launch_open_chest_music.c
