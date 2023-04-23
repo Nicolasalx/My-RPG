@@ -19,14 +19,12 @@ void final(void)
     }
     if (abilities[IS_FUREUR] == false || abilities[IS_BLOODBATH] == false ||
         abilities[IS_GLACIAL_SLOW] == false) {
-        print("Please Unlock First The 3 Last Abilities Of Each Lines\n");
         return;
     }
     if (abilities[IS_FINAL] == true) {
-        print("You Already Have The Final Upgrade\n");
         return;
     }
     if (inventory_content.nb_xp < 12) {
-        print("Not Enough XP\n");
+        return;
     }
 }

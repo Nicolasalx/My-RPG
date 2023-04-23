@@ -17,14 +17,12 @@ void fureur(void)
         return;
     }
     if (abilities[CRITICAL_UP] == false) {
-        print("Please Unlock first Your Critical Chance\n");
         return;
     }
     if (abilities[IS_FUREUR] == true) {
-        print("Already Unlock Fureur\n");
         return;
     }
     if (inventory_content.nb_xp < 10) {
-        print("Not Enough XP\n");
+        return;
     }
 }

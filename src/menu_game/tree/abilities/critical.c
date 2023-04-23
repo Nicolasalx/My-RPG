@@ -18,14 +18,12 @@ void critical(void)
         return;
     }
     if (abilities[STRENGHT_UP] == false) {
-        print("Please Unlock First The Damages Upgrade\n");
         return;
     }
     if (abilities[CRITICAL_UP] == true) {
-        print("Already Unlock Your Critical Chances\n");
         return;
     }
     if (inventory_content.nb_xp < 8) {
-        print("Not Enough XP\n");
+        return;
     }
 }

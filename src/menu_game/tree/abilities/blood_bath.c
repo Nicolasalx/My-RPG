@@ -17,14 +17,12 @@ void blood_bath(void)
         return;
     }
     if (abilities[REGENE] == false) {
-        print("Please Unlock First The Regeneration\n");
         return;
     }
     if (abilities[IS_BLOODBATH] == true) {
-        print("Already Unlock Blood Bath\n");
         return;
     }
     if (inventory_content.nb_xp < 10) {
-        print("Not Enough XP\n");
+        return
     }
 }

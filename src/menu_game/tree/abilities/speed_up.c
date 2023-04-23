@@ -17,10 +17,9 @@ void speed_up(void)
         return;
     }
     if (abilities[SPEED_UP] == true){
-        print("Already Upgrade Your Movement Speed\n");
         return;
     }
     if (inventory_content.nb_xp < 6) {
-        print("Not Enough XP\n");
+        return;
     }
 }

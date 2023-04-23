@@ -17,10 +17,9 @@ void upgrade_health(void)
         return;
     }
     if (abilities[HEALTH_UP] == true) {
-        print("Already Upgrade Your Health\n");
         return;
     }
     if (inventory_content.nb_xp < 6) {
-        print("Not Enough XP\n");
+        return;
     }
 }

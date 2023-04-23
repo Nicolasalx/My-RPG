@@ -24,14 +24,12 @@ void attack_speed_upgrade(void)
         return;
     }
     if (abilities[SPEED_UP] == false) {
-        print("Please Unlock First Your Movement Speed Upgrade\n");
         return;
     }
     if (abilities[ATTACKSPEED_UP] == true) {
-        print("Already Upgrade Your Attack Speed \n");
         return;
     }
     if (inventory_content.nb_xp < 8) {
-        print("Not Enough XP\n");
+        return;
     }
 }

@@ -18,14 +18,12 @@ void glacial_slow(void)
         return;
     }
     if (abilities[ATTACKSPEED_UP] == false) {
-        print("Please Unlock First Your Attack Speed\n");
         return;
     }
     if (abilities[IS_GLACIAL_SLOW] == true) {
-        print("Already Unlock Glacial Slow\n");
         return;
     }
     if (inventory_content.nb_xp < 10) {
-        print("Not Enough XP\n");
+        return;
     }
 }
