@@ -19,14 +19,12 @@ void regeneration(void)
         return;
     }
     if (abilities[HEALTH_UP] == false) {
-        print("Please Unlock First Your Health\n");
         return;
     }
     if (abilities[REGENE] == true) {
-        print("Already Unlock Your Regeneration\n");
         return;
     }
     if (inventory_content.nb_xp < 8) {
-        print("Not Enough XP\n");
+        return;
     }
 }
