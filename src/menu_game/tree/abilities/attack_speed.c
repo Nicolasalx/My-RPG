@@ -9,7 +9,7 @@
 #include "player.h"
 #include "inventory.h"
 
-void upgrade_ad(void)
+void upgrade_as(void)
 {
     player.player_anim.sprite_sheet[2].frame_rate = 15;
     player.player_anim.sprite_sheet[5].frame_rate = 15;
