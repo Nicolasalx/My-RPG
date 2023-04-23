@@ -43,5 +43,6 @@ render_func_t render_func[] = {
     {render_door, GAME},
     {render_shop, GAME},
     {render_menu_quest, GAME},
+    {execute_abilities, GAME},
     {NULL, 0}
 };

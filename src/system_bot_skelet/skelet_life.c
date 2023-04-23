@@ -16,6 +16,7 @@
 void setup_life_skelet(int i)
 {
     int rule_of_3 = 0;
+
     rule_of_3 = (100 * system_bot[i].nb_life_bot) / 100.0;
     system_bot[i].little_life_size_rectangle = (sfVector2f) {rule_of_3, 10};
     sfRectangleShape_setSize(system_bot[i].little_life_rectangle,

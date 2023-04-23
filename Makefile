@@ -45,7 +45,8 @@ ANIMATION_SRC	=	src/animation/create.c \
 
 HEAL_XP_BAR_SRC	=	src/heal_xp_bar/create.c \
 					src/heal_xp_bar/declaration.c \
-					src/heal_xp_bar/render.c
+					src/heal_xp_bar/render.c \
+					src/heal_xp_bar/upgrade_health.c
 
 MANAGEVIEW_SRC	=	src/manage_view/create_view.c \
 					src/manage_view/render_view.c

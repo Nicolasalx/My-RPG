@@ -12,6 +12,8 @@
 #include "map.h"
 #include "manage_view.h"
 #include "stdio.h"
+#include "tree.h"
+#include "system_bot_skelet.h"
 
 void open_game_menu(sfEvent event)
 {

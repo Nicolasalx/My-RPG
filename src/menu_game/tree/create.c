@@ -25,6 +25,7 @@ void create_arrows(void)
 
 void create_button_tree(void)
 {
+    time_usable = sfClock_create();
     for (int i = 0; i < size_tree; ++i) {
         fondation[i].texture = sfTexture_createFromFile
         (fondation[i].path_img, NULL);

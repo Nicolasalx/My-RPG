@@ -8,6 +8,7 @@
 #include "heal_xp_bar.h"
 #include "main.h"
 #include "inventory.h"
+#include "tree.h"
 
 void render_xp_opt(int i)
 {
@@ -67,4 +68,5 @@ void render_xp_heal_bar(void)
     }
     render_xp_mod();
     potion_utilisation();
+    stuff();
 }
