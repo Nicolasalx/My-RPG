@@ -40,5 +40,9 @@ extern bool go_level_3;
 
 void create_door(void);
 void render_door(void);
+void direction_level_3(int i);
+void direction_level_2(int i);
+void direction_level_1(int i);
+void direction_level(int *choose_level_go, int i);
 
 #endif /* !DOOR_H_ */

@@ -24,6 +24,7 @@
 #include "animation.h"
 #include "door.h"
 #include "shop.h"
+#include "boss.h"
 #include "video_start.h"
 
 void (*create[])(void) = {
@@ -55,6 +56,7 @@ void (*create[])(void) = {
     create_collision_map,
     create_shop,
     create_chest,
+    create_boss,
     create_video,
     NULL
 };

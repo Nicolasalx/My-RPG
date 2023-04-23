@@ -308,7 +308,7 @@ inventory_content_t inventory_content = {
     .nb_xp = 50,
     .have_amuletter = false,
     .have_totem = true,
-    .money = 1000,
+    .money = 0,
     .nb_life = 100,
     .nb_life_max = 100
 };

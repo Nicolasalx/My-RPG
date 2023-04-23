@@ -23,6 +23,7 @@
 #include "animation.h"
 #include "door.h"
 #include "shop.h"
+#include "boss.h"
 #include "video_start.h"
 
 render_func_t render_func[] = {
@@ -35,6 +36,7 @@ render_func_t render_func[] = {
     {render_menu, MENU},
     {render_level_arrow, GAME},
     {render_system_bot, GAME},
+    {render_boss, GAME},
     {render_tutorial, MENU},
     {render_view, GAME},
     {render_xp_heal_bar, GAME},

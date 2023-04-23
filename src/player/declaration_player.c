@@ -10,7 +10,7 @@
 player_t player = {
     .pos = {0, 0},
     .scale = {2, 2},
-    .speed = 2,
+    .speed = 20,
     .damage = 0,
     .player_dps = 2,
     .anim_to_play = IDLE_LEFT,

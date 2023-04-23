@@ -68,5 +68,9 @@ bool intersect_pnj(sfCircleShape *circle);
 void print_text_char(int i);
 void pnj_amuletter(int i);
 void pnj_totem(int i);
+void pnj_boss(int i);
+void dialog_arrow(int i);
+void dialog_skelet(int i);
+void dialog_boss(int i);
 
 #endif /* !DIALOG_H_ */

@@ -11,6 +11,7 @@
 #include "generic_func.h"
 #include "manage_view.h"
 #include "inventory.h"
+#include "music.h"
 
 void play_single_anim(sfSprite *sprite, single_anim_t *anim)
 {
@@ -51,7 +52,6 @@ void render_first_chest(int i, bool *chest_1)
     }
     play_single_anim(chest[i].sprite, &chest[i].anim);
     sfRenderWindow_drawSprite(window, chest[i].sprite, NULL);
-    sfRenderWindow_drawRectangleShape(window, chest[i].rectangle, NULL);
 }
 
 void render_second_chest(int i, bool *chest_2)
@@ -69,7 +69,6 @@ void render_second_chest(int i, bool *chest_2)
     }
     play_single_anim(chest[i].sprite, &chest[i].anim);
     sfRenderWindow_drawSprite(window, chest[i].sprite, NULL);
-    sfRenderWindow_drawRectangleShape(window, chest[i].rectangle, NULL);
 }
 
 void render_third_chest(int i, bool *chest_3)
@@ -84,7 +83,6 @@ void render_third_chest(int i, bool *chest_3)
     }
     play_single_anim(chest[i].sprite, &chest[i].anim);
     sfRenderWindow_drawSprite(window, chest[i].sprite, NULL);
-    sfRenderWindow_drawRectangleShape(window, chest[i].rectangle, NULL);
 }
 
 void render_chest(void)

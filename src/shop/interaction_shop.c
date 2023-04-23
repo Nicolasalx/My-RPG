@@ -16,9 +16,6 @@ void detect_shop_open(bool *can_open_shop)
     if (check_collision(detect_shop.rectangle, player.collision) &&
         sfKeyboard_isKeyPressed(sfKeyE)) {
         * can_open_shop = true;
-    } else {
-        sfRenderWindow_drawRectangleShape(window, detect_shop.rectangle,
-            NULL);
     }
 }
 

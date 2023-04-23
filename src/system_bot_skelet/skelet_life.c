@@ -57,7 +57,6 @@ void set_direction_skelet(int i)
     if (system_bot[i].bot_can_move == false) {
         bot_got_base(i);
     }
-    sfRenderWindow_drawCircleShape(window, system_bot[i].zone, NULL);
     sfRenderWindow_drawSprite(window, system_bot[i].bot, NULL);
     sfRenderWindow_drawRectangleShape(window,
         system_bot[i].big_life_rectangle, NULL);

@@ -59,7 +59,6 @@ void pnj_amuletter(int i)
             sfKeyboard_isKeyPressed(sfKeyE)) {
             activated_dialog[PNJ_QUEST_SKELET] = true;
         }
-        sfRenderWindow_drawCircleShape(window, create_dialog[i].circle, NULL);
         sfRenderWindow_drawSprite(window, create_dialog[i].sprite_pnj, NULL);
     }
 }
@@ -71,7 +70,6 @@ void pnj_totem(int i)
             sfKeyboard_isKeyPressed(sfKeyE)) {
             activated_dialog[PNJ_QUEST_ARROW] = true;
         }
-        sfRenderWindow_drawCircleShape(window, create_dialog[i].circle, NULL);
         sfRenderWindow_drawSprite(window, create_dialog[i].sprite_pnj, NULL);
     }
 }

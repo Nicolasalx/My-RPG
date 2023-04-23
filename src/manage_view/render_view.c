@@ -10,6 +10,7 @@
 #include "map.h"
 #include "collision_map.h"
 #include "chest.h"
+#include "player.h"
 
 void go_to_next_level(void)
 {
@@ -31,8 +32,10 @@ void render_view(void)
     if (current_level != next_level) {
         if (my_delta(current_level, next_level) < 0) {
             go_to_prev_level();
+            player.pos = (sfVector2f) {300, 500};
         } else {
             go_to_next_level();
+            player.pos = (sfVector2f) {300, 500};
         }
     }
 }
