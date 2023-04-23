@@ -19,7 +19,6 @@ void pnj_boss(int i)
             sfKeyboard_isKeyPressed(sfKeyE)) {
             activated_dialog[PNJ_QUEST_BOSS] = true;
         }
-        sfRenderWindow_drawCircleShape(window, create_dialog[i].circle, NULL);
         sfRenderWindow_drawSprite(window, create_dialog[i].sprite_pnj, NULL);
     }
 }

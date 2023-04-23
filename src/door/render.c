@@ -24,8 +24,6 @@ bool go_back_start(int i)
         if (display_animation == true && go_back == true) {
             render_animation(0, &go_back);
             return true;
-        } else {
-            sfRenderWindow_drawRectangleShape(window, door[i].rectangle, NULL);
         }
     }
     return false;
@@ -50,8 +48,6 @@ void draw_door(int i, int *choose_level_go)
         direction_level(choose_level_go, i);
     } else {
         if (go_back_start(i) == true) {
-            sfRenderWindow_drawRectangleShape(window, door[i].rectangle,
-                NULL);
         }
     }
 }
