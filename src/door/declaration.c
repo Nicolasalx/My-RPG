@@ -8,8 +8,6 @@
 #include "main.h"
 #include "door.h"
 
-#define COLOR_DOOR 128, 128, 128, 255
-
 door_t door[] = {
     {
         .color_rectangle = (sfColor) {255, 0, 0, 100},
@@ -42,3 +40,8 @@ door_t door[] = {
 };
 
 const int size_door = NB_ELEM(door);
+
+bool go_back = false;
+bool go_level_1 = false;
+bool go_level_2 = false;
+bool go_level_3 = false;

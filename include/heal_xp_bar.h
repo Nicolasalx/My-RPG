@@ -11,6 +11,8 @@
     #include "SFML/Graphics.h"
     #include <stdbool.h>
 
+    #define COLOR_TEXT_BAR 255, 255, 255, 255
+
 typedef enum {
     HEAL,
     XP_YES,

@@ -13,20 +13,6 @@
 #include "manage_view.h"
 #include "stdio.h"
 
-void change_level(void)
-{
-    if (current_level == 0 && player.pos.x >= 310 && player.pos.x <= 384 &&
-    player.pos.y >= 127 && player.pos.y <= 176 &&
-    sfKeyboard_isKeyPressed(sfKeyE)) {
-//        next_level = 0;
-    }
-    if (current_level == 0 && player.pos.x >= 1215 && player.pos.x <= 1285 &&
-    player.pos.y >= 127 && player.pos.y <= 176 &&
-    sfKeyboard_isKeyPressed(sfKeyE)) {
-//        next_level = 0;
-    }
-}
-
 void open_game_menu(sfEvent event)
 {
     if (can_open_game_menu == true && game_state == GAME &&
@@ -59,7 +45,6 @@ void execute_event(sfEvent event)
     && event.key.code == sfKeyH) {
         display_quest = false;
     }
-    change_level();
 }
 
 void manage_event(void)

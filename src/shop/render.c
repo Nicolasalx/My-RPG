@@ -11,88 +11,33 @@
 #include "manage_view.h"
 #include "inventory.h"
 
-void detect_shop_open(bool *can_open_shop)
+void set_color_shop(int i, int *index_previous_shop)
 {
-    if (check_collision(detect_shop.rectangle, player.collision) &&
-        sfKeyboard_isKeyPressed(sfKeyE)) {
-        * can_open_shop = true;
+    if (shop[i].already_buy == true) {
+        shop[i].color_rectangle.a = 100;
+        sfSprite_setColor(shop[i].sprite, shop[i].color_rectangle);
+        sfRectangleShape_setFillColor(shop[i].rectangle, (sfColor)
+            {0, 0, 0, 255});
     } else {
-        sfRenderWindow_drawRectangleShape(window, detect_shop.rectangle,
-            NULL);
-    }
-}
-
-void close_menu_shop(int i, bool *can_open_shop)
-{
-    if (is_mouse_over_sprite(shop[i].sprite) == true && mouse_button_pressed
-        == true) {
-        if (my_strcmp(shop[i].path_img,
-            "game_src/butons/Menu/Square/Buttons/X.png") == 0) {
-            * can_open_shop = false;
+        if (is_mouse_over_rectangle_shape(shop[i].rectangle) == true &&
+            mouse_button_pressed == true) {
+            sfRectangleShape_setFillColor(shop[*index_previous_shop].rectangle,
+                (sfColor) {128, 128, 128, 255});
+            sfRectangleShape_setFillColor(shop[i].rectangle, (sfColor)
+                {0, 0, 255, 255});
+            * index_previous_shop = i;
         }
     }
-}
-
-void validation_buy_potion(int *index_previous_shop)
-{
-    static bool glove = false;
-    static bool boot = false;
-
-    if (*index_previous_shop == 4 && inventory_content.money >= 150 && glove
-        == false) {
-        inventory_content.have_glove = true;
-        inventory_content.money -= 150;
-        glove = true;
-    }
-    if (*index_previous_shop == 5 && inventory_content.money >= 150 && boot ==
-        false) {
-        inventory_content.have_boot = true;
-        inventory_content.money -= 150;
-        boot = true;
-    }
-    if (*index_previous_shop == 6 && inventory_content.money >= 50) {
-        inventory_content.nb_potion += 1;
-        inventory_content.money -= 50;
-    }
-}
-
-void validation_buy(int *index_previous_shop)
-{
-    static bool helmet = false;
-    static bool armor = false;
-
-    if (*index_previous_shop == 2 && inventory_content.money >= 150 && helmet
-        == false) {
-        inventory_content.have_a_helmet = true;
-        inventory_content.money -= 150;
-        helmet = true;
-    }
-    if (*index_previous_shop == 3 && inventory_content.money >= 150 && armor ==
-        false) {
-        inventory_content.have_armor = true;
-        inventory_content.money -= 150;
-        armor = true;
-    }
-    validation_buy_potion(index_previous_shop);
 }
 
 bool display_shop(int i, bool *can_open_shop, int *index_previous_shop)
 {
     if (shop[i].can_choose == true) {
         close_menu_shop(i, can_open_shop);
-        if (shop[i].already_buy == true) {
-            shop[i].color_rectangle.a = 100;
-            sfSprite_setColor(shop[i].sprite, shop[i].color_rectangle);
-            sfRectangleShape_setFillColor(shop[i].rectangle, (sfColor) {0, 0, 0, 255});
-        } else {
-            if (is_mouse_over_rectangle_shape(shop[i].rectangle) == true && mouse_button_pressed == true) {
-                sfRectangleShape_setFillColor(shop[*index_previous_shop].rectangle, (sfColor) {128, 128, 128, 255});
-                sfRectangleShape_setFillColor(shop[i].rectangle, (sfColor) {0, 0, 255, 255});
-                * index_previous_shop = i;
-            }
-        }
+        set_color_shop(i, index_previous_shop);
     }
-    if (is_mouse_over_rectangle_shape(shop[12].rectangle) == true && mouse_button_pressed == true) {
+    if (is_mouse_over_rectangle_shape(shop[12].rectangle) == true &&
+        mouse_button_pressed == true) {
         if (* index_previous_shop != 0) {
             validation_buy(index_previous_shop);
             return true;

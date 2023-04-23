@@ -29,8 +29,7 @@ void play_single_anim(sfSprite *sprite, single_anim_t *anim)
     if (anim->current_frame >= anim->nb_frame) {
         anim->stop_playing = true;
         return;
-    }
-    sfSprite_setTextureRect(sprite, result_rect);
+    } sfSprite_setTextureRect(sprite, result_rect);
     if (sfClock_getElapsedTime(anim->clock).microseconds / 1000
         >= 1000 / anim->frame_rate) {
         sfClock_restart(anim->clock);
@@ -53,7 +52,6 @@ void render_first_chest(int i, bool *chest_1)
     }
     play_single_anim(chest[i].sprite, &chest[i].anim);
     sfRenderWindow_drawSprite(window, chest[i].sprite, NULL);
-    sfRenderWindow_drawRectangleShape(window, chest[i].rectangle, NULL);
 }
 
 void render_second_chest(int i, bool *chest_2)
@@ -71,7 +69,6 @@ void render_second_chest(int i, bool *chest_2)
     }
     play_single_anim(chest[i].sprite, &chest[i].anim);
     sfRenderWindow_drawSprite(window, chest[i].sprite, NULL);
-    sfRenderWindow_drawRectangleShape(window, chest[i].rectangle, NULL);
 }
 
 void render_third_chest(int i, bool *chest_3)
@@ -86,7 +83,6 @@ void render_third_chest(int i, bool *chest_3)
     }
     play_single_anim(chest[i].sprite, &chest[i].anim);
     sfRenderWindow_drawSprite(window, chest[i].sprite, NULL);
-    sfRenderWindow_drawRectangleShape(window, chest[i].rectangle, NULL);
 }
 
 void render_chest(void)
@@ -97,11 +93,12 @@ void render_chest(void)
     for (int i = 0; i < nb_chest; ++i) {
         if (next_level == 1 && chest[i].choice_chest == CHEST_ARROW) {
             render_first_chest(i, &chest_1);
-        } else if (next_level == 2 && chest[i].choice_chest == CHEST_SKELET) {
+        }
+        if (next_level == 2 && chest[i].choice_chest == CHEST_SKELET) {
             render_second_chest(i, &chest_2);
-        } else if (next_level == 3 && chest[i].choice_chest == CHEST_BOSS) {
+        }
+        if (next_level == 3 && chest[i].choice_chest == CHEST_BOSS) {
             render_third_chest(i, &chest_3);
         }
-        
     }
 }

@@ -15,7 +15,10 @@ void create_animation(void)
     animation_level.rectangle = sfRectangleShape_create();
     sfRectangleShape_setOutlineThickness(animation_level.rectangle, 3);
     sfRectangleShape_setOutlineColor(animation_level.rectangle, sfBlack);
-    sfRectangleShape_setSize(animation_level.rectangle, animation_level.size_rectangle);
-    sfRectangleShape_setFillColor(animation_level.rectangle, animation_level.color_rectangle);
-    sfRectangleShape_setPosition(animation_level.rectangle, animation_level.pos_rectangle);
+    sfRectangleShape_setSize(animation_level.rectangle, animation_level.
+        size_rectangle);
+    sfRectangleShape_setFillColor(animation_level.rectangle, animation_level.
+        color_rectangle);
+    sfRectangleShape_setPosition(animation_level.rectangle, animation_level.
+        pos_rectangle);
 }

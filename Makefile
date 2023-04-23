@@ -30,16 +30,19 @@ VIDEO_SRC		=	src/video_start/create.c \
 
 SHOP_SRC		=	src/shop/create.c \
 					src/shop/declaration.c \
-					src/shop/render.c
+					src/shop/render.c \
+					src/shop/interaction_shop.c
 
 DOOR_SRC		=	src/door/create.c \
 					src/door/declaration.c \
-					src/door/render.c
+					src/door/render.c \
+					src/door/direction_door.c
 
 DIALOG_SRC		=	src/dialog/create.c \
 					src/dialog/declaration.c \
 					src/dialog/render.c \
-					src/dialog/pnj_render.c
+					src/dialog/pnj_render.c \
+					src/dialog/pnj_dialog.c
 
 ANIMATION_SRC	=	src/animation/create.c \
 					src/animation/declaration.c \
@@ -64,7 +67,8 @@ MAP_SRC			=	src/map/declaration_map.c \
 SYSTEM_BOT_SRC	=	src/system_bot_skelet/declaration.c \
 					src/system_bot_skelet/create.c \
 					src/system_bot_skelet/render.c \
-					src/system_bot_skelet/skelet_ia.c
+					src/system_bot_skelet/skelet_ia.c \
+					src/system_bot_skelet/skelet_life.c
 
 INVENTORY_SRC	=	src/menu_game/inventory/declaration.c \
 					src/menu_game/inventory/create.c \
@@ -100,7 +104,8 @@ LOADING_SRC		=	src/menu_game/loading/declaration.c \
 
 SAVING_SRC		=	src/menu_game/saving/declaration.c \
 					src/menu_game/saving/create.c \
-					src/menu_game/saving/render.c
+					src/menu_game/saving/render.c \
+					src/menu_game/saving/display_saving.c
 
 SETTINGS_MENU_SRC=	src/menu_game/settings/declaration.c \
 					src/menu_game/settings/create.c \
@@ -127,7 +132,8 @@ PLAYER_SRC	=	src/player/declaration_player.c \
 
 SETTINGS_SRC=	src/menu/settings/create.c \
 				src/menu/settings/declaration.c \
-				src/menu/settings/render.c
+				src/menu/settings/render.c \
+				src/menu/settings/reso_fps.c
 
 MAIN_SRC	=	src/main/declaration_main.c \
 				src/main/create_render_window.c \

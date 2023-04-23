@@ -20,14 +20,16 @@ void opacity_more(int level_choose, bool *disable)
     if (elapsedTime < 2.f) {
         animation_level.color_rectangle.a = (sfUint8)(255 * elapsedTime / 2.f);
     } else if (elapsedTime < 4.f) {
-        animation_level.color_rectangle.a = (sfUint8)(255 * (4.f - elapsedTime) / 2.f);
+        animation_level.color_rectangle.a = (sfUint8)(255 *
+            (4.f - elapsedTime) / 2.f);
     } else {
         sfClock_restart(animation_level.clock);
         animation_level.color_rectangle.a = 0;
         display_animation = false;
         * disable = false;
     }
-    sfRectangleShape_setFillColor(animation_level.rectangle, animation_level.color_rectangle);
+    sfRectangleShape_setFillColor(animation_level.rectangle,
+        animation_level.color_rectangle);
     sfRenderWindow_drawRectangleShape(window, animation_level.rectangle, NULL);
 }
 
@@ -36,5 +38,4 @@ void render_animation(int level_choose, bool *disable)
     if (display_animation == true && * disable == true) {
         opacity_more(level_choose, disable);
     }
-    
 }

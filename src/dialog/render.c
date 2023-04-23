@@ -12,15 +12,13 @@
 #include "player.h"
 #include "manage_view.h"
 
-#define radius 90
-
 bool intersect_pnj(sfCircleShape *circle)
 {
     sfFloatRect rectangleBounds = sfRectangleShape_getGlobalBounds
         (player.collision);
     sfVector2f circleCenter = sfCircleShape_getPosition(circle);
-    circleCenter.x += radius;
-    circleCenter.y += radius;
+    circleCenter.x += radius_90;
+    circleCenter.y += radius_90;
     float circleRadius = sfCircleShape_getRadius(circle);
     sfFloatRect circleBounds = {circleCenter.x - circleRadius,
     circleCenter.y - circleRadius, circleRadius * 2.f, circleRadius * 2.f};
@@ -61,7 +59,6 @@ void pnj_amuletter(int i)
             sfKeyboard_isKeyPressed(sfKeyE)) {
             activated_dialog[PNJ_QUEST_SKELET] = true;
         }
-        sfRenderWindow_drawCircleShape(window, create_dialog[i].circle, NULL);
         sfRenderWindow_drawSprite(window, create_dialog[i].sprite_pnj, NULL);
     }
 }
@@ -73,7 +70,6 @@ void pnj_totem(int i)
             sfKeyboard_isKeyPressed(sfKeyE)) {
             activated_dialog[PNJ_QUEST_ARROW] = true;
         }
-        sfRenderWindow_drawCircleShape(window, create_dialog[i].circle, NULL);
         sfRenderWindow_drawSprite(window, create_dialog[i].sprite_pnj, NULL);
     }
 }

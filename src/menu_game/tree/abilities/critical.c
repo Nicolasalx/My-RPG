@@ -9,7 +9,7 @@
 #include "player.h"
 #include "inventory.h"
 
-void critical()
+void critical(void)
 {
     if (abilities[STRENGHT_UP] == true && abilities[CRITICAL_UP] == false &&
     inventory_content.nb_xp >= 8){

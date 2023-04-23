@@ -143,3 +143,5 @@ tutorial_info_t tutorial_info[] = {
 
 const int size_tutorial_info = NB_ELEM(tutorial_info);
 bool is_fullscreen;
+
+bool can_open_tutorial = false;

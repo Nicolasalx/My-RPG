@@ -29,6 +29,5 @@ void main_loop(void)
         render_all_data();
         sfRenderWindow_display(window);
     }
-    //save_all_data(SAVE_1);
     sfRenderWindow_destroy(window);
 }

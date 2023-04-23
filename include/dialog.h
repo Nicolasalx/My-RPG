@@ -11,6 +11,9 @@
     #include <SFML/Graphics.h>
     #include <stdbool.h>
 
+    #define COLOR_TEXT_DIALOG 0, 0, 0, 255
+    #define radius_90 90
+
 typedef enum {
     PNJ_QUEST_ARROW,
     PNJ_QUEST_SKELET,
@@ -65,5 +68,9 @@ bool intersect_pnj(sfCircleShape *circle);
 void print_text_char(int i);
 void pnj_amuletter(int i);
 void pnj_totem(int i);
+void pnj_boss(int i);
+void dialog_arrow(int i);
+void dialog_skelet(int i);
+void dialog_boss(int i);
 
 #endif /* !DIALOG_H_ */

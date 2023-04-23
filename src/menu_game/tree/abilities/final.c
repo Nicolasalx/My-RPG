@@ -8,7 +8,7 @@
 #include "tree.h"
 #include "inventory.h"
 
-void final()
+void final(void)
 {
     if (abilities[IS_FUREUR] == true && abilities[IS_BLOODBATH] == true &&
         abilities[IS_GLACIAL_SLOW] == true && abilities[IS_FINAL] == false

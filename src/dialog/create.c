@@ -8,17 +8,8 @@
 #include "dialog.h"
 #include "main.h"
 
-void create_pnj(int i)
+void create_circle_pnj(int i)
 {
-    create_dialog[i].texture_pnj = sfTexture_createFromFile(create_dialog[i].
-        path_img_pnj, NULL);
-    create_dialog[i].sprite_pnj = sfSprite_create();
-    sfSprite_setScale(create_dialog[i].sprite_pnj, create_dialog[i].
-        size_sprite_pnj);
-    sfSprite_setTexture(create_dialog[i].sprite_pnj, create_dialog[i].
-        texture_pnj, sfTrue);
-    sfSprite_setPosition(create_dialog[i].sprite_pnj, create_dialog[i].
-        pos_sprite_pnj);
     create_dialog[i].circle = sfCircleShape_create();
     sfCircleShape_setRadius(create_dialog[i].circle, create_dialog[i].radius);
     sfCircleShape_setFillColor(create_dialog[i].circle, create_dialog[i].
@@ -31,6 +22,20 @@ void create_pnj(int i)
         pos_sprite_pnj.x -= 55, create_dialog[i].pos_sprite_pnj.y -= 30};
     sfCircleShape_setPosition(create_dialog[i].circle, create_dialog[i].
         position_circle);
+}
+
+void create_pnj(int i)
+{
+    create_dialog[i].texture_pnj = sfTexture_createFromFile(create_dialog[i].
+        path_img_pnj, NULL);
+    create_dialog[i].sprite_pnj = sfSprite_create();
+    sfSprite_setScale(create_dialog[i].sprite_pnj, create_dialog[i].
+        size_sprite_pnj);
+    sfSprite_setTexture(create_dialog[i].sprite_pnj, create_dialog[i].
+        texture_pnj, sfTrue);
+    sfSprite_setPosition(create_dialog[i].sprite_pnj, create_dialog[i].
+        pos_sprite_pnj);
+    create_circle_pnj(i);
 }
 
 void sprite_text(int i)

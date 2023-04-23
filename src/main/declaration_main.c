@@ -7,7 +7,7 @@
 
 #include "main.h"
 
-sfRenderWindow *window = NULL;
+sfRenderWindow *window = {NULL};
 
 render_window_t render_window = {
     .mode = {1920, 1080, 32},

@@ -14,7 +14,8 @@ void create_door(void)
         sfRectangleShape_setOutlineThickness(door[i].rectangle, 3);
         sfRectangleShape_setOutlineColor(door[i].rectangle, sfBlack);
         sfRectangleShape_setSize(door[i].rectangle, door[i].size_rectangle);
-        sfRectangleShape_setFillColor(door[i].rectangle, door[i].color_rectangle);
+        sfRectangleShape_setFillColor(door[i].rectangle, door[i].
+            color_rectangle);
         sfRectangleShape_setPosition(door[i].rectangle, door[i].pos_rectangle);
     }
 }
