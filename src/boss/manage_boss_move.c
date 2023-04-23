@@ -14,16 +14,15 @@
 
 sfVector2f boss_direction(double x_1, double y_1, double x_2, double y_2)
 {
-    double direction_x = 0;
-    double direction_y = 0;
+    sfVector2f result = {0, 0};
 
     if (x_2 - x_1 != 0.0) {
-        direction_x = (x_2 - x_1) / my_abs(x_2 - x_1);
+        result.x = (x_2 - x_1) / my_abs(x_2 - x_1);
     }
     if (y_2 - y_1 != 0.0) {
-        direction_y = (y_2 - y_1) / my_abs(y_2 - y_1);
+        result.y = (y_2 - y_1) / my_abs(y_2 - y_1);
     }
-    return (sfVector2f) {direction_x, direction_y};
+    return result;
 }
 
 bool manage_attack_boss(int j, sfVector2f boss_dir)
@@ -62,15 +61,21 @@ void move_boss_helper(int j, sfVector2f *boss_dir)
     }
 }
 
-void manage_move_boss(int j)
+sfVector2f compute_boss_dir(int j)
 {
-    static double stack_damage = 0.0;
     sfVector2f boss_dir = boss_direction(
         get_rect_center(boss[j].collision).x,
         get_rect_center(boss[j].collision).y,
         get_rect_center(player.collision).x,
         get_rect_center(player.collision).y
     );
+    return boss_dir;
+}
+
+void manage_move_boss(int j)
+{
+    static double stack_damage = 0.0;
+    sfVector2f boss_dir = compute_boss_dir(j);
     move_boss_helper(j, &boss_dir);
     if (manage_attack_boss(j, boss_dir)) {
         stack_damage += 0.1;
@@ -83,6 +88,6 @@ void manage_move_boss(int j)
     if (sfClock_getElapsedTime(boss[j].clock_move).microseconds / 1000 >=
         boss[j].speed) {
         sfClock_restart(boss[j].clock_move);
-        vect_arithm(boss[j].pos, +=, boss_dir);
+        vect_arithm(boss[j].pos, += , boss_dir);
     }
 }

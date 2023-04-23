@@ -47,6 +47,25 @@ void manage_boss_die(int j)
     anim_sprite(&boss[j].boss_anim, boss[j].anim_to_play);
 }
 
+void render_boss_sprite(int j)
+{
+    manage_health_boss(j);
+    manage_move_boss(j);
+    anim_sprite(&boss[j].boss_anim, boss[j].anim_to_play);
+    for (int i = 0; i < NB_ANIM_BOSS; ++i) {
+        sfSprite_setPosition(
+            boss[j].boss_anim.sprite_sheet[i].sprite, boss[j].pos);
+    }
+    sfRectangleShape_setPosition(boss[j].collision,
+    (sfVector2f) {boss[j].pos.x + (5 * boss[j].scale.x),
+    boss[j].pos.y + (12.5 * boss[j].scale.y)});
+    sfRenderWindow_drawRectangleShape(window, boss[j].health_bar, NULL);
+    sfRenderWindow_drawRectangleShape(
+        window, boss[j].health_bar_outline, NULL);
+    sfRenderWindow_drawSprite(window,
+    boss[j].boss_anim.sprite_sheet[boss[j].anim_to_play].sprite, NULL);
+}
+
 void render_boss(void)
 {
     if (next_level != 3) {
@@ -62,20 +81,6 @@ void render_boss(void)
             continue;
         }
         boss[j].damage = 0;
-        manage_health_boss(j);
-        manage_move_boss(j);
-        anim_sprite(&boss[j].boss_anim, boss[j].anim_to_play);
-        for (int i = 0; i < NB_ANIM_BOSS; ++i) {
-            sfSprite_setPosition(
-                boss[j].boss_anim.sprite_sheet[i].sprite, boss[j].pos);
-        }
-        sfRectangleShape_setPosition(boss[j].collision,
-        (sfVector2f) {boss[j].pos.x + (5 * boss[j].scale.x), boss[j].pos.y + (12.5 * boss[j].scale.y)});
-        sfRenderWindow_drawRectangleShape(window, boss[j].collision, NULL);
-        sfRenderWindow_drawRectangleShape(window, boss[j].attack_collision, NULL);
-        sfRenderWindow_drawRectangleShape(window, boss[j].health_bar, NULL);
-        sfRenderWindow_drawRectangleShape(window, boss[j].health_bar_outline, NULL);
-        sfRenderWindow_drawSprite(window,
-        boss[j].boss_anim.sprite_sheet[boss[j].anim_to_play].sprite, NULL);
+        render_boss_sprite(j);
     }
 }
