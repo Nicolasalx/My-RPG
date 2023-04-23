@@ -186,13 +186,9 @@ SRC			=	src/main.c \
 				$(SAVE_SYSTEM_SRC) \
 				$(SHOP_SRC) \
 				$(MUSIC_SRC) \
-<<<<<<< HEAD
-				$(VIDEO_SRC) \
-				$(WIN_SRC)
-=======
+				$(WIN_SRC) \
 				$(BOSS_SRC) \
 				$(VIDEO_SRC)
->>>>>>> 2897d9f987313170eaf8cb5676c0429d8fbdba5e
 
 CFLAGS		=	-W -Wall -Wextra -I ./include -I ./include/lib -lcsfml-system \
 				-lcsfml-graphics -lcsfml-window -lcsfml-audio -lm
